@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { ArrowRight } from 'lucide-react';
 
 const blogPosts = [
   {
@@ -13,6 +14,8 @@ const blogPosts = [
     authorAiHint: 'man portrait',
     date: 'Mar 10, 2025',
     readTime: '6 min',
+    category: 'Data Security',
+    categoryColor: 'bg-red-100 text-red-800',
   },
   {
     image: 'https://placehold.co/600x400.png',
@@ -23,6 +26,8 @@ const blogPosts = [
     authorAiHint: 'woman portrait',
     date: 'Mar 8, 2025',
     readTime: '5 min',
+    category: 'IT Disposal',
+    categoryColor: 'bg-blue-100 text-blue-800',
   },
   {
     image: 'https://placehold.co/600x400.png',
@@ -33,113 +38,94 @@ const blogPosts = [
     authorAiHint: 'woman portrait',
     date: 'Mar 5, 2025',
     readTime: '7 min',
+    category: 'Sustainability',
+    categoryColor: 'bg-green-100 text-green-800',
   },
-];
-
-const bottomBlogPosts = [
-    {
+  {
     image: 'https://placehold.co/600x400.png',
     aiHint: 'compliance documents',
-    category: 'Compliance',
-    categoryColor: 'bg-red-500',
     title: 'UAE E-Waste Regulations: What Businesses Need to Know',
     description: 'Navigate the regulatory landscape and ensure your business stays compliant with UAE e-waste disposal requirements.',
     author: 'Ahmed Al-Rashid',
     authorAiHint: 'man portrait',
     date: 'Mar 3, 2025',
     readTime: '8 min',
+    category: 'Compliance',
+    categoryColor: 'bg-yellow-100 text-yellow-800',
   },
   {
     image: 'https://placehold.co/600x400.png',
     aiHint: 'old mobile phones',
-    category: 'Consumer Guide',
-    categoryColor: 'bg-orange-500',
     title: 'How to Prepare Your Devices for E-Waste Recycling',
     description: 'Step-by-step guide for consumers to safely prepare smartphones, laptops, and other devices for recycling.',
     author: 'Fatima Hassan',
     authorAiHint: 'woman portrait',
     date: 'Mar 1, 2025',
     readTime: '5 min',
+    category: 'Consumer Guide',
+    categoryColor: 'bg-indigo-100 text-indigo-800',
   },
-]
+  {
+    image: 'https://placehold.co/600x400.png',
+    aiHint: 'circular economy diagram',
+    title: 'The Role of E-Waste in the Circular Economy',
+    description: 'Discover how recycling electronics plays a crucial role in creating a sustainable, circular economic model.',
+    author: 'David Lee',
+    authorAiHint: 'man portrait',
+    date: 'Feb 28, 2025',
+    readTime: '6 min',
+    category: 'Economy',
+    categoryColor: 'bg-purple-100 text-purple-800',
+  },
+];
+
 
 const ExploreBlog = () => {
   return (
-    <section className="py-16 md:py-24 bg-muted/20">
+    <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-left mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            EXPLORE OUR BLOG
+            All Articles
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Expert insights and practical guidance for sustainable e-waste management
+          <p className="mt-2 text-lg text-muted-foreground">
+            Explore our collection of insights and guides on e-waste management.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post, index) => (
-            <Card key={index} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col bg-white rounded-lg">
-              <div className="relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+          {blogPosts.map((post) => (
+            <div key={post.title} className="flex flex-col group">
+              <div className="relative rounded-2xl overflow-hidden mb-4">
                 <Image
                   src={post.image}
                   alt={post.title}
                   width={600}
                   height={400}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-300"
                   data-ai-hint={post.aiHint}
                 />
               </div>
-              <CardContent className="p-6 flex-grow flex flex-col">
-                <h3 className="text-lg font-bold text-foreground mb-2 flex-grow">{post.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4 ">{post.description}</p>
-                <div className="flex items-center gap-2 text-xs text-muted-foreground mb-4">
-                    <Avatar className="h-6 w-6">
+              <Badge className={`${post.categoryColor} self-start border-transparent mb-2`}>{post.category}</Badge>
+              <h3 className="text-xl font-bold text-foreground mb-2 flex-grow">
+                <a href="#" className="hover:text-primary transition-colors">{post.title}</a>
+              </h3>
+              <p className="text-muted-foreground text-sm mb-4 ">{post.description}</p>
+              <div className="flex items-center justify-between mt-auto">
+                <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                    <Avatar className="h-8 w-8">
                       <AvatarImage src={`https://placehold.co/40x40.png`} alt={post.author} data-ai-hint={post.authorAiHint} />
                       <AvatarFallback>{post.author.charAt(0)}</AvatarFallback>
                     </Avatar>
-                    <span>{post.author}</span>
-                  <span>•</span>
-                  <span>{post.date}</span>
-                  <span>•</span>
-                  <span>{post.readTime}</span>
+                    <div>
+                      <span className="font-semibold text-foreground">{post.author}</span>
+                      <p>{post.date} • {post.readTime}</p>
+                    </div>
                 </div>
-                <a href="#" className="text-primary font-semibold hover:underline text-sm mt-auto">
-                  Read More
+                 <a href="#" className="flex items-center gap-1 text-primary font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                  Read More <ArrowRight className="h-4 w-4" />
                 </a>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-          {bottomBlogPosts.map((post, index) => (
-            <Card key={index} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col md:flex-row bg-white rounded-lg">
-              <div className="relative md:w-1/3">
-                 <Image
-                  src={post.image}
-                  alt={post.title}
-                  width={400}
-                  height={400}
-                  className="w-full h-48 md:h-full object-cover"
-                  data-ai-hint={post.aiHint}
-                />
               </div>
-
-              <CardContent className="p-6 flex-grow flex flex-col md:w-2/3">
-                {post.category && (
-                  <Badge className={`text-white mb-2 ${post.categoryColor}`}>{post.category}</Badge>
-                )}
-                <h3 className="text-lg font-bold text-foreground mb-2">{post.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4 flex-grow">{post.description}</p>
-                 <div className="flex items-center gap-2 text-xs text-muted-foreground mt-auto">
-                    <Avatar className="h-6 w-6">
-                      <AvatarImage src={`https://placehold.co/40x40.png`} alt={post.author} data-ai-hint={post.authorAiHint} />
-                      <AvatarFallback>{post.author.charAt(0)}</AvatarFallback>
-                    </Avatar>
-                    <span>{post.author}</span>
-                  <span>•</span>
-                  <span>{post.date}</span>
-                </div>
-              </CardContent>
-            </Card>
+            </div>
           ))}
         </div>
       </div>
