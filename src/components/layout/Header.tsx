@@ -1,6 +1,6 @@
 'use client';
 
-import { Mail, Phone, Facebook, Twitter, Linkedin, Instagram, ChevronDown, Recycle, Menu, ArrowRight, Sun, Moon } from 'lucide-react';
+import { Mail, Phone, Facebook, Twitter, Linkedin, Instagram, ChevronDown, Recycle, Menu, ArrowRight, Sun, Moon, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import {
@@ -80,6 +80,23 @@ const ThemeToggle = () => {
     )
 }
 
+const LanguageToggle = () => {
+    return (
+        <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon">
+                    <Globe className="h-[1.2rem] w-[1.2rem]" />
+                    <span className="sr-only">Toggle language</span>
+                </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+                <DropdownMenuItem>English</DropdownMenuItem>
+                <DropdownMenuItem>العربية</DropdownMenuItem>
+            </DropdownMenuContent>
+        </DropdownMenu>
+    )
+}
+
 
 const Header = () => {
   const [servicesOpen, setServicesOpen] = React.useState(false);
@@ -151,6 +168,7 @@ const Header = () => {
           </nav>
           <div className="flex items-center gap-2">
             <ThemeToggle />
+            <LanguageToggle />
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                 <Button className="hidden sm:inline-flex">Get a Quote</Button>
             </a>
