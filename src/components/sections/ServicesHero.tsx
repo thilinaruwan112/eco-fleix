@@ -2,18 +2,18 @@ import { ChevronRight } from 'lucide-react';
 
 const ServicesHero = () => {
   return (
-    <section className="relative w-full h-[300px] md:h-[400px] bg-gradient-to-r from-[#0A1E44] to-[#1E40AF] text-white">
-      <div className="container mx-auto px-4 h-full flex flex-col justify-center items-start z-20 relative">
-        <div className="flex items-center gap-2 text-sm text-white/80">
-          <a href="/" className="hover:text-white">Home</a>
+    <section className="relative w-full py-20 md:py-32 bg-gradient-to-br from-green-50 to-blue-50 text-gray-800">
+      <div className="container mx-auto px-4 text-center z-20 relative">
+         <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-4">
+          <a href="/" className="hover:text-primary">Home</a>
           <ChevronRight className="h-4 w-4" />
           <span>Services</span>
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mt-4">
-          OUR SERVICES
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground">
+          Our <span className="text-primary">Services</span>
         </h1>
-        <p className="max-w-2xl mt-4 text-lg md:text-xl text-white/90">
-          Professional data destruction and recycling solutions
+        <p className="max-w-3xl mx-auto mt-4 text-lg md:text-xl text-muted-foreground">
+          Comprehensive solutions for secure, sustainable, and smart IT asset management.
         </p>
       </div>
     </section>

@@ -4,22 +4,22 @@ import { useState } from 'react';
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Check, ShieldCheck, Trash2, Shield, AlertTriangle, Settings, FileText, Eye, HelpCircle, Clock, RefreshCw, Box, Package, Recycle, CheckCircle, DollarSign, Leaf, Globe, Settings2, Truck, BarChart3, HardDrive, Cpu, Wrench, CheckSquare, Search, Award, Users, BookUser, BarChartHorizontal } from 'lucide-react';
+import { Check, ShieldCheck, Trash2, Shield, AlertTriangle, Settings, FileText, Eye, HelpCircle, Clock, RefreshCw, Box, Package, Recycle, CheckCircle, DollarSign, Leaf, Globe, Settings2, Truck, BarChart3, HardDrive, Cpu, Wrench, CheckSquare, Search, Award, Users, BookUser, BarChartHorizontal, ArrowRight } from 'lucide-react';
 import { Badge } from '../ui/badge';
 import Image from 'next/image';
 
 const services = [
-  { id: 'it-asset-remarketing', name: 'IT Asset Remarketing', icon: <Recycle className="h-5 w-5" /> },
-  { id: 'it-asset-remanufacturing', name: 'IT Asset Remanufacturing', icon: <RefreshCw className="h-5 w-5" /> },
-  { id: 'it-asset-disposition', name: 'IT Asset Disposition', icon: <Package className="h-5 w-5" /> },
-  { id: 'data-destruction', name: 'Data Destruction', icon: <ShieldCheck className="h-5 w-5" /> },
+  { id: 'it-asset-remarketing', name: 'IT Asset Remarketing', icon: <Recycle className="h-8 w-8 text-primary" />, description: 'Maximize value from retired IT assets through strategic resale and redeployment.' },
+  { id: 'it-asset-remanufacturing', name: 'IT Asset Remanufacturing', icon: <RefreshCw className="h-8 w-8 text-primary" />, description: 'Breathe new life into aging IT hardware by restoring it to like-new condition.' },
+  { id: 'it-asset-disposition', name: 'IT Asset Disposition', icon: <Package className="h-8 w-8 text-primary" />, description: 'Secure and sustainable management of retired technology assets and data.' },
+  { id: 'data-destruction', name: 'Data Destruction', icon: <ShieldCheck className="h-8 w-8 text-primary" />, description: 'Ensure complete data elimination from all storage devices with certified processes.' },
 ];
 
 const keyBenefits = [
-  { icon: <ShieldCheck className="h-8 w-8 text-primary" />, title: 'Data Security', description: 'Complete protection of sensitive information' },
-  { icon: <Shield className="h-8 w-8 text-primary" />, title: 'Compliance', description: 'Meet regulatory requirements' },
-  { icon: <AlertTriangle className="h-8 w-8 text-primary" />, title: 'Risk Mitigation', description: 'Eliminate data breach risks' },
-  { icon: <Trash2 className="h-8 w-8 text-primary" />, title: 'Environmental Responsibility', description: 'Eco-friendly disposal methods' },
+  { icon: <ShieldCheck className="h-8 w-8 text-green-700" />, title: 'Data Security', description: 'Complete protection of sensitive information' },
+  { icon: <Shield className="h-8 w-8 text-blue-700" />, title: 'Compliance', description: 'Meet regulatory requirements' },
+  { icon: <AlertTriangle className="h-8 w-8 text-green-700" />, title: 'Risk Mitigation', description: 'Eliminate data breach risks' },
+  { icon: <Trash2 className="h-8 w-8 text-blue-700" />, title: 'Environmental Responsibility', description: 'Eco-friendly disposal methods' },
 ];
 
 const destructionMethods = [
@@ -346,177 +346,181 @@ const ItAssetRemarketingContent = () => (
 );
 
 
-const PlaceholderContent = ({ title }: {title: string}) => (
-    <div id={title.toLowerCase().replace(/\s/g, '-')} className="space-y-12">
-        <section>
-            <h2 className="text-3xl font-bold">{title}</h2>
-            <p className="mt-4 text-muted-foreground">
-                Detailed information about our {title.toLowerCase()} services will be available soon. Please check back later or contact us for more information. We are committed to providing secure, compliant, and environmentally responsible solutions for all your IT asset needs.
-            </p>
-        </section>
-        <section>
-            <Card className="bg-white/60 shadow-lg">
-                <CardContent className="p-8 text-center">
-                    <h3 className="text-2xl font-bold mb-4">Coming Soon</h3>
-                    <p className="text-muted-foreground">
-                        We are currently updating this section to provide you with the best information possible.
+const DataDestructionContent = () => (
+    <div id="data-destruction" className="space-y-12">
+    <section>
+        <Badge className="mb-2 bg-primary/10 text-primary border-transparent">Service Overview</Badge>
+        <h2 className="text-3xl font-bold">Data Destruction</h2>
+        <div className="w-16 h-1.5 bg-primary my-4 rounded-full"></div>
+        <p className="mt-4 text-muted-foreground">
+        Secure data destruction is critical for protecting sensitive information and maintaining compliance. Our certified processes ensure complete data elimination from all storage devices, providing peace of mind and regulatory compliance for your organization.
+        </p>
+    </section>
+
+    <section>
+        <Card className="bg-white/60 shadow-lg">
+            <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-6 text-center">Key Benefits</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {keyBenefits.map(item => (
+                    <div key={item.title} className="flex flex-col items-center text-center gap-3">
+                        <div className="bg-primary/10 rounded-full p-3 flex-shrink-0 group hover:bg-primary transition-colors duration-300">
+                            {React.cloneElement(item.icon, { className: "h-8 w-8 text-primary group-hover:text-white transition-colors duration-300"})}
+                        </div>
+                        <div>
+                            <h4 className="font-bold">{item.title}</h4>
+                            <p className="text-sm text-muted-foreground">{item.description}</p>
+                        </div>
+                    </div>
+                ))}
+                </div>
+            </CardContent>
+        </Card>
+    </section>
+
+    <section className="grid md:grid-cols-2 gap-8">
+        <Card className="shadow-lg">
+            <CardContent className="p-8">
+                <div className="flex items-center gap-3 mb-4">
+                    <Settings className="h-7 w-7 text-primary" />
+                    <h3 className="text-xl font-bold">State-of-the-art Data Destruction Methods</h3>
+                </div>
+                <ul className="space-y-3">
+                {destructionMethods.map(method => (
+                    <li key={method} className="flex items-center gap-3">
+                        <Check className="h-5 w-5 text-green-600" />
+                        <span>{method}</span>
+                    </li>
+                ))}
+                </ul>
+            </CardContent>
+        </Card>
+        <Card className="shadow-lg">
+             <CardContent className="p-8">
+                <div className="flex items-center gap-3 mb-4">
+                    <FileText className="h-7 w-7 text-primary" />
+                    <h3 className="text-xl font-bold">Comprehensive Solutions</h3>
+                </div>
+                <ul className="space-y-3">
+                {comprehensiveSolutions.map(solution => (
+                    <li key={solution} className="flex items-center gap-3">
+                        <Check className="h-5 w-5 text-green-600" />
+                        <span>{solution}</span>
+                    </li>
+                ))}
+                </ul>
+            </CardContent>
+        </Card>
+    </section>
+    
+    <section>
+        <Card className="shadow-lg">
+            <CardContent className="p-8">
+                <h3 className="text-2xl font-bold">Safeguarding Your Business</h3>
+                <p className="mt-4 text-muted-foreground">
+                Our data destruction services protect your organization from data breaches, identity theft, and regulatory non-compliance. We follow strict protocols to ensure your sensitive information is completely destroyed beyond recovery.
+                </p>
+                <p className="mt-4 text-muted-foreground">
+                From financial records to customer databases, we handle all types of sensitive data with the highest level of security and professionalism.
+                </p>
+            </CardContent>
+        </Card>
+    </section>
+
+    <section>
+         <Card className="bg-white/60 shadow-lg">
+            <CardContent className="p-8 text-center">
+                <h3 className="text-2xl font-bold">Your Data, Your Control</h3>
+                <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
+                    Maintain complete control over your data destruction process. Our transparent procedures allow you to witness the destruction process and receive detailed documentation for your records.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-8">
+                    {yourDataYourControlItems.map(item => (
+                        <div key={item.title} className="flex flex-col items-center gap-3">
+                            <div className="bg-primary/10 rounded-full p-3">
+                                {item.icon}
+                            </div>
+                            <h4 className="font-semibold">{item.title}</h4>
+                        </div>
+                    ))}
+                </div>
+            </CardContent>
+        </Card>
+    </section>
+     <section>
+        <Card className="bg-primary text-primary-foreground">
+            <CardContent className="p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <h3 className="text-2xl font-bold">Ready to Secure Your Data?</h3>
+                    <p className="mt-2 text-primary-foreground/90">
+                        Learn how our data destruction services can protect your business from security threats.
                     </p>
-                </CardContent>
-            </Card>
-        </section>
+                </div>
+                <Button variant="secondary" size="lg" className="flex-shrink-0">Contact Us Today</Button>
+            </CardContent>
+        </Card>
+    </section>
     </div>
 );
 
 
 const ServicesContent = () => {
-  const [activeService, setActiveService] = useState('it-asset-remarketing');
+  const [activeService, setActiveService] = useState<string | null>(null);
+
+  const renderContent = () => {
+    if (!activeService) return null;
+    switch(activeService) {
+        case 'it-asset-remarketing': return <ItAssetRemarketingContent />;
+        case 'it-asset-remanufacturing': return <ItAssetRemanufacturingContent />;
+        case 'it-asset-disposition': return <ItAssetDispositionContent />;
+        case 'data-destruction': return <DataDestructionContent />;
+        default: return null;
+    }
+  }
 
   return (
-    <div className="bg-muted/20">
+    <div className="bg-white">
         <div className="container mx-auto px-4 py-16 md:py-24">
-            <div className="grid md:grid-cols-12 gap-8">
-                <aside className="md:col-span-3 sticky top-28 self-start">
-                    <Card className="p-4 shadow-lg">
-                    <h3 className="text-lg font-bold mb-4 px-4">Our Services</h3>
-                    <nav className="flex flex-col gap-2">
-                        {services.map((service) => (
-                        <a href={`#${service.id}`} key={service.id} onClick={(e) => { e.preventDefault(); setActiveService(service.id); const el = document.getElementById(service.id); el?.scrollIntoView({ behavior: 'smooth' }); }}>
-                            <Button
-                                variant={activeService === service.id ? 'default' : 'ghost'}
-                                className="w-full justify-start gap-3 h-auto py-2 px-4 text-left"
-                                onClick={() => setActiveService(service.id)}
-                            >
-                                {service.icon}
-                                <span className="flex-1 whitespace-nowrap">{service.name}</span>
-                            </Button>
-                        </a>
-                        ))}
-                    </nav>
-                    </Card>
-                </aside>
-
-                <main className="md:col-span-9 space-y-12">
-                {activeService === 'data-destruction' && (
-                    <div id="data-destruction" className="space-y-12">
-                    <section>
-                        <Badge className="mb-2 bg-primary/10 text-primary border-transparent">Service Overview</Badge>
-                        <h2 className="text-3xl font-bold">Data Destruction</h2>
-                        <div className="w-16 h-1.5 bg-primary my-4 rounded-full"></div>
-                        <p className="mt-4 text-muted-foreground">
-                        Secure data destruction is critical for protecting sensitive information and maintaining compliance. Our certified processes ensure complete data elimination from all storage devices, providing peace of mind and regulatory compliance for your organization.
+            {activeService ? (
+                <div>
+                     <Button onClick={() => setActiveService(null)} variant="outline" className="mb-8">
+                        &larr; Back to All Services
+                    </Button>
+                    {renderContent()}
+                </div>
+            ) : (
+                <div>
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+                            Explore Our Services
+                        </h2>
+                        <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+                            We offer a suite of services designed to handle your IT assets securely, sustainably, and efficiently.
                         </p>
-                    </section>
-
-                    <section>
-                        <Card className="bg-white/60 shadow-lg">
-                            <CardContent className="p-8">
-                                <h3 className="text-2xl font-bold mb-6 text-center">Key Benefits</h3>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                                {keyBenefits.map(item => (
-                                    <div key={item.title} className="flex flex-col items-center text-center gap-3">
-                                        <div className="bg-primary/10 rounded-full p-3 flex-shrink-0 group hover:bg-primary transition-colors duration-300">
-                                            {React.cloneElement(item.icon, { className: "h-8 w-8 text-primary group-hover:text-white transition-colors duration-300"})}
-                                        </div>
-                                        <div>
-                                            <h4 className="font-bold">{item.title}</h4>
-                                            <p className="text-sm text-muted-foreground">{item.description}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                                </div>
-                            </CardContent>
-                        </Card>
-                    </section>
-
-                    <section className="grid md:grid-cols-2 gap-8">
-                        <Card className="shadow-lg">
-                            <CardContent className="p-8">
-                                <div className="flex items-center gap-3 mb-4">
-                                    <Settings className="h-7 w-7 text-primary" />
-                                    <h3 className="text-xl font-bold">State-of-the-art Data Destruction Methods</h3>
-                                </div>
-                                <ul className="space-y-3">
-                                {destructionMethods.map(method => (
-                                    <li key={method} className="flex items-center gap-3">
-                                        <Check className="h-5 w-5 text-green-600" />
-                                        <span>{method}</span>
-                                    </li>
-                                ))}
-                                </ul>
-                            </CardContent>
-                        </Card>
-                        <Card className="shadow-lg">
-                             <CardContent className="p-8">
-                                <div className="flex items-center gap-3 mb-4">
-                                    <FileText className="h-7 w-7 text-primary" />
-                                    <h3 className="text-xl font-bold">Comprehensive Solutions</h3>
-                                </div>
-                                <ul className="space-y-3">
-                                {comprehensiveSolutions.map(solution => (
-                                    <li key={solution} className="flex items-center gap-3">
-                                        <Check className="h-5 w-5 text-green-600" />
-                                        <span>{solution}</span>
-                                    </li>
-                                ))}
-                                </ul>
-                            </CardContent>
-                        </Card>
-                    </section>
-                    
-                    <section>
-                        <Card className="shadow-lg">
-                            <CardContent className="p-8">
-                                <h3 className="text-2xl font-bold">Safeguarding Your Business</h3>
-                                <p className="mt-4 text-muted-foreground">
-                                Our data destruction services protect your organization from data breaches, identity theft, and regulatory non-compliance. We follow strict protocols to ensure your sensitive information is completely destroyed beyond recovery.
-                                </p>
-                                <p className="mt-4 text-muted-foreground">
-                                From financial records to customer databases, we handle all types of sensitive data with the highest level of security and professionalism.
-                                </p>
-                            </CardContent>
-                        </Card>
-                    </section>
-
-                    <section>
-                         <Card className="bg-white/60 shadow-lg">
-                            <CardContent className="p-8 text-center">
-                                <h3 className="text-2xl font-bold">Your Data, Your Control</h3>
-                                <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
-                                    Maintain complete control over your data destruction process. Our transparent procedures allow you to witness the destruction process and receive detailed documentation for your records.
-                                </p>
-                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-8">
-                                    {yourDataYourControlItems.map(item => (
-                                        <div key={item.title} className="flex flex-col items-center gap-3">
-                                            <div className="bg-primary/10 rounded-full p-3">
-                                                {item.icon}
-                                            </div>
-                                            <h4 className="font-semibold">{item.title}</h4>
-                                        </div>
-                                    ))}
-                                </div>
-                            </CardContent>
-                        </Card>
-                    </section>
-                     <section>
-                        <Card className="bg-primary text-primary-foreground">
-                            <CardContent className="p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-                                <div>
-                                    <h3 className="text-2xl font-bold">Ready to Secure Your Data?</h3>
-                                    <p className="mt-2 text-primary-foreground/90">
-                                        Learn how our data destruction services can protect your business from security threats.
-                                    </p>
-                                </div>
-                                <Button variant="secondary" size="lg" className="flex-shrink-0">Contact Us Today</Button>
-                            </CardContent>
-                        </Card>
-                    </section>
                     </div>
-                )}
-                 {activeService === 'it-asset-remarketing' && <ItAssetRemarketingContent />}
-                 {activeService === 'it-asset-remanufacturing' && <ItAssetRemanufacturingContent />}
-                 {activeService === 'it-asset-disposition' && <ItAssetDispositionContent />}
-                </main>
-            </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {services.map((service) => (
+                            <button key={service.id} onClick={() => setActiveService(service.id)} className="block group text-left">
+                                <Card className="text-left shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-2xl bg-white h-full transform hover:-translate-y-2">
+                                    <CardContent className="p-8 flex flex-col h-full">
+                                    <div className="bg-primary/10 rounded-full p-3 mb-4 w-max">
+                                        {service.icon}
+                                    </div>
+                                    <h3 className="text-lg font-bold text-foreground flex-grow">
+                                        {service.name}
+                                    </h3>
+                                    <p className="text-sm text-muted-foreground mt-2 mb-4 flex-grow">{service.description}</p>
+                                    <div className="flex justify-between items-center mt-auto">
+                                        <p className="text-sm font-semibold text-primary">Learn More</p>
+                                        <ArrowRight className="h-5 w-5 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                                    </div>
+                                    </CardContent>
+                                </Card>
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            )}
         </div>
     </div>
   );
