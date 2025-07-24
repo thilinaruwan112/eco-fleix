@@ -5,7 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowLeft, Building2, Landmark, School, Banknote, Stethoscope, Check, Shield, Globe, FileText, Users, DollarSign, Leaf, RefreshCw, BarChart, Eye, Star } from 'lucide-react';
+import { ArrowLeft, Building2, Landmark, School, Banknote, Stethoscope, Check, Shield, Globe, FileText, Users, DollarSign, Leaf, RefreshCw, BarChart, Eye, Star, Recycle } from 'lucide-react';
 import { Badge } from '../ui/badge';
 import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
