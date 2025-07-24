@@ -3,9 +3,11 @@ import PioneeringSustainable from '@/components/sections/PioneeringSustainable';
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col gap-16 md:gap-24 py-16 md:py-24">
+    <div className="flex flex-col">
       <AboutHero />
-      <PioneeringSustainable />
+      <div className="py-16 md:py-24">
+        <PioneeringSustainable />
+      </div>
     </div>
   );
 }
