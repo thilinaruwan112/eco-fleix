@@ -51,12 +51,12 @@ const Certifications = () => {
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {certificationItems.map((item, index) => (
-            <Card key={index} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <Card key={index} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl">
               <CardContent className="p-6 flex flex-col items-center gap-3">
                 <div className="bg-muted rounded-full p-3 mb-2">
                     {item.icon}
                 </div>
-                <h3 className="text-base font-semibold text-foreground">
+                <h3 className="text-base font-bold text-foreground">
                   {item.title}
                 </h3>
               </CardContent>
