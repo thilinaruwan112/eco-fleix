@@ -97,7 +97,7 @@ const Header = () => {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
-            <NavLink href="#">Our Process</NavLink>
+            <NavLink href="/our-process">Our Process</NavLink>
             <NavLink href="/contact">Contact</NavLink>
           </nav>
           <div className="flex items-center gap-2">
@@ -141,7 +141,7 @@ const Header = () => {
                                 ))}
                               </DropdownMenuContent>
                             </DropdownMenu>
-                            <NavLink href="#">Our Process</NavLink>
+                            <NavLink href="/our-process">Our Process</NavLink>
                             <NavLink href="/contact">Contact</NavLink>
                              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                                 <Button>Get a Quote</Button>
