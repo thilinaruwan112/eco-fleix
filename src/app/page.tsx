@@ -6,6 +6,7 @@ import ServiceArea from '@/components/sections/ServiceArea';
 import Education from '@/components/sections/Education';
 import About from '@/components/sections/About';
 import WhatWeAccept from '@/components/sections/WhatWeAccept';
+import HowItWorks from '@/components/sections/HowItWorks';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <About />
       <WhatWeAccept />
+      <HowItWorks />
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           <div className="flex flex-col gap-8 md:gap-12">
