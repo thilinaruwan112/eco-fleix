@@ -11,16 +11,21 @@ const Cta = () => {
         <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-8">
             <div className="max-w-xl">
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                Ready to Make a Difference?
+                    Ready to Start Your E-Waste Journey?
                 </h2>
                 <p className="mt-4 text-lg text-primary-foreground/90">
-                Join us in creating a sustainable future. Schedule your free e-waste pickup today and take the first step towards responsible electronics recycling.
+                    Let us help you manage your electronic waste with our proven, secure, and environmentally responsible process.
                 </p>
             </div>
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 flex items-center gap-4">
+                <a href="/contact">
+                    <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary">
+                        Contact Us
+                    </Button>
+                </a>
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                     <Button size="lg" variant="secondary" className="text-primary hover:bg-gray-200">
-                        Get Your Free Quote <ArrowRight className="ml-2 h-5 w-5" />
+                        Get a Quote
                     </Button>
                 </a>
             </div>
