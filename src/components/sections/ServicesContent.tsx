@@ -76,11 +76,11 @@ const ServicesContent = () => {
                         <a href={`#${service.id}`} key={service.id}>
                             <Button
                                 variant={activeService === service.id ? 'default' : 'ghost'}
-                                className="w-full justify-start gap-3 whitespace-nowrap"
+                                className="w-full justify-start gap-3 h-auto py-2 px-4 text-left"
                                 onClick={() => setActiveService(service.id)}
                             >
                                 {service.icon}
-                                {service.name}
+                                <span className="flex-1">{service.name}</span>
                             </Button>
                         </a>
                         ))}
