@@ -18,15 +18,27 @@ interface TranslationContextType {
 const TranslationContext = createContext<TranslationContextType | undefined>(undefined);
 
 export const TranslationProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguageState] = useState<Language>('en');
   const [dir, setDir] = useState<'ltr' | 'rtl'>('ltr');
+
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem('language') as Language;
+    if (storedLanguage && (storedLanguage === 'en' || storedLanguage === 'ar')) {
+      setLanguageState(storedLanguage);
+    }
+  }, []);
 
   useEffect(() => {
     const newDir = language === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = language;
     document.documentElement.dir = newDir;
     setDir(newDir);
+    localStorage.setItem('language', language);
   }, [language]);
+
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang);
+  };
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations[Language]] || key;

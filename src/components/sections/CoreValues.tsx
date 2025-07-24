@@ -1,41 +1,44 @@
+'use client';
+
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Leaf, Lightbulb, Star, ShieldCheck } from 'lucide-react';
-
-const coreValues = [
-  {
-    icon: <Leaf className="h-7 w-7 text-primary" />,
-    title: 'Sustainability',
-    description: 'Prioritizing environmental responsibility in every facet of our operations to build a greener tomorrow.',
-  },
-  {
-    icon: <ShieldCheck className="h-7 w-7 text-primary" />,
-    title: 'Integrity',
-    description: 'Upholding the highest standards of honesty and transparency in all our business practices and client interactions.',
-  },
-  {
-    icon: <Lightbulb className="h-7 w-7 text-primary" />,
-    title: 'Innovation',
-    description: 'Continuously developing cutting-edge solutions to meet the evolving challenges of e-waste management.',
-  },
-  {
-    icon: <Star className="h-7 w-7 text-primary" />,
-    title: 'Excellence',
-    description: 'Committing to deliver superior quality and unparalleled service in every project we undertake.',
-  },
-];
+import { useTranslation } from '@/hooks/use-translation';
 
 const CoreValues = () => {
+    const { t } = useTranslation();
+    const coreValues = [
+        {
+          icon: <Leaf className="h-7 w-7 text-primary" />,
+          title: t('core_value_1_title'),
+          description: t('core_value_1_desc'),
+        },
+        {
+          icon: <ShieldCheck className="h-7 w-7 text-primary" />,
+          title: t('core_value_2_title'),
+          description: t('core_value_2_desc'),
+        },
+        {
+          icon: <Lightbulb className="h-7 w-7 text-primary" />,
+          title: t('core_value_3_title'),
+          description: t('core_value_3_desc'),
+        },
+        {
+          icon: <Star className="h-7 w-7 text-primary" />,
+          title: t('core_value_4_title'),
+          description: t('core_value_4_desc'),
+        },
+      ];
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <Badge className="bg-primary/10 text-primary border-transparent mb-4 hover:bg-primary/10">What We Stand For</Badge>
+          <Badge className="bg-primary/10 text-primary border-transparent mb-4 hover:bg-primary/10">{t('what_we_stand_for')}</Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            Our Core Values
+            {t('our_core_values')}
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            These fundamental principles guide our decisions, shape our corporate culture, and define our commitment to our clients and the environment.
+            {t('our_core_values_desc')}
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
