@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Check, ShieldCheck, Trash2, Shield, AlertTriangle, Settings, FileText, Eye, HelpCircle, Clock, RefreshCw, Box, Package, Recycle, CheckCircle, DollarSign, Leaf, Globe, Settings2, Truck, BarChart3, HardDrive, Cpu, Wrench, CheckSquare, Search, Award } from 'lucide-react';
+import { Check, ShieldCheck, Trash2, Shield, AlertTriangle, Settings, FileText, Eye, HelpCircle, Clock, RefreshCw, Box, Package, Recycle, CheckCircle, DollarSign, Leaf, Globe, Settings2, Truck, BarChart3, HardDrive, Cpu, Wrench, CheckSquare, Search, Award, Users, BookUser, BarChartHorizontal } from 'lucide-react';
 import { Badge } from '../ui/badge';
 import Image from 'next/image';
 
@@ -40,6 +40,79 @@ const yourDataYourControlItems = [
     { icon: <HelpCircle className="h-8 w-8 text-primary" />, title: 'Certified Documentation' },
     { icon: <Clock className="h-8 w-8 text-primary" />, title: 'Scheduled Services' },
 ]
+
+const ItAssetDispositionContent = () => {
+    const features = [
+        { icon: <Leaf className="h-7 w-7 text-green-600" />, title: 'Eco-Friendly Approach', description: 'We prioritize sustainable practices by maximizing asset reuse and responsible recycling to minimize e-waste and support a healthier planet.' },
+        { icon: <Clock className="h-7 w-7 text-blue-600" />, title: 'Streamlined Process', description: 'Our efficient, hassle-free process covers everything from inventory assessment to final reporting, letting you focus on your core operations.' },
+        { icon: <Shield className="h-7 w-7 text-red-600" />, title: 'Protect Your Data and Reputation', description: 'Complete data eradication from your retired devices protects your reputation and ensures compliance with data protection standards.' },
+        { icon: <BookUser className="h-7 w-7 text-yellow-600" />, title: 'Compliance and Accountability', description: 'We adhere to GDPR, HIPAA, and other regulations, ensuring full compliance and providing transparent accountability throughout the process.' },
+    ];
+    return (
+        <div id="it-asset-disposition" className="space-y-12">
+            <section className="text-center">
+                <Badge className="mb-4 bg-primary/10 text-primary border-transparent">Service Overview</Badge>
+                <h2 className="text-3xl font-bold">IT Asset Disposition (ITAD)</h2>
+                <div className="w-16 h-1.5 bg-primary my-4 rounded-full mx-auto"></div>
+                <p className="mt-4 max-w-3xl mx-auto text-muted-foreground">
+                    Our IT Asset Disposition (ITAD) service provides a secure and sustainable way to manage retired technology assets. We ensure your data is completely secure while maximizing value recovery and adhering to environmental regulations.
+                </p>
+            </section>
+            
+            <section>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {features.map(feature => (
+                        <Card key={feature.title} className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+                           <CardContent className="p-6 flex items-start gap-4">
+                               <div className="flex-shrink-0 bg-muted rounded-full p-3">{feature.icon}</div>
+                               <div>
+                                   <h3 className="font-bold text-lg">{feature.title}</h3>
+                                   <p className="text-muted-foreground text-sm mt-1">{feature.description}</p>
+                               </div>
+                           </CardContent>
+                        </Card>
+                    ))}
+                </div>
+            </section>
+
+            <section className="grid md:grid-cols-2 gap-8 items-center bg-muted/30 p-8 rounded-lg">
+                <div className="space-y-4">
+                    <h3 className="text-2xl font-bold text-foreground">Customized Solutions for Your Business</h3>
+                    <p className="text-muted-foreground">
+                        Every business has unique needs. We offer tailored ITAD solutions to fit your specific requirements, whether you need on-site data destruction, detailed asset tracking, or secure logistics. We collaborate with you to create a plan that aligns with your business goals.
+                    </p>
+                     <Button>Request a Consultation</Button>
+                </div>
+                 <div className="relative h-64 w-full rounded-lg overflow-hidden">
+                    <Image 
+                        src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+                        alt="Customized IT solutions meeting"
+                        layout="fill"
+                        objectFit="cover"
+                        data-ai-hint="business meeting technology"
+                    />
+                </div>
+            </section>
+
+            <section>
+                <Card className="border-l-4 border-primary shadow-lg">
+                    <CardContent className="p-8">
+                       <div className="flex items-start gap-6">
+                            <Users className="h-10 w-10 text-primary flex-shrink-0 mt-1" />
+                            <div>
+                                <h3 className="text-2xl font-bold">Experience You Can Trust</h3>
+                                <p className="mt-2 text-muted-foreground">
+                                    With years of industry expertise, we have a proven track record of delivering exceptional ITAD services. Our team of specialists is committed to the highest standards of professionalism and customer satisfaction. Trust us to manage your IT assets with precision and integrity.
+                                </p>
+                            </div>
+                       </div>
+                    </CardContent>
+                </Card>
+            </section>
+        </div>
+    );
+};
+
 
 const ItAssetRemanufacturingContent = () => {
     const benefits = [
@@ -397,7 +470,7 @@ const ServicesContent = () => {
                 )}
                  {activeService === 'it-asset-remarketing' && <ItAssetRemarketingContent />}
                  {activeService === 'it-asset-remanufacturing' && <ItAssetRemanufacturingContent />}
-                 {activeService === 'it-asset-disposition' && <PlaceholderContent title="IT Asset Disposition" />}
+                 {activeService === 'it-asset-disposition' && <ItAssetDispositionContent />}
                 </main>
             </div>
         </div>
