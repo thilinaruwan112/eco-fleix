@@ -1,3 +1,5 @@
+'use client';
+
 import { Mail, Phone, Facebook, Twitter, Linkedin, Instagram, ChevronDown, Recycle, Menu, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -63,6 +65,8 @@ const MegaMenu = ({title, items, viewAllHref} : {title: string, items: typeof se
 
 
 const Header = () => {
+  const [servicesOpen, setServicesOpen] = React.useState(false);
+  const [whoWeServeOpen, setWhoWeServeOpen] = React.useState(false);
   const phoneNumber = '+97141234567';
   const message = "Hello! I'm interested in your e-waste recycling services.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
@@ -105,22 +109,26 @@ const Header = () => {
             <NavLink href="/">Home</NavLink>
             <NavLink href="/about">About</NavLink>
             <NavLink href="/blog">Blogs</NavLink>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <NavLink hasDropdown>Services</NavLink>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-screen max-w-6xl" align="start" sideOffset={18}>
-                <MegaMenu title="Service" items={services} viewAllHref="/services"/>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <NavLink hasDropdown>Who We Serve</NavLink>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-screen max-w-6xl" align="start" sideOffset={18}>
-                <MegaMenu title="Sector" items={whoWeServe.slice(0,4)} viewAllHref="/who-we-serve"/>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <div onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
+              <DropdownMenu open={servicesOpen} onOpenChange={setServicesOpen}>
+                <DropdownMenuTrigger asChild>
+                  <NavLink hasDropdown>Services</NavLink>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-screen max-w-6xl" align="start" sideOffset={18}>
+                  <MegaMenu title="Service" items={services} viewAllHref="/services"/>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
+            <div onMouseEnter={() => setWhoWeServeOpen(true)} onMouseLeave={() => setWhoWeServeOpen(false)}>
+              <DropdownMenu open={whoWeServeOpen} onOpenChange={setWhoWeServeOpen}>
+                <DropdownMenuTrigger asChild>
+                  <NavLink hasDropdown>Who We Serve</NavLink>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-screen max-w-6xl" align="start" sideOffset={18}>
+                  <MegaMenu title="Sector" items={whoWeServe.slice(0,4)} viewAllHref="/who-we-serve"/>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
             <NavLink href="/our-process">Our Process</NavLink>
             <NavLink href="/contact">Contact</NavLink>
           </nav>
