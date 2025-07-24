@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Check, ShieldCheck, Trash2, Shield, AlertTriangle, Settings, FileText, Eye, HelpCircle, Clock, RefreshCw, Box, Package, Recycle } from 'lucide-react';
+import { Check, ShieldCheck, Trash2, Shield, AlertTriangle, Settings, FileText, Eye, HelpCircle, Clock, RefreshCw, Box, Package, Recycle, CheckCircle, DollarSign, Leaf, Globe, Settings2, Truck, BarChart3 } from 'lucide-react';
+import { Badge } from '../ui/badge';
 
 const services = [
   { id: 'it-asset-remarketing', name: 'IT Asset Remarketing', icon: <Recycle className="h-5 w-5" /> },
@@ -38,6 +39,116 @@ const yourDataYourControlItems = [
     { icon: <HelpCircle className="h-8 w-8 text-primary" />, title: 'Certified Documentation' },
     { icon: <Clock className="h-8 w-8 text-primary" />, title: 'Scheduled Services' },
 ]
+
+const ItAssetRemarketingContent = () => (
+    <div id="it-asset-remarketing" className="space-y-12">
+        <section>
+            <Badge className="mb-2 bg-primary/10 text-primary border-transparent">Service Overview</Badge>
+            <h2 className="text-3xl font-bold">IT Asset Remarketing</h2>
+            <div className="w-16 h-1.5 bg-primary my-4 rounded-full"></div>
+            <p className="mt-4 text-muted-foreground">
+                IT Asset Remarketing provides a strategic way to handle your company's outdated or surplus technology. Instead of disposal, we focus on reselling or redeploying these assets to maximize their value, lessen your financial outlay on new equipment, and promote environmental sustainability by giving your hardware a second life.
+            </p>
+        </section>
+
+        <section>
+            <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                <CheckCircle className="h-7 w-7 text-primary" />
+                Benefits of IT Asset Remarketing
+            </h3>
+            <div className="border-l-4 border-primary pl-6 space-y-6">
+                <div>
+                    <h4 className="font-bold flex items-center gap-2"><DollarSign className="h-5 w-5 text-green-600" />Maximize Value</h4>
+                    <p className="text-muted-foreground ml-7">We help you achieve the highest possible financial return on your outdated IT equipment, boosting your company's budget.</p>
+                </div>
+                <div>
+                    <h4 className="font-bold flex items-center gap-2"><Settings2 className="h-5 w-5 text-green-600" />Cost Savings</h4>
+                    <p className="text-muted-foreground ml-7">Lower the expense of new technology acquisitions and replacements by recovering value from your existing assets.</p>
+                </div>
+                <div>
+                    <h4 className="font-bold flex items-center gap-2"><Leaf className="h-5 w-5 text-green-600" />Environmental Responsibility</h4>
+                    <p className="text-muted-foreground ml-7">Contribute to a greener planet by extending the functional life of your IT hardware, which minimizes e-waste and supports circular economy principles.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                <Clock className="h-7 w-7 text-primary" />
+                Our IT Asset Remarketing Process
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <Card className="bg-muted/30">
+                    <CardContent className="p-6">
+                        <div className="flex items-center gap-4">
+                            <div className="bg-primary/10 text-primary font-bold rounded-full h-10 w-10 flex items-center justify-center">1</div>
+                            <h4 className="font-bold">Assessment</h4>
+                        </div>
+                        <p className="text-sm text-muted-foreground mt-2">Our team evaluates your IT assets to ascertain their condition, value, and potential for resale.</p>
+                    </CardContent>
+                </Card>
+                <Card className="bg-muted/30">
+                    <CardContent className="p-6">
+                        <div className="flex items-center gap-4">
+                            <div className="bg-primary/10 text-primary font-bold rounded-full h-10 w-10 flex items-center justify-center">2</div>
+                            <h4 className="font-bold">Refurbishment</h4>
+                        </div>
+                        <p className="text-sm text-muted-foreground mt-2">We professionally recondition and repair assets to ensure they meet market standards for resale.</p>
+                    </CardContent>
+                </Card>
+                <Card className="bg-muted/30">
+                    <CardContent className="p-6">
+                        <div className="flex items-center gap-4">
+                            <div className="bg-primary/10 text-primary font-bold rounded-full h-10 w-10 flex items-center justify-center">3</div>
+                            <h4 className="font-bold">Market Analysis</h4>
+                        </div>
+                        <p className="text-sm text-muted-foreground mt-2">We perform in-depth market research to find the best sales channels and target buyers for your specific IT equipment.</p>
+                    </CardContent>
+                </Card>
+                 <Card className="bg-muted/30">
+                    <CardContent className="p-6">
+                        <div className="flex items-center gap-4">
+                            <div className="bg-primary/10 text-primary font-bold rounded-full h-10 w-10 flex items-center justify-center">4</div>
+                            <h4 className="font-bold">Resale</h4>
+                        </div>
+                        <p className="text-sm text-muted-foreground mt-2">Our experts handle the complete sales cycle, from strategic marketing to secure transaction processing.</p>
+                    </CardContent>
+                </Card>
+            </div>
+        </section>
+        
+        <section className="grid md:grid-cols-3 gap-8">
+            <div className="space-y-2">
+                <Globe className="h-8 w-8 text-primary" />
+                <h4 className="font-bold text-lg">Access a Worldwide Audience</h4>
+                <p className="text-muted-foreground">Go beyond local markets. Our extensive network links you with international buyers, improving your odds of finding a buyer who recognizes the full value of your equipment.</p>
+            </div>
+            <div className="space-y-2">
+                <Leaf className="h-8 w-8 text-primary" />
+                <h4 className="font-bold text-lg">Sustainable Practices</h4>
+                <p className="text-muted-foreground">Opting for remarketing over disposal is a smart environmental choice. You give your hardware a new purpose and play a part in minimizing electronic waste.</p>
+            </div>
+             <div className="space-y-2">
+                <Truck className="h-8 w-8 text-primary" />
+                <h4 className="font-bold text-lg">Streamlined Logistics</h4>
+                <p className="text-muted-foreground">We manage all logistical details for you. After a sale, our team coordinates the packing and shipping, guaranteeing your equipment arrives safely at its new destination.</p>
+            </div>
+        </section>
+
+        <section>
+            <Card className="bg-primary/10 border-l-4 border-primary">
+                <CardContent className="p-8">
+                    <BarChart3 className="h-10 w-10 text-primary mb-4" />
+                    <h3 className="text-2xl font-bold">Conclusion</h3>
+                    <p className="mt-4 text-muted-foreground italic">
+                        "IT Asset Remarketing is more than just a way to sell old devices; it's a key component of modern asset management. It offers a path to boost your organization's financial health, champion environmental sustainability, and guarantee data security."
+                    </p>
+                </CardContent>
+            </Card>
+        </section>
+    </div>
+);
+
 
 const PlaceholderContent = ({ title }: {title: string}) => (
     <div id={title.toLowerCase().replace(/\s/g, '-')} className="space-y-12">
@@ -80,7 +191,7 @@ const ServicesContent = () => {
                                 onClick={() => setActiveService(service.id)}
                             >
                                 {service.icon}
-                                <span className="flex-1">{service.name}</span>
+                                <span className="flex-1 whitespace-normal">{service.name}</span>
                             </Button>
                         </a>
                         ))}
@@ -190,7 +301,7 @@ const ServicesContent = () => {
                     </section>
                     </div>
                 )}
-                 {activeService === 'it-asset-remarketing' && <PlaceholderContent title="IT Asset Remarketing" />}
+                 {activeService === 'it-asset-remarketing' && <ItAssetRemarketingContent />}
                  {activeService === 'it-asset-remanufacturing' && <PlaceholderContent title="IT Asset Remanufacturing" />}
                  {activeService === 'it-asset-disposition' && <PlaceholderContent title="IT Asset Disposition" />}
                 </main>
