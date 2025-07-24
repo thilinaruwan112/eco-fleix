@@ -3,13 +3,13 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Check, ShieldCheck, Trash2, Shield, AlertTriangle, Settings, FileText, Eye, HelpCircle, Clock } from 'lucide-react';
+import { Check, ShieldCheck, Trash2, Shield, AlertTriangle, Settings, FileText, Eye, HelpCircle, Clock, RefreshCw, Box, Package, Recycle } from 'lucide-react';
 
 const services = [
+  { id: 'it-asset-remarketing', name: 'IT Asset Remarketing', icon: <Recycle className="h-5 w-5" /> },
+  { id: 'it-asset-remanufacturing', name: 'IT Asset Remanufacturing', icon: <RefreshCw className="h-5 w-5" /> },
+  { id: 'it-asset-disposition', name: 'IT Asset Disposition', icon: <Package className="h-5 w-5" /> },
   { id: 'data-destruction', name: 'Data Destruction', icon: <ShieldCheck className="h-5 w-5" /> },
-  { id: 'it-asset-recovery', name: 'IT Asset Recovery', icon: <Trash2 className="h-5 w-5" /> },
-  { id: 'equipment-recycling', name: 'Equipment Recycling', icon: <Trash2 className="h-5 w-5" /> },
-  { id: 'compliance-services', name: 'Compliance Services', icon: <Shield className="h-5 w-5" /> },
 ];
 
 const keyBenefits = [
@@ -39,8 +39,30 @@ const yourDataYourControlItems = [
     { icon: <Clock className="h-8 w-8 text-primary" />, title: 'Scheduled Services' },
 ]
 
+const PlaceholderContent = ({ title }: {title: string}) => (
+    <div id={title.toLowerCase().replace(/\s/g, '-')} className="space-y-12">
+        <section>
+            <h2 className="text-3xl font-bold">{title}</h2>
+            <p className="mt-4 text-muted-foreground">
+                Detailed information about our {title.toLowerCase()} services will be available soon. Please check back later or contact us for more information. We are committed to providing secure, compliant, and environmentally responsible solutions for all your IT asset needs.
+            </p>
+        </section>
+        <section>
+            <Card className="bg-white/60 shadow-lg">
+                <CardContent className="p-8 text-center">
+                    <h3 className="text-2xl font-bold mb-4">Coming Soon</h3>
+                    <p className="text-muted-foreground">
+                        We are currently updating this section to provide you with the best information possible.
+                    </p>
+                </CardContent>
+            </Card>
+        </section>
+    </div>
+);
+
+
 const ServicesContent = () => {
-  const [activeService, setActiveService] = useState('data-destruction');
+  const [activeService, setActiveService] = useState('it-asset-remarketing');
 
   return (
     <div className="bg-muted/20">
@@ -51,15 +73,16 @@ const ServicesContent = () => {
                     <h3 className="text-lg font-bold mb-4 px-4">Our Services</h3>
                     <nav className="flex flex-col gap-2">
                         {services.map((service) => (
-                        <Button
-                            key={service.id}
-                            variant={activeService === service.id ? 'default' : 'ghost'}
-                            className="justify-start gap-3"
-                            onClick={() => setActiveService(service.id)}
-                        >
-                            {service.icon}
-                            {service.name}
-                        </Button>
+                        <a href={`#${service.id}`} key={service.id}>
+                            <Button
+                                variant={activeService === service.id ? 'default' : 'ghost'}
+                                className="w-full justify-start gap-3"
+                                onClick={() => setActiveService(service.id)}
+                            >
+                                {service.icon}
+                                {service.name}
+                            </Button>
+                        </a>
                         ))}
                     </nav>
                     </Card>
@@ -67,7 +90,7 @@ const ServicesContent = () => {
 
                 <main className="md:col-span-9 space-y-12">
                 {activeService === 'data-destruction' && (
-                    <div className="space-y-12">
+                    <div id="data-destruction" className="space-y-12">
                     <section>
                         <h2 className="text-3xl font-bold">Data Destruction</h2>
                         <p className="mt-4 text-muted-foreground">
@@ -167,6 +190,9 @@ const ServicesContent = () => {
                     </section>
                     </div>
                 )}
+                 {activeService === 'it-asset-remarketing' && <PlaceholderContent title="IT Asset Remarketing" />}
+                 {activeService === 'it-asset-remanufacturing' && <PlaceholderContent title="IT Asset Remanufacturing" />}
+                 {activeService === 'it-asset-disposition' && <PlaceholderContent title="IT Asset Disposition" />}
                 </main>
             </div>
         </div>

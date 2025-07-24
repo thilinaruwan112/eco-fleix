@@ -1,6 +1,13 @@
 import { Mail, Phone, Facebook, Twitter, Linkedin, Instagram, ChevronDown, Recycle, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
 
 const NavLink = ({ children, href, hasDropdown = false }: { children: React.ReactNode, href: string, hasDropdown?: boolean }) => (
   <a href={href} className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors">
@@ -8,6 +15,13 @@ const NavLink = ({ children, href, hasDropdown = false }: { children: React.Reac
     {hasDropdown && <ChevronDown className="h-4 w-4" />}
   </a>
 );
+
+const services = [
+  { name: 'IT Asset Remarketing', href: '/services#it-asset-remarketing' },
+  { name: 'IT Asset Remanufacturing', href: '/services#it-asset-remanufacturing' },
+  { name: 'IT Asset Disposition', href: '/services#it-asset-disposition' },
+  { name: 'Data Destruction', href: '/services#data-destruction' },
+];
 
 const Header = () => {
   const phoneNumber = '+97141234567'; // Replace with your WhatsApp number
@@ -51,7 +65,18 @@ const Header = () => {
             <NavLink href="/">Home</NavLink>
             <NavLink href="/about">About</NavLink>
             <NavLink href="/blog">Blogs</NavLink>
-            <NavLink href="/services">Services</NavLink>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors focus-visible:outline-none">
+                Services <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                {services.map(service => (
+                    <DropdownMenuItem key={service.name} asChild>
+                        <a href={service.href}>{service.name}</a>
+                    </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
             <NavLink href="#" hasDropdown>Who We Serve</NavLink>
             <NavLink href="#">Our Process</NavLink>
             <NavLink href="#">Contact</NavLink>
@@ -73,7 +98,18 @@ const Header = () => {
                             <NavLink href="/">Home</NavLink>
                             <NavLink href="/about">About</NavLink>
                             <NavLink href="/blog">Blogs</NavLink>
-                            <NavLink href="/services">Services</NavLink>
+                            <DropdownMenu>
+                                <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors focus-visible:outline-none">
+                                    Services <ChevronDown className="h-4 w-4" />
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent>
+                                    {services.map(service => (
+                                        <DropdownMenuItem key={service.name} asChild>
+                                            <a href={service.href}>{service.name}</a>
+                                        </DropdownMenuItem>
+                                    ))}
+                                </DropdownMenuContent>
+                            </DropdownMenu>
                             <NavLink href="#" hasDropdown>Who We Serve</NavLink>
                             <NavLink href="#">Our Process</NavLink>
                             <NavLink href="#">Contact</NavLink>
