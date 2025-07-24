@@ -49,7 +49,7 @@ const Certifications = () => {
             We adhere to the highest industry standards for quality, security, and environmental responsibility.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {certificationItems.map((item, index) => (
             <Card key={index} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardContent className="p-8 flex flex-col items-center gap-4">
