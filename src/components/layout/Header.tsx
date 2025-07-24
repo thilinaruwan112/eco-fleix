@@ -26,44 +26,46 @@ const NavLink = ({ children, href, hasDropdown = false }: { children: React.Reac
 };
 
 const services = [
-  { name: 'IT Asset Remarketing', href: '/services#it-asset-remarketing', description: 'Maximize value from retired IT assets.', image: 'https://placehold.co/400x400.png', aiHint: 'refurbished laptops' },
-  { name: 'IT Asset Remanufacturing', href: '/services#it-asset-remanufacturing', description: 'Breathe new life into aging IT hardware.', image: 'https://placehold.co/400x400.png', aiHint: 'technician repairing computer' },
-  { name: 'IT Asset Disposition', href: '/services#it-asset-disposition', description: 'Secure and sustainable management of retired assets.', image: 'https://placehold.co/400x400.png', aiHint: 'e-waste collection bins' },
-  { name: 'Data Destruction', href: '/services#data-destruction', description: 'Ensure complete data elimination.', image: 'https://placehold.co/400x400.png', aiHint: 'hard drive shredder' },
+  { name: 'it_asset_remarketing', href: '/services#it-asset-remarketing', description: 'it_asset_remarketing_desc_short', image: 'https://placehold.co/400x400.png', aiHint: 'refurbished laptops' },
+  { name: 'it_asset_remanufacturing', href: '/services#it-asset-remanufacturing', description: 'it_asset_remanufacturing_desc_short', image: 'https://placehold.co/400x400.png', aiHint: 'technician repairing computer' },
+  { name: 'it_asset_disposition', href: '/services#it-asset-disposition', description: 'it_asset_disposition_desc_short', image: 'https://placehold.co/400x400.png', aiHint: 'e-waste collection bins' },
+  { name: 'data_destruction', href: '/services#data-destruction', description: 'data_destruction_desc_short', image: 'https://placehold.co/400x400.png', aiHint: 'hard drive shredder' },
 ];
 
 const whoWeServe = [
-    { name: 'Corporations', href: '/who-we-serve#corporations', description: 'Scalable solutions for businesses.', image: 'https://placehold.co/400x400.png', aiHint: 'modern office building' },
-    { name: 'Government Agencies', href: '/who-we-serve#government-agencies', description: 'Secure and compliant disposal.', image: 'https://placehold.co/400x400.png', aiHint: 'government building' },
-    { name: 'Educational Institutions', href: '/who-we-serve#educational-institutions', description: 'Responsible recycling for schools.', image: 'https://placehold.co/400x400.png', aiHint: 'university campus' },
-    { name: 'Financial Institutions', href: '/who-we-serve#financial-institutions', description: 'Secure data destruction for finance.', image: 'https://placehold.co/400x400.png', aiHint: 'bank building exterior' },
-    { name: 'Healthcare & Medical', href: '/who-we-serve#healthcare-medical', description: 'Specialized handling of medical e-waste.', image: 'https://placehold.co/400x400.png', aiHint: 'hospital building' },
+    { name: 'corporations', href: '/who-we-serve#corporations', description: 'corporations_desc', image: 'https://placehold.co/400x400.png', aiHint: 'modern office building' },
+    { name: 'government_agencies', href: '/who-we-serve#government-agencies', description: 'government_agencies_desc', image: 'https://placehold.co/400x400.png', aiHint: 'government building' },
+    { name: 'educational_institutions', href: '/who-we-serve#educational-institutions', description: 'educational_institutions_desc', image: 'https://placehold.co/400x400.png', aiHint: 'university campus' },
+    { name: 'financial_institutions', href: '/who-we-serve#financial-institutions', description: 'financial_institutions_desc', image: 'https://placehold.co/400x400.png', aiHint: 'bank building exterior' },
+    { name: 'healthcare_medical', href: '/who-we-serve#healthcare-medical', description: 'healthcare_medical_desc', image: 'https://placehold.co/400x400.png', aiHint: 'hospital building' },
 ];
 
-const MegaMenu = ({title, items, viewAllHref} : {title: string, items: typeof services, viewAllHref: string}) => (
+const MegaMenu = ({title, items, viewAllHref} : {title: string, items: {name: string, href: string, description: string, image: string, aiHint: string}[], viewAllHref: string}) => {
+    const { t } = useTranslation();
+    return (
     <div className="grid grid-cols-1 md:grid-cols-5 gap-6 p-6 w-full max-w-6xl">
         <div className="bg-primary/5 rounded-lg p-6 flex flex-col justify-between col-span-1">
             <div>
-                <h3 className="text-xl font-bold text-foreground">Shop by {title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Discover our curated collections.</p>
+                <h3 className="text-xl font-bold text-foreground">{t('shop_by_title', { title: t(title) })}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{t('discover_our_collections')}</p>
             </div>
             <a href={viewAllHref} className="flex items-center text-sm font-semibold text-primary mt-4 hover:underline">
-                View All <ArrowRight className="ml-1 h-4 w-4" />
+                {t('view_all')} <ArrowRight className="ml-1 h-4 w-4" />
             </a>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 col-span-4">
             {items.map(item => (
                 <a key={item.name} href={item.href} className="group">
                     <div className="aspect-square relative rounded-lg overflow-hidden mb-2">
-                         <Image src={item.image} alt={item.name} layout="fill" objectFit="cover" className="transform group-hover:scale-105 transition-transform" data-ai-hint={item.aiHint}/>
+                         <Image src={item.image} alt={t(item.name)} layout="fill" objectFit="cover" className="transform group-hover:scale-105 transition-transform" data-ai-hint={item.aiHint}/>
                     </div>
-                    <h4 className="font-semibold text-foreground text-sm group-hover:text-primary">{item.name}</h4>
-                    <p className="text-xs text-muted-foreground">{item.description}</p>
+                    <h4 className="font-semibold text-foreground text-sm group-hover:text-primary">{t(item.name)}</h4>
+                    <p className="text-xs text-muted-foreground">{t(item.description)}</p>
                 </a>
             ))}
         </div>
     </div>
-);
+)};
 
 const ThemeToggle = () => {
     const { setTheme, theme } = useTheme();
@@ -160,7 +162,7 @@ const Header = () => {
                     onMouseEnter={() => setServicesOpen(true)} 
                     onMouseLeave={() => setServicesOpen(false)}
                 >
-                    <MegaMenu title="Service" items={services} viewAllHref="/services"/>
+                    <MegaMenu title="service" items={services} viewAllHref="/services"/>
                 </DropdownMenuContent>
             </DropdownMenu>
             <DropdownMenu open={whoWeServeOpen} onOpenChange={setWhoWeServeOpen}>
@@ -176,7 +178,7 @@ const Header = () => {
                     onMouseEnter={() => setWhoWeServeOpen(true)} 
                     onMouseLeave={() => setWhoWeServeOpen(false)}
                 >
-                    <MegaMenu title="Sector" items={whoWeServe.slice(0,4)} viewAllHref="/who-we-serve"/>
+                    <MegaMenu title="sector" items={whoWeServe.slice(0,4)} viewAllHref="/who-we-serve"/>
                 </DropdownMenuContent>
             </DropdownMenu>
             <NavLink href="/our-process">{t('our_process')}</NavLink>
@@ -209,7 +211,7 @@ const Header = () => {
                               <DropdownMenuContent>
                                 {services.map(service => (
                                   <DropdownMenuItem key={service.name} asChild>
-                                    <a href={service.href}>{service.name}</a>
+                                    <a href={service.href}>{t(service.name)}</a>
                                   </DropdownMenuItem>
                                 ))}
                               </DropdownMenuContent>
@@ -221,7 +223,7 @@ const Header = () => {
                               <DropdownMenuContent>
                                 {whoWeServe.map(item => (
                                   <DropdownMenuItem key={item.name} asChild>
-                                    <a href={item.href}>{item.name}</a>
+                                    <a href={item.href}>{t(item.name)}</a>
                                   </DropdownMenuItem>
                                 ))}
                               </DropdownMenuContent>

@@ -478,5 +478,14 @@
   "common_challenge_3_title": "Environmental Responsibility",
   "common_challenge_3_desc": "Our zero-landfill policy and responsible recycling practices help your organization reduce its environmental footprint and meet sustainability goals.",
   "common_challenge_4_title": "Cost Management",
-  "common_challenge_4_desc": "Our value recovery programs help offset the costs of IT asset disposition, providing a more cost-effective solution than traditional disposal methods."
+  "common_challenge_4_desc": "Our value recovery programs help offset the costs of IT asset disposition, providing a more cost-effective solution than traditional disposal methods.",
+  "shop_by_title": "Shop by {title}",
+  "discover_our_collections": "Discover our curated collections.",
+  "view_all": "View All",
+  "service": "Service",
+  "sector": "Sector",
+  "it_asset_remarketing_desc_short": "Maximize value from retired IT assets.",
+  "it_asset_remanufacturing_desc_short": "Breathe new life into aging IT hardware.",
+  "it_asset_disposition_desc_short": "Secure and sustainable management of retired assets.",
+  "data_destruction_desc_short": "Ensure complete data elimination."
 }
