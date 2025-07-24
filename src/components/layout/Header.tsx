@@ -23,6 +23,14 @@ const services = [
   { name: 'Data Destruction', href: '/services#data-destruction' },
 ];
 
+const whoWeServe = [
+    { name: 'Corporations', href: '/who-we-serve#corporations' },
+    { name: 'Government Agencies', href: '/who-we-serve#government-agencies' },
+    { name: 'Educational Institutions', href: '/who-we-serve#educational-institutions' },
+    { name: 'Financial Institutions', href: '/who-we-serve#financial-institutions' },
+    { name: 'Healthcare & Medical', href: '/who-we-serve#healthcare-medical' },
+];
+
 const Header = () => {
   const phoneNumber = '+97141234567'; // Replace with your WhatsApp number
   const message = "Hello! I'm interested in your e-waste recycling services.";
@@ -77,7 +85,18 @@ const Header = () => {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
-            <NavLink href="#" hasDropdown>Who We Serve</NavLink>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors focus-visible:outline-none">
+                Who We Serve <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                {whoWeServe.map(item => (
+                    <DropdownMenuItem key={item.name} asChild>
+                        <a href={item.href}>{item.name}</a>
+                    </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
             <NavLink href="#">Our Process</NavLink>
             <NavLink href="#">Contact</NavLink>
           </nav>
@@ -110,7 +129,18 @@ const Header = () => {
                                     ))}
                                 </DropdownMenuContent>
                             </DropdownMenu>
-                            <NavLink href="#" hasDropdown>Who We Serve</NavLink>
+                            <DropdownMenu>
+                              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors focus-visible:outline-none">
+                                Who We Serve <ChevronDown className="h-4 w-4" />
+                              </DropdownMenuTrigger>
+                              <DropdownMenuContent>
+                                {whoWeServe.map(item => (
+                                    <DropdownMenuItem key={item.name} asChild>
+                                        <a href={item.href}>{item.name}</a>
+                                    </DropdownMenuItem>
+                                ))}
+                              </DropdownMenuContent>
+                            </DropdownMenu>
                             <NavLink href="#">Our Process</NavLink>
                             <NavLink href="#">Contact</NavLink>
                              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
