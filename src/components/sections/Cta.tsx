@@ -10,7 +10,7 @@ const Cta = () => {
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           Join us in creating a sustainable future through responsible e-waste management. Together, we can make a positive impact on our planet.
         </p>
-        <div className="mt-8 flex justify-center gap-4">
+        <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
           <Button size="lg">Get Started Now</Button>
           <Button size="lg" variant="outline">Schedule a Pickup</Button>
         </div>
