@@ -3,7 +3,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { ArrowRight } from 'lucide-react';
 
 const blogPosts = [
   {
@@ -94,21 +93,19 @@ const ExploreBlog = () => {
               <CardContent className="p-6 flex-grow flex flex-col">
                 <h3 className="text-xl font-bold text-foreground mb-2">{post.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4 flex-grow">{post.description}</p>
-                <div className="flex items-center gap-4 text-xs text-muted-foreground mb-4">
-                  <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 text-xs text-muted-foreground mb-4">
                     <Avatar className="h-6 w-6">
                       <AvatarImage src={`https://placehold.co/40x40.png`} alt={post.author} data-ai-hint={post.authorAiHint} />
                       <AvatarFallback>{post.author.charAt(0)}</AvatarFallback>
                     </Avatar>
                     <span>{post.author}</span>
-                  </div>
                   <span>•</span>
                   <span>{post.date}</span>
                   <span>•</span>
                   <span>{post.readTime}</span>
                 </div>
-                <a href="#" className="text-primary font-semibold hover:underline text-sm flex items-center gap-1">
-                  Read More <ArrowRight className="h-4 w-4" />
+                <a href="#" className="text-primary font-semibold hover:underline text-sm">
+                  Read More
                 </a>
               </CardContent>
             </Card>
