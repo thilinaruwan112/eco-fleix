@@ -49,7 +49,7 @@ const CoreValues = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {coreValues.map((value) => (
-            <Card key={value.title} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <Card key={value.title} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl">
               <CardContent className="p-8 flex flex-col items-center gap-4">
                 <div className={`rounded-full p-4 mb-2 ${value.bgColor}`}>
                   {value.icon}
