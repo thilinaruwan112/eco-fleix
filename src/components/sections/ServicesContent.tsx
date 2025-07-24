@@ -3,8 +3,9 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Check, ShieldCheck, Trash2, Shield, AlertTriangle, Settings, FileText, Eye, HelpCircle, Clock, RefreshCw, Box, Package, Recycle, CheckCircle, DollarSign, Leaf, Globe, Settings2, Truck, BarChart3 } from 'lucide-react';
+import { Check, ShieldCheck, Trash2, Shield, AlertTriangle, Settings, FileText, Eye, HelpCircle, Clock, RefreshCw, Box, Package, Recycle, CheckCircle, DollarSign, Leaf, Globe, Settings2, Truck, BarChart3, HardDrive, Cpu, Wrench, CheckSquare, Search, Award } from 'lucide-react';
 import { Badge } from '../ui/badge';
+import Image from 'next/image';
 
 const services = [
   { id: 'it-asset-remarketing', name: 'IT Asset Remarketing', icon: <Recycle className="h-5 w-5" /> },
@@ -39,6 +40,99 @@ const yourDataYourControlItems = [
     { icon: <HelpCircle className="h-8 w-8 text-primary" />, title: 'Certified Documentation' },
     { icon: <Clock className="h-8 w-8 text-primary" />, title: 'Scheduled Services' },
 ]
+
+const ItAssetRemanufacturingContent = () => {
+    const benefits = [
+        { icon: <DollarSign className="h-8 w-8 text-primary" />, title: 'Economical Solution', description: 'Revitalize existing IT assets, avoiding high costs of new purchases.' },
+        { icon: <Leaf className="h-8 w-8 text-primary" />, title: 'Eco-Conscious', description: 'Significantly reduce electronic waste and support a circular economy.' },
+        { icon: <Cpu className="h-8 w-8 text-primary" />, title: 'Enhanced Functionality', description: 'Boost hardware and software capabilities to meet current demands.' },
+        { icon: <ShieldCheck className="h-8 w-8 text-primary" />, title: 'Data Integrity', description: 'Your sensitive information is securely managed throughout the process.' },
+    ];
+    const processSteps = [
+        { icon: <Search className="h-7 w-7 text-primary" />, title: '1. In-depth Assessment', description: 'We conduct a thorough analysis of your IT assets to determine their remanufacturing potential.' },
+        { icon: <Wrench className="h-7 w-7 text-primary" />, title: '2. Expert Restoration', description: 'Our certified engineers use state-of-the-art tools to repair and upgrade your hardware components.' },
+        { icon: <HardDrive className="h-7 w-7 text-primary" />, title: '3. Secure Data Handling', description: 'We perform secure data wiping and management to protect your confidential information.' },
+        { icon: <CheckSquare className="h-7 w-7 text-primary" />, title: '4. Rigorous Testing', description: 'Every remanufactured asset undergoes extensive quality assurance checks for peak performance.' },
+        { icon: <Award className="h-7 w-7 text-primary" />, title: '5. Warranty & Assurance', description: 'We stand by our work with comprehensive warranty coverage and dedicated support.' },
+    ];
+    return(
+    <div id="it-asset-remanufacturing" className="space-y-12">
+        <section>
+            <Badge className="mb-2 bg-primary/10 text-primary border-transparent">Service Overview</Badge>
+            <h2 className="text-3xl font-bold">IT Asset Remanufacturing</h2>
+            <div className="w-16 h-1.5 bg-primary my-4 rounded-full"></div>
+            <p className="mt-4 text-muted-foreground">
+                We specialize in breathing new life into your aging IT infrastructure. Our remanufacturing service restores, repairs, and enhances your outdated technology, transforming it to perform like new and extending its operational lifespan.
+            </p>
+        </section>
+
+        <section>
+            <Card className="bg-white/60 shadow-lg">
+                <CardContent className="p-8">
+                    <h3 className="text-2xl font-bold mb-6 text-center">The Advantages of Remanufacturing</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {benefits.map(item => (
+                            <div key={item.title} className="flex flex-col items-center text-center gap-3">
+                                <div className="bg-primary/10 rounded-full p-3 flex-shrink-0">
+                                    {item.icon}
+                                </div>
+                                <div>
+                                    <h4 className="font-bold">{item.title}</h4>
+                                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </CardContent>
+            </Card>
+        </section>
+
+        <section className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                 <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <RefreshCw className="h-7 w-7 text-primary" />
+                    Our Comprehensive Process
+                </h3>
+                <div className="space-y-6">
+                    {processSteps.map((step) => (
+                        <div key={step.title} className="flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors">
+                            <div className="flex-shrink-0">{step.icon}</div>
+                            <div>
+                                <h4 className="font-bold">{step.title}</h4>
+                                <p className="text-sm text-muted-foreground">{step.description}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+             <div className="relative h-96 w-full rounded-lg overflow-hidden">
+                <Image 
+                    src="https://images.unsplash.com/photo-1593722872436-f3655572a813?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+                    alt="Technician remanufacturing IT assets"
+                    layout="fill"
+                    objectFit="cover"
+                    data-ai-hint="technician electronics repair"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            </div>
+        </section>
+
+        <section>
+            <Card className="bg-primary text-primary-foreground">
+                <CardContent className="p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div>
+                        <h3 className="text-2xl font-bold">Ready to Upgrade Your Infrastructure?</h3>
+                        <p className="mt-2 text-primary-foreground/90">
+                            Discover how our IT asset remanufacturing can help you save money, reduce e-waste, and boost performance.
+                        </p>
+                    </div>
+                    <Button variant="secondary" size="lg" className="flex-shrink-0">Contact Us Today</Button>
+                </CardContent>
+            </Card>
+        </section>
+    </div>
+);
+}
 
 const ItAssetRemarketingContent = () => (
     <div id="it-asset-remarketing" className="space-y-12">
@@ -184,14 +278,14 @@ const ServicesContent = () => {
                     <h3 className="text-lg font-bold mb-4 px-4">Our Services</h3>
                     <nav className="flex flex-col gap-2">
                         {services.map((service) => (
-                        <a href={`#${service.id}`} key={service.id}>
+                        <a href={`#${service.id}`} key={service.id} onClick={(e) => { e.preventDefault(); setActiveService(service.id); const el = document.getElementById(service.id); el?.scrollIntoView({ behavior: 'smooth' }); }}>
                             <Button
                                 variant={activeService === service.id ? 'default' : 'ghost'}
-                                className="w-full justify-start gap-3 h-auto py-2 px-4 text-left"
+                                className="w-full justify-start gap-3 h-auto py-2 px-4 text-left whitespace-normal"
                                 onClick={() => setActiveService(service.id)}
                             >
                                 {service.icon}
-                                <span className="flex-1 whitespace-normal">{service.name}</span>
+                                <span className="flex-1">{service.name}</span>
                             </Button>
                         </a>
                         ))}
@@ -302,7 +396,7 @@ const ServicesContent = () => {
                     </div>
                 )}
                  {activeService === 'it-asset-remarketing' && <ItAssetRemarketingContent />}
-                 {activeService === 'it-asset-remanufacturing' && <PlaceholderContent title="IT Asset Remanufacturing" />}
+                 {activeService === 'it-asset-remanufacturing' && <ItAssetRemanufacturingContent />}
                  {activeService === 'it-asset-disposition' && <PlaceholderContent title="IT Asset Disposition" />}
                 </main>
             </div>
