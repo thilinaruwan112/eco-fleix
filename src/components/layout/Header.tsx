@@ -39,8 +39,8 @@ const Header = () => {
           <div className="flex items-center gap-2">
             <Recycle className="h-8 w-8 text-primary" />
             <div className='flex flex-col'>
-              <span className="font-bold text-2xl text-primary">ECO FLEIX</span>
-              <span className="text-xs text-foreground/70 -mt-1">ELECTRONIC WASTE RECYCLING</span>
+              <span className="font-bold text-2xl text-primary">ELECTRONICs WASTE RECYCLING</span>
+              <span className="text-xs text-foreground/70 -mt-1"></span>
             </div>
           </div>
           <nav className="hidden md:flex items-center gap-6">
