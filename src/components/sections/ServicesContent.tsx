@@ -76,7 +76,7 @@ const ServicesContent = () => {
                         <a href={`#${service.id}`} key={service.id}>
                             <Button
                                 variant={activeService === service.id ? 'default' : 'ghost'}
-                                className="w-full justify-start gap-3"
+                                className="w-full justify-start gap-3 whitespace-nowrap"
                                 onClick={() => setActiveService(service.id)}
                             >
                                 {service.icon}
