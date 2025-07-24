@@ -1,15 +1,32 @@
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <section className="container mx-auto px-4 text-center">
-      <div className="flex flex-col items-center gap-4">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground font-headline">
-          Give Your Electronics a Second Life
-        </h1>
-        <p className="max-w-3xl text-lg md:text-xl text-muted-foreground">
-          Join EcoCollect Dubai in our mission to create a sustainable future. Schedule a free pick-up for your e-waste and make a positive impact on the environment.
-        </p>
+    <section className="relative w-full h-[500px] text-white">
+       <Image
+          src="https://placehold.co/1920x500"
+          alt="E-waste recycling"
+          layout="fill"
+          objectFit="cover"
+          className="z-0"
+          data-ai-hint="e-waste recycling bin"
+        />
+      <div className="absolute inset-0 bg-black/50 z-10" />
+      <div className="container mx-auto px-4 h-full flex items-center z-20 relative">
+        <div className="max-w-xl text-left">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+            <span className="text-primary-foreground">WE RECYCLE</span><br />
+            <span className="text-primary-foreground">COMPUTERS &</span><br />
+            <span className="text-primary-foreground">ACCESSORIES</span>
+          </h1>
+          <p className="max-w-lg mt-4 text-lg md:text-xl text-primary-foreground/90">
+            Professional electronic waste recycling services for businesses and organizations. Secure, certified, and environmentally responsible disposal.
+          </p>
+          <Button size="lg" className="mt-8 bg-primary hover:bg-primary/90 text-primary-foreground">
+            Schedule Pickup Today
+          </Button>
+        </div>
       </div>
     </section>
   );

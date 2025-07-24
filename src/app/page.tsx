@@ -7,7 +7,7 @@ import Education from '@/components/sections/Education';
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-16 md:gap-24 py-8 md:py-12">
+    <div className="flex flex-col gap-16 md:gap-24 pb-8 md:pb-12">
       <Hero />
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
