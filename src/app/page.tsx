@@ -7,29 +7,49 @@ import CriticalRecycling from '@/components/sections/CriticalRecycling';
 import Faq from '@/components/sections/Faq';
 import Testimonials from '@/components/sections/Testimonials';
 import Cta from '@/components/sections/Cta';
-import { Laptop, Smartphone, Camera, Monitor } from 'lucide-react';
+import { Laptop, Smartphone, Camera, Monitor, Shield, Network, Headphones, Gamepad2 } from 'lucide-react';
 import ServicesContent from '@/components/sections/ServicesContent';
 
 const acceptedItems = [
   {
     icon: <Laptop />,
-    title: 'Computers & Laptops',
+    title: 'Desktop, Laptop & Computer Equipment',
     description: 'Desktops, laptops, and all related computer equipment.',
   },
   {
     icon: <Smartphone />,
-    title: 'Mobile Devices',
+    title: 'Smartphones, Tablets & Cell Phones',
     description: 'Smartphones, tablets, cell phones, and accessories.',
   },
   {
+    icon: <Camera />,
+    title: 'Camcorders & Digital Cameras',
+    description: 'Camcorders, digital cameras, and other video equipment.',
+  },
+  {
     icon: <Monitor />,
-    title: 'Displays & Screens',
+    title: 'LCD Monitors & Televisions',
     description: 'Monitors, televisions, and other display equipment.',
   },
   {
-    icon: <Camera />,
-    title: 'Peripherals & More',
-    description: 'Cameras, printers, cables, and other electronic accessories.',
+    icon: <Shield />,
+    title: 'Security Devices',
+    description: 'Security cameras, alarm systems, and other security electronics.',
+  },
+  {
+    icon: <Network />,
+    title: 'Network Switches & Equipment',
+    description: 'Routers, switches, modems, and other networking gear.',
+  },
+  {
+    icon: <Headphones />,
+    title: 'Audio & Sound Equipments',
+    description: 'Headphones, speakers, amplifiers, and other audio devices.',
+  },
+  {
+    icon: <Gamepad2 />,
+    title: 'Games & Game Accessories',
+    description: 'Gaming consoles, controllers, and other gaming accessories.',
   },
 ];
 
@@ -48,5 +68,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
