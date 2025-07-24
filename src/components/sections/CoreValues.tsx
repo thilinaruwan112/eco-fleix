@@ -1,61 +1,52 @@
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { Leaf, Lightbulb, Star } from 'lucide-react';
-
-const HandshakeIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M11 17a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2.5"/><path d="M13 17a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v1.5"/><path d="M8 18V7"/><path d="M16 18V9"/></svg>
-);
-
+import { Leaf, Lightbulb, Star, ShieldCheck } from 'lucide-react';
 
 const coreValues = [
   {
-    icon: <Leaf className="h-7 w-7 text-green-700" />,
+    icon: <Leaf className="h-7 w-7 text-primary" />,
     title: 'Sustainability',
-    description: 'Environmental responsibility in everything we do',
-    bgColor: 'bg-green-100',
+    description: 'Prioritizing environmental responsibility in every facet of our operations to build a greener tomorrow.',
   },
   {
-    icon: <HandshakeIcon className="h-7 w-7 text-blue-800" />,
+    icon: <ShieldCheck className="h-7 w-7 text-primary" />,
     title: 'Integrity',
-    description: 'Honest and transparent business practices',
-    bgColor: 'bg-blue-100',
+    description: 'Upholding the highest standards of honesty and transparency in all our business practices and client interactions.',
   },
   {
-    icon: <Lightbulb className="h-7 w-7 text-green-700" />,
+    icon: <Lightbulb className="h-7 w-7 text-primary" />,
     title: 'Innovation',
-    description: 'Cutting-edge solutions for modern challenges',
-    bgColor: 'bg-green-100',
+    description: 'Continuously developing cutting-edge solutions to meet the evolving challenges of e-waste management.',
   },
   {
-    icon: <Star className="h-7 w-7 text-blue-800" />,
+    icon: <Star className="h-7 w-7 text-primary" />,
     title: 'Excellence',
-    description: 'Delivering superior quality in all services',
-    bgColor: 'bg-blue-100',
+    description: 'Committing to deliver superior quality and unparalleled service in every project we undertake.',
   },
 ];
 
 const CoreValues = () => {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <Badge className="bg-green-100 text-green-800 border-transparent mb-4 hover:bg-green-100">What We Stand For</Badge>
+          <Badge className="bg-primary/10 text-primary border-transparent mb-4 hover:bg-primary/10">What We Stand For</Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            OUR CORE VALUES
+            Our Core Values
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            These principles guide our decisions, shape our culture, and define how we operate.
+            These fundamental principles guide our decisions, shape our corporate culture, and define our commitment to our clients and the environment.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {coreValues.map((value) => (
-            <Card key={value.title} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl">
-              <CardContent className="p-8 flex flex-col items-center gap-4">
-                <div className={`rounded-full p-4 mb-2 ${value.bgColor}`}>
+            <Card key={value.title} className="text-left shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-2xl bg-white h-full transform hover:-translate-y-2 group">
+              <CardContent className="p-8 flex flex-col h-full">
+                <div className="bg-primary/10 rounded-full p-3 mb-6 w-max group-hover:bg-primary transition-colors">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-bold text-foreground">{value.title}</h3>
-                <p className="text-muted-foreground">{value.description}</p>
+                <h3 className="text-xl font-bold text-foreground mb-2">{value.title}</h3>
+                <p className="text-muted-foreground flex-grow">{value.description}</p>
               </CardContent>
             </Card>
           ))}

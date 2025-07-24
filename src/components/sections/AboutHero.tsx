@@ -1,26 +1,19 @@
-import Image from 'next/image';
-import { Badge } from '@/components/ui/badge';
+import { ChevronRight } from 'lucide-react';
 
 const AboutHero = () => {
   return (
-    <section className="relative w-full h-[400px] md:h-[500px] text-white">
-      <Image
-        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0ZWFtJTIwbWVldGluZ3xlbnwwfHx8fDE3NTM0Mzg4MTd8MA&ixlib=rb-4.1.0&q=80&w=1080"
-        alt="Team working together in an office"
-        layout="fill"
-        objectFit="cover"
-        className="z-0"
-        data-ai-hint="team meeting office"
-      />
-      <div className="absolute inset-0 bg-black/50 z-10" />
-      <div className="container mx-auto px-4 h-full flex flex-col justify-center items-center text-center z-20 relative">
-        <Badge className="mb-4 bg-green-500/80 text-white border-transparent">Our Story</Badge>
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-          <span className="text-white">ABOUT </span>
-          <span className="text-green-400">US</span>
+    <section className="relative w-full py-20 md:py-32 bg-gradient-to-br from-green-50 to-blue-50 text-gray-800">
+      <div className="container mx-auto px-4 text-center z-20 relative">
+        <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-4">
+          <a href="/" className="hover:text-primary">Home</a>
+          <ChevronRight className="h-4 w-4" />
+          <span>About Us</span>
+        </div>
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground">
+          About <span className="text-primary">Us</span>
         </h1>
-        <p className="max-w-2xl mt-4 text-lg md:text-xl text-white/90">
-          We transform e-waste management through sustainable practices and innovative solutions.
+        <p className="max-w-3xl mx-auto mt-4 text-lg md:text-xl text-muted-foreground">
+          We are dedicated to transforming e-waste management through sustainable practices and innovative solutions, paving the way for a greener future.
         </p>
       </div>
     </section>
