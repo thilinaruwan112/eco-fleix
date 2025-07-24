@@ -6,6 +6,7 @@ import Certifications from '@/components/sections/Certifications';
 import CriticalRecycling from '@/components/sections/CriticalRecycling';
 import Faq from '@/components/sections/Faq';
 import Testimonials from '@/components/sections/Testimonials';
+import Cta from '@/components/sections/Cta';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <CriticalRecycling />
       <Faq />
       <Testimonials />
+      <Cta />
     </div>
   );
 }
