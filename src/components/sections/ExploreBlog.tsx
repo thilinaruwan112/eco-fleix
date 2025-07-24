@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const blogPosts = [
@@ -35,7 +34,10 @@ const blogPosts = [
     date: 'Mar 5, 2025',
     readTime: '7 min',
   },
-  {
+];
+
+const bottomBlogPosts = [
+    {
     image: 'https://placehold.co/600x400.png',
     aiHint: 'compliance documents',
     category: 'Compliance',
@@ -59,14 +61,13 @@ const blogPosts = [
     date: 'Mar 1, 2025',
     readTime: '5 min',
   },
-];
+]
 
 const ExploreBlog = () => {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-16 md:py-24 bg-muted/20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-            <Button variant="outline" className="rounded-full mb-4">All Articles</Button>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
             EXPLORE OUR BLOG
           </h2>
@@ -76,7 +77,7 @@ const ExploreBlog = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post, index) => (
-            <Card key={index} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
+            <Card key={index} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col bg-white rounded-lg">
               <div className="relative">
                 <Image
                   src={post.image}
@@ -86,13 +87,10 @@ const ExploreBlog = () => {
                   className="w-full h-48 object-cover"
                   data-ai-hint={post.aiHint}
                 />
-                {post.category && (
-                  <Badge className={`absolute top-4 right-4 text-white ${post.categoryColor}`}>{post.category}</Badge>
-                )}
               </div>
               <CardContent className="p-6 flex-grow flex flex-col">
-                <h3 className="text-xl font-bold text-foreground mb-2">{post.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4 flex-grow">{post.description}</p>
+                <h3 className="text-lg font-bold text-foreground mb-2 flex-grow">{post.title}</h3>
+                <p className="text-muted-foreground text-sm mb-4 ">{post.description}</p>
                 <div className="flex items-center gap-2 text-xs text-muted-foreground mb-4">
                     <Avatar className="h-6 w-6">
                       <AvatarImage src={`https://placehold.co/40x40.png`} alt={post.author} data-ai-hint={post.authorAiHint} />
@@ -104,9 +102,42 @@ const ExploreBlog = () => {
                   <span>•</span>
                   <span>{post.readTime}</span>
                 </div>
-                <a href="#" className="text-primary font-semibold hover:underline text-sm">
+                <a href="#" className="text-primary font-semibold hover:underline text-sm mt-auto">
                   Read More
                 </a>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          {bottomBlogPosts.map((post, index) => (
+            <Card key={index} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col md:flex-row bg-white rounded-lg">
+              <div className="relative md:w-1/3">
+                 <Image
+                  src={post.image}
+                  alt={post.title}
+                  width={400}
+                  height={400}
+                  className="w-full h-48 md:h-full object-cover"
+                  data-ai-hint={post.aiHint}
+                />
+              </div>
+
+              <CardContent className="p-6 flex-grow flex flex-col md:w-2/3">
+                {post.category && (
+                  <Badge className={`text-white mb-2 ${post.categoryColor}`}>{post.category}</Badge>
+                )}
+                <h3 className="text-lg font-bold text-foreground mb-2">{post.title}</h3>
+                <p className="text-muted-foreground text-sm mb-4 flex-grow">{post.description}</p>
+                 <div className="flex items-center gap-2 text-xs text-muted-foreground mt-auto">
+                    <Avatar className="h-6 w-6">
+                      <AvatarImage src={`https://placehold.co/40x40.png`} alt={post.author} data-ai-hint={post.authorAiHint} />
+                      <AvatarFallback>{post.author.charAt(0)}</AvatarFallback>
+                    </Avatar>
+                    <span>{post.author}</span>
+                  <span>•</span>
+                  <span>{post.date}</span>
+                </div>
               </CardContent>
             </Card>
           ))}
