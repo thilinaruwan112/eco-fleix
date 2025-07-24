@@ -30,7 +30,7 @@ const carouselImages = [
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-[500px] text-white">
+    <section className="relative w-full h-[600px] md:h-[500px] text-white">
       <Carousel
         className="absolute w-full h-full"
         plugins={[

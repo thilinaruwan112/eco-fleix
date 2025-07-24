@@ -6,7 +6,7 @@ const Footer = () => {
     return (
       <footer className="bg-gray-800 text-white">
         <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Logo and Description */}
             <div className="space-y-4">
                <div className="flex items-center gap-2">
@@ -64,9 +64,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-700 mt-8">
-            <div className="container mx-auto px-4 py-6 flex justify-between items-center text-sm text-gray-500">
+            <div className="container mx-auto px-4 py-6 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500 gap-4">
                 <p>&copy; {new Date().getFullYear()} ECO FLEIX. All rights reserved.</p>
-                <div className="flex gap-4 items-center">
+                <div className="flex flex-wrap justify-center gap-4 items-center">
                     <a href="#" className="hover:text-white">Privacy Policy</a>
                     <a href="#" className="hover:text-white">Terms of Service</a>
                     <a href="#" className="hover:text-white">Cookie Policy</a>

@@ -13,11 +13,11 @@ const About = () => {
   return (
     <section className="container mx-auto px-4">
       <div className="grid md:grid-cols-2 gap-12 items-center">
-        <div className="space-y-6">
+        <div className="space-y-6 text-center md:text-left">
           <h2 className="text-3xl font-bold tracking-tight text-foreground">
             Responsible Electronic Scrap Buyers
           </h2>
-          <ul className="space-y-4">
+          <ul className="space-y-4 inline-block text-left">
             {features.map((feature) => (
               <li key={feature} className="flex items-center gap-3">
                 <CheckCircle className="h-6 w-6 text-primary" />

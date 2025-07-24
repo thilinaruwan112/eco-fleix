@@ -23,12 +23,12 @@ const CriticalRecycling = () => {
       </div>
       <div className="grid md:grid-cols-2 gap-8">
         <Card className="bg-red-50 border-red-200 shadow-lg">
-          <CardContent className="p-8">
+          <CardContent className="p-6 md:p-8">
             <h3 className="text-xl font-bold text-red-700 mb-6">The Challenge</h3>
             <ul className="space-y-4">
               {challenges.map((challenge, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <TriangleAlert className="h-5 w-5 text-red-500 mt-1" />
+                  <TriangleAlert className="h-5 w-5 text-red-500 mt-1 flex-shrink-0" />
                   <span className="text-muted-foreground">{challenge}</span>
                 </li>
               ))}
@@ -36,7 +36,7 @@ const CriticalRecycling = () => {
           </CardContent>
         </Card>
         <Card className="bg-green-50 border-green-200 shadow-lg">
-          <CardContent className="p-8">
+          <CardContent className="p-6 md:p-8">
             <h3 className="text-xl font-bold text-green-800 mb-6">Our Solution</h3>
             <ul className="space-y-4">
               {solutions.map((solution, index) => (
