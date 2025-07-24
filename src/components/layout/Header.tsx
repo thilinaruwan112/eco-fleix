@@ -12,6 +12,7 @@ import {
 import Image from 'next/image';
 import * as React from 'react';
 import { useTheme } from 'next-themes';
+import { useTranslation } from '@/hooks/use-translation';
 
 
 const NavLink = ({ children, href, hasDropdown = false }: { children: React.ReactNode, href?: string, hasDropdown?: boolean }) => {
@@ -81,6 +82,8 @@ const ThemeToggle = () => {
 }
 
 const LanguageToggle = () => {
+    const { setLanguage } = useTranslation();
+
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -90,8 +93,8 @@ const LanguageToggle = () => {
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-                <DropdownMenuItem>English</DropdownMenuItem>
-                <DropdownMenuItem>العربية</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage('en')}>English</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage('ar')}>العربية</DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
     )
@@ -104,6 +107,7 @@ const Header = () => {
   const phoneNumber = '+971529058388';
   const message = "Hello! I'm interested in your e-waste recycling services.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  const { t } = useTranslation();
   
   return (
     <header className="bg-background/80 backdrop-blur-sm sticky top-0 z-40 w-full">
@@ -120,7 +124,7 @@ const Header = () => {
             </a>
           </div>
           <div className="hidden md:flex items-center gap-4">
-            <span>Connect with us</span>
+            <span>{t('connect_with_us')}</span>
             <div className="flex items-center gap-3">
               <a href="#" aria-label="Facebook"><Facebook className="h-4 w-4" /></a>
               <a href="#" aria-label="Twitter"><Twitter className="h-4 w-4" /></a>
@@ -136,41 +140,53 @@ const Header = () => {
             <Recycle className="h-8 w-8 text-primary" />
             <div className='flex flex-col'>
               <span className="font-bold text-lg md:text-2xl text-primary">ECO FLEIX</span>
-              <span className="text-xs text-foreground/70 -mt-1">E WASTE RECYCLING COMPANY</span>
+              <span className="text-xs text-foreground/70 -mt-1">{t('company_subtitle')}</span>
             </div>
           </a>
           <nav className="hidden md:flex items-center gap-6">
-            <NavLink href="/">Home</NavLink>
-            <NavLink href="/about">About</NavLink>
-            <NavLink href="/blog">Blogs</NavLink>
+            <NavLink href="/">{t('home')}</NavLink>
+            <NavLink href="/about">{t('about')}</NavLink>
+            <NavLink href="/blog">{t('blogs')}</NavLink>
             <DropdownMenu open={servicesOpen} onOpenChange={setServicesOpen}>
-              <DropdownMenuTrigger asChild>
-                <div onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
-                  <NavLink hasDropdown>Services</NavLink>
-                </div>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-screen max-w-6xl" align="center" sideOffset={18} onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
-                <MegaMenu title="Service" items={services} viewAllHref="/services"/>
-              </DropdownMenuContent>
+                <DropdownMenuTrigger asChild>
+                    <div onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)} className="py-2">
+                      <NavLink hasDropdown>{t('services')}</NavLink>
+                    </div>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent 
+                    align="center" 
+                    sideOffset={18} 
+                    className="w-screen max-w-6xl"
+                    onMouseEnter={() => setServicesOpen(true)} 
+                    onMouseLeave={() => setServicesOpen(false)}
+                >
+                    <MegaMenu title="Service" items={services} viewAllHref="/services"/>
+                </DropdownMenuContent>
             </DropdownMenu>
             <DropdownMenu open={whoWeServeOpen} onOpenChange={setWhoWeServeOpen}>
-              <DropdownMenuTrigger asChild>
-                <div onMouseEnter={() => setWhoWeServeOpen(true)} onMouseLeave={() => setWhoWeServeOpen(false)}>
-                  <NavLink hasDropdown>Who We Serve</NavLink>
-                </div>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-screen max-w-6xl" align="center" sideOffset={18} onMouseEnter={() => setWhoWeServeOpen(true)} onMouseLeave={() => setWhoWeServeOpen(false)}>
-                <MegaMenu title="Sector" items={whoWeServe.slice(0,4)} viewAllHref="/who-we-serve"/>
-              </DropdownMenuContent>
+                <DropdownMenuTrigger asChild>
+                    <div onMouseEnter={() => setWhoWeServeOpen(true)} onMouseLeave={() => setWhoWeServeOpen(false)} className="py-2">
+                      <NavLink hasDropdown>{t('who_we_serve')}</NavLink>
+                    </div>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent 
+                    align="center" 
+                    sideOffset={18} 
+                    className="w-screen max-w-6xl"
+                    onMouseEnter={() => setWhoWeServeOpen(true)} 
+                    onMouseLeave={() => setWhoWeServeOpen(false)}
+                >
+                    <MegaMenu title="Sector" items={whoWeServe.slice(0,4)} viewAllHref="/who-we-serve"/>
+                </DropdownMenuContent>
             </DropdownMenu>
-            <NavLink href="/our-process">Our Process</NavLink>
-            <NavLink href="/contact">Contact</NavLink>
+            <NavLink href="/our-process">{t('our_process')}</NavLink>
+            <NavLink href="/contact">{t('contact')}</NavLink>
           </nav>
           <div className="flex items-center gap-2">
             <ThemeToggle />
             <LanguageToggle />
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                <Button className="hidden sm:inline-flex">Get a Quote</Button>
+                <Button className="hidden sm:inline-flex">{t('get_a_quote')}</Button>
             </a>
             <div className="md:hidden">
                 <Sheet>
@@ -182,13 +198,13 @@ const Header = () => {
                     </SheetTrigger>
                     <SheetContent side="right">
                         <div className="flex flex-col gap-6 pt-12">
-                            <NavLink href="/">Home</NavLink>
-                            <NavLink href="/about">About</NavLink>
-                            <NavLink href="/blog">Blogs</NavLink>
+                            <NavLink href="/">{t('home')}</NavLink>
+                            <NavLink href="/about">{t('about')}</NavLink>
+                            <NavLink href="/blog">{t('blogs')}</NavLink>
                             {/* Simple dropdowns for mobile */}
                             <DropdownMenu>
                               <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors focus-visible:outline-none">
-                                Services <ChevronDown className="h-4 w-4" />
+                                {t('services')} <ChevronDown className="h-4 w-4" />
                               </DropdownMenuTrigger>
                               <DropdownMenuContent>
                                 {services.map(service => (
@@ -200,7 +216,7 @@ const Header = () => {
                             </DropdownMenu>
                             <DropdownMenu>
                               <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors focus-visible:outline-none">
-                                Who We Serve <ChevronDown className="h-4 w-4" />
+                                {t('who_we_serve')} <ChevronDown className="h-4 w-4" />
                               </DropdownMenuTrigger>
                               <DropdownMenuContent>
                                 {whoWeServe.map(item => (
@@ -210,10 +226,10 @@ const Header = () => {
                                 ))}
                               </DropdownMenuContent>
                             </DropdownMenu>
-                            <NavLink href="/our-process">Our Process</NavLink>
-                            <NavLink href="/contact">Contact</NavLink>
+                            <NavLink href="/our-process">{t('our_process')}</NavLink>
+                            <NavLink href="/contact">{t('contact')}</NavLink>
                              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                                <Button>Get a Quote</Button>
+                                <Button>{t('get_a_quote')}</Button>
                              </a>
                         </div>
                     </SheetContent>
