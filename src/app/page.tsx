@@ -5,12 +5,14 @@ import AcceptedMaterials from '@/components/sections/AcceptedMaterials';
 import ServiceArea from '@/components/sections/ServiceArea';
 import Education from '@/components/sections/Education';
 import About from '@/components/sections/About';
+import WhatWeAccept from '@/components/sections/WhatWeAccept';
 
 export default function Home() {
   return (
     <div className="flex flex-col gap-16 md:gap-24 pb-8 md:pb-12">
       <Hero />
       <About />
+      <WhatWeAccept />
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           <div className="flex flex-col gap-8 md:gap-12">
