@@ -2,7 +2,7 @@ import { ChevronRight } from 'lucide-react';
 
 const ServicesHero = () => {
   return (
-    <section className="relative w-full h-[300px] md:h-[400px] bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+    <section className="relative w-full h-[300px] md:h-[400px] bg-gradient-to-r from-[#0A1E44] to-[#1E40AF] text-white">
       <div className="container mx-auto px-4 h-full flex flex-col justify-center items-start z-20 relative">
         <div className="flex items-center gap-2 text-sm text-white/80">
           <a href="/" className="hover:text-white">Home</a>
