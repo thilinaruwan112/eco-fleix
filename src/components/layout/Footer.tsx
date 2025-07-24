@@ -66,7 +66,8 @@ const Footer = () => {
         <div className="border-t border-gray-700 mt-8">
             <div className="container mx-auto px-4 py-6 flex justify-between items-center text-sm text-gray-500">
                 <p>&copy; {new Date().getFullYear()} ECO FLEIX. All rights reserved.</p>
-                <div className="flex gap-4">
+                <div className="flex gap-4 items-center">
+                    <p>Powered by <a href="https://payshia.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">Payshia Software Solution</a></p>
                     <a href="#" className="hover:text-white">Privacy Policy</a>
                     <a href="#" className="hover:text-white">Terms of Service</a>
                     <a href="#" className="hover:text-white">Cookie Policy</a>
