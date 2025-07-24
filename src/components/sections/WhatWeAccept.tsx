@@ -15,7 +15,7 @@ interface WhatWeAcceptProps {
 
 const WhatWeAccept: React.FC<WhatWeAcceptProps> = ({ title, items }) => {
   return (
-    <section className="bg-gradient-to-br from-green-50 to-blue-50 py-16 md:py-24">
+    <section className="bg-gradient-to-br from-green-50 to-blue-50 py-16 md:py-24 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
            <Badge className="bg-primary/10 text-primary border-transparent mb-4 hover:bg-primary/10">WHAT WE RECYCLE</Badge>
@@ -28,12 +28,12 @@ const WhatWeAccept: React.FC<WhatWeAcceptProps> = ({ title, items }) => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {items.map((item, index) => (
-            <Card key={index} className="text-left shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-2xl bg-white h-full transform hover:-translate-y-2 group">
+            <Card key={index} className="text-left shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-2xl bg-card h-full transform hover:-translate-y-2 group">
               <CardContent className="p-8 flex flex-col h-full">
                 <div className="bg-primary/10 rounded-full p-3 mb-6 w-max group-hover:bg-primary transition-colors duration-300">
                   {React.cloneElement(item.icon as React.ReactElement, { className: "h-8 w-8 text-primary group-hover:text-white transition-colors duration-300"})}
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-2 flex-grow">
+                <h3 className="text-xl font-bold text-card-foreground mb-2 flex-grow">
                   {item.title}
                 </h3>
                 <p className="text-muted-foreground">

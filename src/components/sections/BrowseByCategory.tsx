@@ -31,7 +31,7 @@ const categories = [
 
 const BrowseByCategory = () => {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-green-50 to-blue-50">
+    <section className="py-16 md:py-24 bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
@@ -44,12 +44,12 @@ const BrowseByCategory = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {categories.map((category) => (
             <a href="#" key={category.title} className="block group">
-              <Card className="text-left shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-2xl bg-white h-full transform hover:-translate-y-2">
+              <Card className="text-left shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-2xl bg-card h-full transform hover:-translate-y-2">
                 <CardContent className="p-8 flex flex-col h-full">
                   <div className="bg-primary/10 rounded-full p-3 mb-4 w-max">
                     {category.icon}
                   </div>
-                  <h3 className="text-lg font-bold text-foreground flex-grow">
+                  <h3 className="text-lg font-bold text-card-foreground flex-grow">
                     {category.title}
                   </h3>
                   <p className="text-sm text-muted-foreground mt-2 mb-4 flex-grow">{category.description}</p>
