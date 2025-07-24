@@ -40,18 +40,18 @@ const Header = () => {
       </div>
       <div className="border-b border-t border-border/50">
         <div className="container mx-auto px-4 flex items-center justify-between h-20">
-          <div className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2">
             <Recycle className="h-8 w-8 text-primary" />
             <div className='flex flex-col'>
               <span className="font-bold text-lg md:text-2xl text-primary">ECO FLEIX</span>
               <span className="text-xs text-foreground/70 -mt-1">ELECTRONICS WASTE RECYCLING</span>
             </div>
-          </div>
+          </a>
           <nav className="hidden md:flex items-center gap-6">
             <NavLink href="/">Home</NavLink>
             <NavLink href="/about">About</NavLink>
             <NavLink href="/blog">Blogs</NavLink>
-            <NavLink href="/services" hasDropdown>Services</NavLink>
+            <NavLink href="/services">Services</NavLink>
             <NavLink href="#" hasDropdown>Who We Serve</NavLink>
             <NavLink href="#">Our Process</NavLink>
             <NavLink href="#">Contact</NavLink>
@@ -73,7 +73,7 @@ const Header = () => {
                             <NavLink href="/">Home</NavLink>
                             <NavLink href="/about">About</NavLink>
                             <NavLink href="/blog">Blogs</NavLink>
-                            <NavLink href="/services" hasDropdown>Services</NavLink>
+                            <NavLink href="/services">Services</NavLink>
                             <NavLink href="#" hasDropdown>Who We Serve</NavLink>
                             <NavLink href="#">Our Process</NavLink>
                             <NavLink href="#">Contact</NavLink>

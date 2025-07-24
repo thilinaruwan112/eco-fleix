@@ -9,10 +9,10 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Logo and Description */}
             <div className="space-y-4">
-               <div className="flex items-center gap-2">
+               <a href="/" className="flex items-center gap-2">
                     <Recycle className="h-8 w-8 text-primary" />
                     <span className="font-bold text-xl text-white">ECO FLEIX</span>
-                </div>
+                </a>
               <p className="text-gray-400">
                 Leading sustainable e-waste recycling company transforming electronic waste management through innovative solutions.
               </p>
@@ -47,7 +47,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li><a href="/" className="text-gray-400 hover:text-white">Home</a></li>
                 <li><a href="/about" className="text-gray-400 hover:text-white">About</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white">Services</a></li>
+                <li><a href="/services" className="text-gray-400 hover:text-white">Services</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white">Contact</a></li>
               </ul>
             </div>
