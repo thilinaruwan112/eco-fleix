@@ -10,7 +10,7 @@ import Cta from '@/components/sections/Cta';
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-16 md:gap-24 pb-8 md:pb-12">
+    <div className="flex flex-col gap-16 md:gap-24">
       <Hero />
       <About />
       <WhatWeAccept />
