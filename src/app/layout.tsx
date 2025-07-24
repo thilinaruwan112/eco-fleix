@@ -25,6 +25,11 @@ export default function RootLayout({
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <div className="bg-gray-900 text-gray-500 text-sm py-4">
+            <div className="container mx-auto px-4 flex justify-end items-center">
+                <p>Powered by <a href="https://payshia.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">Payshia Software Solution</a></p>
+            </div>
+        </div>
         <Toaster />
       </body>
     </html>
