@@ -4,22 +4,22 @@ import { ShieldCheck, FileText, Leaf, BarChart2 } from 'lucide-react';
 
 const challenges = [
   {
-    icon: <ShieldCheck className="h-8 w-8 text-primary" />,
+    icon: <ShieldCheck className="h-8 w-8 text-primary group-hover:text-white transition-colors duration-300" />,
     title: 'Data Security & Privacy',
     description: 'Our certified data destruction processes ensure complete eradication of sensitive information, protecting your organization from data breaches and compliance violations.',
   },
   {
-    icon: <FileText className="h-8 w-8 text-primary" />,
+    icon: <FileText className="h-8 w-8 text-primary group-hover:text-white transition-colors duration-300" />,
     title: 'Regulatory Compliance',
     description: 'We stay up-to-date with all relevant regulations and provide comprehensive documentation to help you maintain compliance with industry-specific requirements.',
   },
   {
-    icon: <Leaf className="h-8 w-8 text-primary" />,
+    icon: <Leaf className="h-8 w-8 text-primary group-hover:text-white transition-colors duration-300" />,
     title: 'Environmental Responsibility',
     description: 'Our zero-landfill policy and responsible recycling practices help your organization reduce its environmental footprint and meet sustainability goals.',
   },
   {
-    icon: <BarChart2 className="h-8 w-8 text-primary" />,
+    icon: <BarChart2 className="h-8 w-8 text-primary group-hover:text-white transition-colors duration-300" />,
     title: 'Cost Management',
     description: 'Our value recovery programs help offset the costs of IT asset disposition, providing a more cost-effective solution than traditional disposal methods.',
   },
