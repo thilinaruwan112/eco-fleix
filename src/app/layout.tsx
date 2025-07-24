@@ -30,7 +30,7 @@ export default function RootLayout({
         <TranslationProvider>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >
