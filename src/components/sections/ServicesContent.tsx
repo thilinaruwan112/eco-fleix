@@ -46,7 +46,7 @@ const ServicesContent = () => {
     <div className="bg-muted/20">
         <div className="container mx-auto px-4 py-16 md:py-24">
             <div className="grid md:grid-cols-12 gap-8">
-                <aside className="md:col-span-3">
+                <aside className="md:col-span-3 sticky top-28 self-start">
                     <Card className="p-4 shadow-lg">
                     <h3 className="text-lg font-bold mb-4 px-4">Our Services</h3>
                     <nav className="flex flex-col gap-2">
