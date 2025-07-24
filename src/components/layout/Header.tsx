@@ -24,18 +24,18 @@ const NavLink = ({ children, href, hasDropdown = false }: { children: React.Reac
 };
 
 const services = [
-  { name: 'IT Asset Remarketing', href: '/services#it-asset-remarketing', description: 'Maximize value from retired IT assets.', image: 'https://placehold.co/600x400.png', aiHint: 'refurbished laptops' },
-  { name: 'IT Asset Remanufacturing', href: '/services#it-asset-remanufacturing', description: 'Breathe new life into aging IT hardware.', image: 'https://placehold.co/600x400.png', aiHint: 'technician repairing computer' },
-  { name: 'IT Asset Disposition', href: '/services#it-asset-disposition', description: 'Secure and sustainable management of retired assets.', image: 'https://placehold.co/600x400.png', aiHint: 'e-waste collection bins' },
-  { name: 'Data Destruction', href: '/services#data-destruction', description: 'Ensure complete data elimination.', image: 'https://placehold.co/600x400.png', aiHint: 'hard drive shredder' },
+  { name: 'IT Asset Remarketing', href: '/services#it-asset-remarketing', description: 'Maximize value from retired IT assets.', image: 'https://placehold.co/400x400.png', aiHint: 'refurbished laptops' },
+  { name: 'IT Asset Remanufacturing', href: '/services#it-asset-remanufacturing', description: 'Breathe new life into aging IT hardware.', image: 'https://placehold.co/400x400.png', aiHint: 'technician repairing computer' },
+  { name: 'IT Asset Disposition', href: '/services#it-asset-disposition', description: 'Secure and sustainable management of retired assets.', image: 'https://placehold.co/400x400.png', aiHint: 'e-waste collection bins' },
+  { name: 'Data Destruction', href: '/services#data-destruction', description: 'Ensure complete data elimination.', image: 'https://placehold.co/400x400.png', aiHint: 'hard drive shredder' },
 ];
 
 const whoWeServe = [
-    { name: 'Corporations', href: '/who-we-serve#corporations', description: 'Scalable solutions for businesses.', image: 'https://placehold.co/600x400.png', aiHint: 'modern office building' },
-    { name: 'Government Agencies', href: '/who-we-serve#government-agencies', description: 'Secure and compliant disposal.', image: 'https://placehold.co/600x400.png', aiHint: 'government building' },
-    { name: 'Educational Institutions', href: '/who-we-serve#educational-institutions', description: 'Responsible recycling for schools.', image: 'https://placehold.co/600x400.png', aiHint: 'university campus' },
-    { name: 'Financial Institutions', href: '/who-we-serve#financial-institutions', description: 'Secure data destruction for finance.', image: 'https://placehold.co/600x400.png', aiHint: 'bank building exterior' },
-    { name: 'Healthcare & Medical', href: '/who-we-serve#healthcare-medical', description: 'Specialized handling of medical e-waste.', image: 'https://placehold.co/600x400.png', aiHint: 'hospital building' },
+    { name: 'Corporations', href: '/who-we-serve#corporations', description: 'Scalable solutions for businesses.', image: 'https://placehold.co/400x400.png', aiHint: 'modern office building' },
+    { name: 'Government Agencies', href: '/who-we-serve#government-agencies', description: 'Secure and compliant disposal.', image: 'https://placehold.co/400x400.png', aiHint: 'government building' },
+    { name: 'Educational Institutions', href: '/who-we-serve#educational-institutions', description: 'Responsible recycling for schools.', image: 'https://placehold.co/400x400.png', aiHint: 'university campus' },
+    { name: 'Financial Institutions', href: '/who-we-serve#financial-institutions', description: 'Secure data destruction for finance.', image: 'https://placehold.co/400x400.png', aiHint: 'bank building exterior' },
+    { name: 'Healthcare & Medical', href: '/who-we-serve#healthcare-medical', description: 'Specialized handling of medical e-waste.', image: 'https://placehold.co/400x400.png', aiHint: 'hospital building' },
 ];
 
 const MegaMenu = ({title, items, viewAllHref} : {title: string, items: typeof services, viewAllHref: string}) => (
@@ -52,7 +52,7 @@ const MegaMenu = ({title, items, viewAllHref} : {title: string, items: typeof se
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 col-span-4">
             {items.map(item => (
                 <a key={item.name} href={item.href} className="group">
-                    <div className="aspect-video relative rounded-lg overflow-hidden mb-2">
+                    <div className="aspect-square relative rounded-lg overflow-hidden mb-2">
                          <Image src={item.image} alt={item.name} layout="fill" objectFit="cover" className="transform group-hover:scale-105 transition-transform" data-ai-hint={item.aiHint}/>
                     </div>
                     <h4 className="font-semibold text-foreground text-sm group-hover:text-primary">{item.name}</h4>
