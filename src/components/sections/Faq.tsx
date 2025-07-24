@@ -1,32 +1,56 @@
+'use client';
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Badge } from '../ui/badge';
+import { useTranslation } from '@/hooks/use-translation';
+
 
 const Faq = () => {
+  const { t } = useTranslation();
+
+  const faqs = [
+    {
+        question: t('faq_1_question'),
+        answer: t('faq_1_answer')
+    },
+    {
+        question: t('faq_2_question'),
+        answer: t('faq_2_answer')
+    },
+    {
+        question: t('faq_3_question'),
+        answer: t('faq_3_answer')
+    },
+    {
+        question: t('faq_4_question'),
+        answer: t('faq_4_answer')
+    }
+]
+
   return (
-    <section className="container mx-auto px-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold tracking-tight">Frequently Asked Questions</h2>
+    <section className="py-16 md:py-24 bg-background">
+      <div className="container mx-auto px-4">
+         <div className="text-center max-w-3xl mx-auto mb-12">
+          <Badge className="bg-primary/10 text-primary border-transparent mb-4 hover:bg-primary/10">{t('need_help')}</Badge>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+            {t('faq_title')}
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            {t('faq_desc')}
+          </p>
         </div>
-        <Accordion type="single" collapsible className="w-full">
-          <AccordionItem value="item-1">
-            <AccordionTrigger>What types of electronics do you accept?</AccordionTrigger>
-            <AccordionContent>
-              We accept a wide range of electronic devices, including laptops, smartphones, tablets, desktop computers, monitors, printers, cables, and more. Please see our "What We Accept" section for a more comprehensive list.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-2">
-            <AccordionTrigger>Is pickup service free?</AccordionTrigger>
-            <AccordionContent>
-              Yes, our pickup service is completely free for qualifying quantities of e-waste within our service area in Dubai. Contact us with your list of items to see if you qualify.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-3">
-            <AccordionTrigger>How do you ensure data security?</AccordionTrigger>
-            <AccordionContent>
-              We take data security very seriously. We offer certified data destruction services that are compliant with international standards, ensuring all your sensitive information is securely and permanently erased before recycling.
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
+        <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="w-full space-y-4">
+            {faqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index+1}`} className="bg-muted/40 rounded-lg px-6 border-b-0">
+                    <AccordionTrigger className="text-lg text-left hover:no-underline">{faq.question}</AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground text-base">
+                    {faq.answer}
+                    </AccordionContent>
+                </AccordionItem>
+            ))}
+            </Accordion>
+        </div>
       </div>
     </section>
   );
