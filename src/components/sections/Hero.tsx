@@ -12,19 +12,24 @@ import Autoplay from "embla-carousel-autoplay"
 
 const carouselImages = [
     {
-        src: "https://images.unsplash.com/photo-1652658379315-9ff6d19d8929?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxlLXdhc3RlJTIwcmVjeWNsaW5nJTIwYmlufGVufDB8fHx8MTc1MzM0NDQ2Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-        alt: "E-waste recycling bin",
-        hint: "e-waste recycling bin"
+        src: "https://content-provider.payshia.com/eco-fleix/hero-1.webp",
+        alt: "E-waste recycling",
+        hint: "e-waste recycling"
     },
     {
-        src: "https://images.unsplash.com/photo-1542372147-9753493EA627?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzODQ5MTh8MHwxfHNlYXJjaHwxfHxlLXdhc3RlfGVufDB8fHx8MTY1MjY0MDc4OA&ixlib=rb-4.0.3&q=80&w=1080",
-        alt: "Collection of old electronics",
-        hint: "electronic waste pile"
+        src: "https://content-provider.payshia.com/eco-fleix/hero-2.webp",
+        alt: "E-waste collection",
+        hint: "e-waste collection"
     },
     {
-        src: "https://images.unsplash.com/photo-1628177241233-14638a452a36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzODQ5MTh8MHwxfHNlYXJjaHw1fHxyZWN5Y2xpbmclMjBjZW50ZXJ8ZW58MHx8fHwxNjUyNjQwODIz&ixlib=rb-4.0.3&q=80&w=1080",
-        alt: "Recycling facility",
-        hint: "recycling facility"
+        src: "https://content-provider.payshia.com/eco-fleix/hero-3.webp",
+        alt: "Electronics recycling",
+        hint: "electronics recycling"
+    },
+    {
+        src: "https://content-provider.payshia.com/eco-fleix/hero-4.webp",
+        alt: "Recycling plant",
+        hint: "recycling plant"
     }
 ];
 
