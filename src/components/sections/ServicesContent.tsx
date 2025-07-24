@@ -15,10 +15,10 @@ const services = [
 ];
 
 const keyBenefits = [
-  { icon: <ShieldCheck className="h-8 w-8 text-white" />, title: 'Data Security', description: 'Complete protection of sensitive information' },
-  { icon: <Shield className="h-8 w-8 text-white" />, title: 'Compliance', description: 'Meet regulatory requirements' },
-  { icon: <AlertTriangle className="h-8 w-8 text-white" />, title: 'Risk Mitigation', description: 'Eliminate data breach risks' },
-  { icon: <Trash2 className="h-8 w-8 text-white" />, title: 'Environmental Responsibility', description: 'Eco-friendly disposal methods' },
+  { icon: <ShieldCheck className="h-8 w-8 text-primary" />, title: 'Data Security', description: 'Complete protection of sensitive information' },
+  { icon: <Shield className="h-8 w-8 text-primary" />, title: 'Compliance', description: 'Meet regulatory requirements' },
+  { icon: <AlertTriangle className="h-8 w-8 text-primary" />, title: 'Risk Mitigation', description: 'Eliminate data breach risks' },
+  { icon: <Trash2 className="h-8 w-8 text-primary" />, title: 'Environmental Responsibility', description: 'Eco-friendly disposal methods' },
 ];
 
 const destructionMethods = [
@@ -413,8 +413,8 @@ const ServicesContent = () => {
                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                                 {keyBenefits.map(item => (
                                     <div key={item.title} className="flex flex-col items-center text-center gap-3">
-                                        <div className="bg-primary/10 rounded-full p-3 flex-shrink-0">
-                                            {item.icon}
+                                        <div className="bg-primary/10 rounded-full p-3 flex-shrink-0 group hover:bg-primary transition-colors duration-300">
+                                            {React.cloneElement(item.icon, { className: "h-8 w-8 text-primary group-hover:text-white transition-colors duration-300"})}
                                         </div>
                                         <div>
                                             <h4 className="font-bold">{item.title}</h4>
