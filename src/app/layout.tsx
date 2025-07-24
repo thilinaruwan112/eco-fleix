@@ -4,6 +4,7 @@ import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import WhatsappButton from '@/components/layout/WhatsappButton';
+import Preloader from '@/components/layout/Preloader';
 
 export const metadata: Metadata = {
   title: 'EcoCollect Dubai',
@@ -23,6 +24,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased flex flex-col min-h-screen">
+        <Preloader />
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
