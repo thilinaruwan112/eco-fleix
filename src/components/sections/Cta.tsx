@@ -1,6 +1,9 @@
 import { Button } from '@/components/ui/button';
 
 const Cta = () => {
+    const phoneNumber = '+97141234567'; // Replace with your WhatsApp number
+    const message = "Hello! I'm interested in your e-waste recycling services.";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   return (
     <section className="bg-secondary text-secondary-foreground py-16 md:py-24">
       <div className="container mx-auto px-4 text-center">
@@ -11,8 +14,12 @@ const Cta = () => {
           Join us in creating a sustainable future through responsible e-waste management. Together, we can make a positive impact on our planet.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-          <Button size="lg">Get Started Now</Button>
-          <Button size="lg" variant="outline">Schedule a Pickup</Button>
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+            <Button size="lg">Get Started Now</Button>
+          </a>
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+            <Button size="lg" variant="outline">Schedule a Pickup</Button>
+          </a>
         </div>
       </div>
     </section>

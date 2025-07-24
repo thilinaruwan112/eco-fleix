@@ -10,6 +10,9 @@ const NavLink = ({ children, href, hasDropdown = false }: { children: React.Reac
 );
 
 const Header = () => {
+  const phoneNumber = '+97141234567'; // Replace with your WhatsApp number
+  const message = "Hello! I'm interested in your e-waste recycling services.";
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   return (
     <header className="bg-background/80 backdrop-blur-sm sticky top-0 z-40 w-full">
       <div className="bg-primary text-primary-foreground">
@@ -54,7 +57,9 @@ const Header = () => {
             <NavLink href="#">Contact</NavLink>
           </nav>
           <div className="flex items-center gap-2">
-            <Button className="hidden sm:inline-flex">Get a Quote</Button>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <Button className="hidden sm:inline-flex">Get a Quote</Button>
+            </a>
             <div className="md:hidden">
                 <Sheet>
                     <SheetTrigger asChild>
@@ -72,7 +77,9 @@ const Header = () => {
                             <NavLink href="#" hasDropdown>Who We Serve</NavLink>
                             <NavLink href="#">Our Process</NavLink>
                             <NavLink href="#">Contact</NavLink>
-                             <Button>Get a Quote</Button>
+                             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                                <Button>Get a Quote</Button>
+                             </a>
                         </div>
                     </SheetContent>
                 </Sheet>

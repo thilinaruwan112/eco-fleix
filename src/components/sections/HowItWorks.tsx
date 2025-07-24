@@ -27,6 +27,10 @@ const steps = [
 ];
 
 const HowItWorks = () => {
+    const phoneNumber = '+97141234567'; // Replace with your WhatsApp number
+    const message = "Hello! I'm interested in your e-waste recycling services.";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
   return (
     <section className="container mx-auto px-4">
       <div className="text-center mb-12">
@@ -63,10 +67,14 @@ const HowItWorks = () => {
               Submit your item list or call us directly for immediate assistance.
             </p>
             <div className="flex flex-col gap-4">
-              <Button size="lg">Submit Item List</Button>
-              <Button size="lg" variant="outline">
-                Call Us Now
-              </Button>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="w-full">Submit Item List</Button>
+              </a>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <Button size="lg" variant="outline" className="w-full">
+                    Call Us Now
+                </Button>
+              </a>
             </div>
           </CardContent>
         </Card>
