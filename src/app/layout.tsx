@@ -3,6 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import WhatsappButton from '@/components/layout/WhatsappButton';
 
 export const metadata: Metadata = {
   title: 'EcoCollect Dubai',
@@ -30,6 +31,7 @@ export default function RootLayout({
                 <p>Powered by <a href="https://payshia.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">Payshia Software Solution</a></p>
             </div>
         </div>
+        <WhatsappButton />
         <Toaster />
       </body>
     </html>
