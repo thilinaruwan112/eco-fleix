@@ -115,7 +115,7 @@ const Header = () => {
                   <NavLink hasDropdown>Services</NavLink>
                 </div>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-screen max-w-6xl" align="start" sideOffset={18} onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
+              <DropdownMenuContent className="w-screen max-w-6xl" align="center" sideOffset={18} onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
                 <MegaMenu title="Service" items={services} viewAllHref="/services"/>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -125,7 +125,7 @@ const Header = () => {
                   <NavLink hasDropdown>Who We Serve</NavLink>
                 </div>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-screen max-w-6xl" align="start" sideOffset={18} onMouseEnter={() => setWhoWeServeOpen(true)} onMouseLeave={() => setWhoWeServeOpen(false)}>
+              <DropdownMenuContent className="w-screen max-w-6xl" align="center" sideOffset={18} onMouseEnter={() => setWhoWeServeOpen(true)} onMouseLeave={() => setWhoWeServeOpen(false)}>
                 <MegaMenu title="Sector" items={whoWeServe.slice(0,4)} viewAllHref="/who-we-serve"/>
               </DropdownMenuContent>
             </DropdownMenu>
