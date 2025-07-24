@@ -82,14 +82,15 @@ const ContactForm = () => {
                 <div className="bg-primary/10 p-3 rounded-full"><Mail className="h-6 w-6 text-primary" /></div>
                 <div>
                   <h4 className="font-semibold text-lg">Email</h4>
-                  <a href="mailto:info@ecofleix.com" className="text-muted-foreground hover:text-primary">info@ecofleix.com</a>
+                  <a href="mailto:ecofleixewasterecyclinguae@gmail.com" className="text-muted-foreground hover:text-primary">ecofleixewasterecyclinguae@gmail.com</a>
                 </div>
               </div>
                <div className="flex items-start gap-4">
                 <div className="bg-primary/10 p-3 rounded-full"><Phone className="h-6 w-6 text-primary" /></div>
                 <div>
                   <h4 className="font-semibold text-lg">Phone</h4>
-                  <a href="tel:+97141234567" className="text-muted-foreground hover:text-primary">+971 4 123 4567</a>
+                  <a href="tel:+971529058388" className="text-muted-foreground hover:text-primary">+971 52 905 8388</a><br/>
+                  <a href="tel:+971544563685" className="text-muted-foreground hover:text-primary">+971 54 456 3685</a>
                 </div>
               </div>
                <div className="flex items-start gap-4">

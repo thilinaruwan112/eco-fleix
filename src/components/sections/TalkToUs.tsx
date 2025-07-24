@@ -22,7 +22,7 @@ const contactOptions = [
     title: 'Email Us',
     description: 'Send us a detailed message',
     buttonText: 'Email',
-    href: 'mailto:info@ecofleix.com',
+    href: 'mailto:ecofleixewasterecyclinguae@gmail.com',
   },
 ];
 

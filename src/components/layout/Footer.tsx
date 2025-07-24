@@ -24,19 +24,27 @@ const Footer = () => {
               <ul className="space-y-2 text-gray-400">
                 <li className="flex items-center gap-3">
                   <MapPin className="h-5 w-5" />
-                  <span>123 Green Street, Eco City</span>
+                  <span>Raja Building, Bur Dubai, Dubai</span>
+                </li>
+                 <li className="flex items-center gap-3">
+                  <MapPin className="h-5 w-5" />
+                  <span>Al Sajaa Industrial Area, Sharjah</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone className="h-5 w-5" />
-                  <span>+1 (555) 123-4567</span>
+                  <span>+971 52 905 8388</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Phone className="h-5 w-5" />
+                  <span>+971 54 456 3685</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="h-5 w-5" />
-                  <span>info@ecofleix.com</span>
+                  <span>ecofleixewasterecyclinguae@gmail.com</span>
                 </li>
                  <li className="flex items-center gap-3">
                   <Globe className="h-5 w-5" />
-                  <span>www.ecofleix.com</span>
+                  <span>www.ecofleixewasterecycling.com</span>
                 </li>
               </ul>
             </div>

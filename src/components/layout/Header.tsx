@@ -84,7 +84,7 @@ const ThemeToggle = () => {
 const Header = () => {
   const [servicesOpen, setServicesOpen] = React.useState(false);
   const [whoWeServeOpen, setWhoWeServeOpen] = React.useState(false);
-  const phoneNumber = '+97141234567';
+  const phoneNumber = '+971529058388';
   const message = "Hello! I'm interested in your e-waste recycling services.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   
@@ -93,13 +93,13 @@ const Header = () => {
       <div className="bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 flex justify-between items-center py-2 text-xs">
           <div className="flex items-center gap-2 md:gap-4 flex-wrap">
-            <a href="mailto:info@ecofleix.com" className="flex items-center gap-2">
+            <a href="mailto:ecofleixewasterecyclinguae@gmail.com" className="flex items-center gap-2">
               <Mail className="h-4 w-4" />
-              <span>info@ecofleix.com</span>
+              <span>ecofleixewasterecyclinguae@gmail.com</span>
             </a>
-            <a href="tel:+97141234567" className="hidden sm:flex items-center gap-2">
+            <a href="tel:+971529058388" className="hidden sm:flex items-center gap-2">
               <Phone className="h-4 w-4" />
-              <span>+971 4 123 4567</span>
+              <span>+971 52 905 8388</span>
             </a>
           </div>
           <div className="hidden md:flex items-center gap-4">
@@ -119,7 +119,7 @@ const Header = () => {
             <Recycle className="h-8 w-8 text-primary" />
             <div className='flex flex-col'>
               <span className="font-bold text-lg md:text-2xl text-primary">ECO FLEIX</span>
-              <span className="text-xs text-foreground/70 -mt-1">ELECTRONICS WASTE RECYCLING</span>
+              <span className="text-xs text-foreground/70 -mt-1">E WASTE RECYCLING COMPANY</span>
             </div>
           </a>
           <nav className="hidden md:flex items-center gap-6">

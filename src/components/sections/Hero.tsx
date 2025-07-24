@@ -33,7 +33,7 @@ const slides = [
 ];
 
 const Hero = () => {
-    const phoneNumber = '+97141234567'; // Replace with your WhatsApp number
+    const phoneNumber = '+971529058388';
     const message = "Hello! I'm interested in your e-waste recycling services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
