@@ -1,4 +1,4 @@
-import { Mail, Phone, Facebook, Twitter, Linkedin, Instagram, ChevronDown, Recycle, Menu } from 'lucide-react';
+import { Mail, Phone, Facebook, Twitter, Linkedin, Instagram, ChevronDown, Recycle, Menu, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import {
@@ -7,34 +7,66 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import Image from 'next/image';
+import * as React from 'react';
 
 
-const NavLink = ({ children, href, hasDropdown = false }: { children: React.ReactNode, href: string, hasDropdown?: boolean }) => (
-  <a href={href} className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors">
-    {children}
-    {hasDropdown && <ChevronDown className="h-4 w-4" />}
-  </a>
-);
+const NavLink = ({ children, href, hasDropdown = false }: { children: React.ReactNode, href?: string, hasDropdown?: boolean }) => {
+  const Comp = href ? 'a' : 'div';
+  return (
+      <Comp href={href} className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors cursor-pointer">
+        {children}
+        {hasDropdown && <ChevronDown className="h-4 w-4" />}
+      </Comp>
+  )
+};
 
 const services = [
-  { name: 'IT Asset Remarketing', href: '/services#it-asset-remarketing' },
-  { name: 'IT Asset Remanufacturing', href: '/services#it-asset-remanufacturing' },
-  { name: 'IT Asset Disposition', href: '/services#it-asset-disposition' },
-  { name: 'Data Destruction', href: '/services#data-destruction' },
+  { name: 'IT Asset Remarketing', href: '/services#it-asset-remarketing', description: 'Maximize value from retired IT assets.', image: 'https://placehold.co/600x400.png', aiHint: 'refurbished laptops' },
+  { name: 'IT Asset Remanufacturing', href: '/services#it-asset-remanufacturing', description: 'Breathe new life into aging IT hardware.', image: 'https://placehold.co/600x400.png', aiHint: 'technician repairing computer' },
+  { name: 'IT Asset Disposition', href: '/services#it-asset-disposition', description: 'Secure and sustainable management of retired assets.', image: 'https://placehold.co/600x400.png', aiHint: 'e-waste collection bins' },
+  { name: 'Data Destruction', href: '/services#data-destruction', description: 'Ensure complete data elimination.', image: 'https://placehold.co/600x400.png', aiHint: 'hard drive shredder' },
 ];
 
 const whoWeServe = [
-    { name: 'Corporations', href: '/who-we-serve#corporations' },
-    { name: 'Government Agencies', href: '/who-we-serve#government-agencies' },
-    { name: 'Educational Institutions', href: '/who-we-serve#educational-institutions' },
-    { name: 'Financial Institutions', href: '/who-we-serve#financial-institutions' },
-    { name: 'Healthcare & Medical', href: '/who-we-serve#healthcare-medical' },
+    { name: 'Corporations', href: '/who-we-serve#corporations', description: 'Scalable solutions for businesses.', image: 'https://placehold.co/600x400.png', aiHint: 'modern office building' },
+    { name: 'Government Agencies', href: '/who-we-serve#government-agencies', description: 'Secure and compliant disposal.', image: 'https://placehold.co/600x400.png', aiHint: 'government building' },
+    { name: 'Educational Institutions', href: '/who-we-serve#educational-institutions', description: 'Responsible recycling for schools.', image: 'https://placehold.co/600x400.png', aiHint: 'university campus' },
+    { name: 'Financial Institutions', href: '/who-we-serve#financial-institutions', description: 'Secure data destruction for finance.', image: 'https://placehold.co/600x400.png', aiHint: 'bank building exterior' },
+    { name: 'Healthcare & Medical', href: '/who-we-serve#healthcare-medical', description: 'Specialized handling of medical e-waste.', image: 'https://placehold.co/600x400.png', aiHint: 'hospital building' },
 ];
 
+const MegaMenu = ({title, items, viewAllHref} : {title: string, items: typeof services, viewAllHref: string}) => (
+    <div className="grid grid-cols-1 md:grid-cols-5 gap-6 p-6 w-full max-w-6xl">
+        <div className="bg-primary/5 rounded-lg p-6 flex flex-col justify-between col-span-1">
+            <div>
+                <h3 className="text-xl font-bold text-foreground">Shop by {title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">Discover our curated collections.</p>
+            </div>
+            <a href={viewAllHref} className="flex items-center text-sm font-semibold text-primary mt-4 hover:underline">
+                View All <ArrowRight className="ml-1 h-4 w-4" />
+            </a>
+        </div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 col-span-4">
+            {items.map(item => (
+                <a key={item.name} href={item.href} className="group">
+                    <div className="aspect-video relative rounded-lg overflow-hidden mb-2">
+                         <Image src={item.image} alt={item.name} layout="fill" objectFit="cover" className="transform group-hover:scale-105 transition-transform" data-ai-hint={item.aiHint}/>
+                    </div>
+                    <h4 className="font-semibold text-foreground text-sm group-hover:text-primary">{item.name}</h4>
+                    <p className="text-xs text-muted-foreground">{item.description}</p>
+                </a>
+            ))}
+        </div>
+    </div>
+);
+
+
 const Header = () => {
-  const phoneNumber = '+97141234567'; // Replace with your WhatsApp number
+  const phoneNumber = '+97141234567';
   const message = "Hello! I'm interested in your e-waste recycling services.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  
   return (
     <header className="bg-background/80 backdrop-blur-sm sticky top-0 z-40 w-full">
       <div className="bg-primary text-primary-foreground">
@@ -74,27 +106,19 @@ const Header = () => {
             <NavLink href="/about">About</NavLink>
             <NavLink href="/blog">Blogs</NavLink>
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors focus-visible:outline-none">
-                Services <ChevronDown className="h-4 w-4" />
+              <DropdownMenuTrigger asChild>
+                <NavLink hasDropdown>Services</NavLink>
               </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                {services.map(service => (
-                    <DropdownMenuItem key={service.name} asChild>
-                        <a href={service.href}>{service.name}</a>
-                    </DropdownMenuItem>
-                ))}
+              <DropdownMenuContent className="w-screen max-w-6xl" align="start" sideOffset={18}>
+                <MegaMenu title="Service" items={services} viewAllHref="/services"/>
               </DropdownMenuContent>
             </DropdownMenu>
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors focus-visible:outline-none">
-                Who We Serve <ChevronDown className="h-4 w-4" />
+              <DropdownMenuTrigger asChild>
+                <NavLink hasDropdown>Who We Serve</NavLink>
               </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                {whoWeServe.map(item => (
-                    <DropdownMenuItem key={item.name} asChild>
-                        <a href={item.href}>{item.name}</a>
-                    </DropdownMenuItem>
-                ))}
+              <DropdownMenuContent className="w-screen max-w-6xl" align="start" sideOffset={18}>
+                <MegaMenu title="Sector" items={whoWeServe.slice(0,4)} viewAllHref="/who-we-serve"/>
               </DropdownMenuContent>
             </DropdownMenu>
             <NavLink href="/our-process">Our Process</NavLink>
@@ -117,17 +141,18 @@ const Header = () => {
                             <NavLink href="/">Home</NavLink>
                             <NavLink href="/about">About</NavLink>
                             <NavLink href="/blog">Blogs</NavLink>
+                            {/* Simple dropdowns for mobile */}
                             <DropdownMenu>
-                                <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors focus-visible:outline-none">
-                                    Services <ChevronDown className="h-4 w-4" />
-                                </DropdownMenuTrigger>
-                                <DropdownMenuContent>
-                                    {services.map(service => (
-                                        <DropdownMenuItem key={service.name} asChild>
-                                            <a href={service.href}>{service.name}</a>
-                                        </DropdownMenuItem>
-                                    ))}
-                                </DropdownMenuContent>
+                              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors focus-visible:outline-none">
+                                Services <ChevronDown className="h-4 w-4" />
+                              </DropdownMenuTrigger>
+                              <DropdownMenuContent>
+                                {services.map(service => (
+                                  <DropdownMenuItem key={service.name} asChild>
+                                    <a href={service.href}>{service.name}</a>
+                                  </DropdownMenuItem>
+                                ))}
+                              </DropdownMenuContent>
                             </DropdownMenu>
                             <DropdownMenu>
                               <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors focus-visible:outline-none">
@@ -135,9 +160,9 @@ const Header = () => {
                               </DropdownMenuTrigger>
                               <DropdownMenuContent>
                                 {whoWeServe.map(item => (
-                                    <DropdownMenuItem key={item.name} asChild>
-                                        <a href={item.href}>{item.name}</a>
-                                    </DropdownMenuItem>
+                                  <DropdownMenuItem key={item.name} asChild>
+                                    <a href={item.href}>{item.name}</a>
+                                  </DropdownMenuItem>
                                 ))}
                               </DropdownMenuContent>
                             </DropdownMenu>
