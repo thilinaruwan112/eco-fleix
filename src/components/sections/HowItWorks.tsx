@@ -33,7 +33,7 @@ const HowItWorks = () => {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <Badge className="bg-primary/10 text-primary border-transparent mb-4 hover:bg-primary/10">Our Process</Badge>
@@ -46,11 +46,11 @@ const HowItWorks = () => {
         </div>
 
         <div className="relative">
-          <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -translate-y-1/2 -z-10"></div>
+          <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 dark:bg-gray-700 -translate-y-1/2 -z-10"></div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
             {steps.map((step, index) => (
               <div key={step.title} className="relative flex flex-col items-center text-center">
-                 <div className="bg-primary/10 rounded-full p-4 mb-4 ring-8 ring-white">
+                 <div className="bg-primary/10 rounded-full p-4 mb-4 ring-8 ring-background">
                     {step.icon}
                   </div>
                 <h3 className="text-xl font-bold text-foreground mb-2">{step.title}</h3>

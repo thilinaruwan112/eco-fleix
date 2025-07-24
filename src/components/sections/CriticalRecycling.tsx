@@ -28,7 +28,7 @@ const CriticalRecycling = () => {
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          <Card className="shadow-lg border-l-4 border-destructive bg-white">
+          <Card className="shadow-lg border-l-4 border-destructive bg-card">
             <CardContent className="p-8">
               <div className="flex items-center gap-4 mb-6">
                 <div className="bg-destructive/10 p-3 rounded-full">
@@ -46,7 +46,7 @@ const CriticalRecycling = () => {
               </ul>
             </CardContent>
           </Card>
-          <Card className="shadow-lg border-l-4 border-primary bg-white">
+          <Card className="shadow-lg border-l-4 border-primary bg-card">
             <CardContent className="p-8">
               <div className="flex items-center gap-4 mb-6">
                 <div className="bg-primary/10 p-3 rounded-full">

@@ -8,7 +8,7 @@ const PioneeringSustainable = () => {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="relative h-[450px] rounded-2xl overflow-hidden shadow-lg">

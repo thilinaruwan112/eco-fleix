@@ -16,7 +16,7 @@ const MissionVision = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl bg-white group">
+          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl bg-card group">
             <CardContent className="p-8 flex flex-col items-start gap-4">
               <div className="bg-primary/10 rounded-full p-3 mb-2 w-max group-hover:bg-primary transition-colors">
                 <Eye className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
@@ -29,7 +29,7 @@ const MissionVision = () => {
               </p>
             </CardContent>
           </Card>
-          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl bg-white group">
+          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl bg-card group">
             <CardContent className="p-8 flex flex-col items-start gap-4">
               <div className="bg-primary/10 rounded-full p-3 mb-2 w-max group-hover:bg-primary transition-colors">
                 <Check className="h-8 w-8 text-primary group-hover:text-white transition-colors" />

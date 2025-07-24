@@ -40,7 +40,7 @@ const CommonChallenges = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {challenges.map((challenge, index) => (
-            <Card key={index} className="text-left shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-2xl bg-white h-full transform hover:-translate-y-2 group">
+            <Card key={index} className="text-left shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-2xl bg-card h-full transform hover:-translate-y-2 group">
               <CardContent className="p-8 flex flex-col h-full">
                 <div className="bg-primary/10 rounded-full p-3 mb-6 w-max group-hover:bg-primary transition-colors duration-300">
                   {challenge.icon}

@@ -40,7 +40,7 @@ const Certifications = () => {
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {certificationItems.map((item, index) => (
-            <Card key={index} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl bg-white">
+            <Card key={index} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl bg-card">
               <CardContent className="p-8 flex flex-col items-center justify-center gap-4 h-full">
                 <div className="bg-primary/10 rounded-full p-4 mb-2">
                     {item.icon}

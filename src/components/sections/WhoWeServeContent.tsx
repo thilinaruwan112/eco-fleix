@@ -86,7 +86,7 @@ const CorporationsContent = () => {
 
         <section>
             <h3 className="text-2xl font-bold text-center mb-8">Client Testimonial</h3>
-             <Card className="max-w-3xl mx-auto shadow-xl rounded-2xl transform -rotate-1 bg-white">
+             <Card className="max-w-3xl mx-auto shadow-xl rounded-2xl transform -rotate-1 bg-card">
                 <CardContent className="p-8 relative text-center">
                     <Star className="h-16 w-16 text-primary/10 absolute top-6 left-6 -z-0" fill="currentColor"/>
                     <blockquote className="text-lg text-foreground italic relative z-10">
@@ -164,7 +164,7 @@ const GovernmentAgenciesContent = () => {
 
         <section>
             <h3 className="text-2xl font-bold text-center mb-8">Client Testimonial</h3>
-             <Card className="max-w-3xl mx-auto shadow-xl rounded-2xl transform rotate-1 bg-white">
+             <Card className="max-w-3xl mx-auto shadow-xl rounded-2xl transform rotate-1 bg-card">
                 <CardContent className="p-8 relative text-center">
                     <Star className="h-16 w-16 text-primary/10 absolute top-6 right-6 -z-0" fill="currentColor"/>
                     <blockquote className="text-lg text-foreground italic relative z-10">
@@ -242,7 +242,7 @@ const EducationalInstitutionsContent = () => {
 
         <section>
             <h3 className="text-2xl font-bold text-center mb-8">Client Testimonial</h3>
-             <Card className="max-w-3xl mx-auto shadow-xl rounded-2xl transform -rotate-1 bg-white">
+             <Card className="max-w-3xl mx-auto shadow-xl rounded-2xl transform -rotate-1 bg-card">
                 <CardContent className="p-8 relative text-center">
                     <Star className="h-16 w-16 text-primary/10 absolute top-6 left-6 -z-0" fill="currentColor"/>
                     <blockquote className="text-lg text-foreground italic relative z-10">
@@ -319,7 +319,7 @@ const FinancialInstitutionsContent = () => {
 
         <section>
             <h3 className="text-2xl font-bold text-center mb-8">Client Testimonial</h3>
-             <Card className="max-w-3xl mx-auto shadow-xl rounded-2xl transform rotate-1 bg-white">
+             <Card className="max-w-3xl mx-auto shadow-xl rounded-2xl transform rotate-1 bg-card">
                 <CardContent className="p-8 relative text-center">
                     <Star className="h-16 w-16 text-primary/10 absolute top-6 right-6 -z-0" fill="currentColor"/>
                     <blockquote className="text-lg text-foreground italic relative z-10">
@@ -397,7 +397,7 @@ const HealthcareMedicalContent = () => {
 
         <section>
             <h3 className="text-2xl font-bold text-center mb-8">Client Testimonial</h3>
-             <Card className="max-w-3xl mx-auto shadow-xl rounded-2xl transform -rotate-1 bg-white">
+             <Card className="max-w-3xl mx-auto shadow-xl rounded-2xl transform -rotate-1 bg-card">
                 <CardContent className="p-8 relative text-center">
                     <Star className="h-16 w-16 text-primary/10 absolute top-6 left-6 -z-0" fill="currentColor"/>
                     <blockquote className="text-lg text-foreground italic relative z-10">
@@ -452,7 +452,7 @@ const WhoWeServeContent = () => {
   }
 
   return (
-    <div className="bg-white">
+    <div className="bg-background">
         <div className="container mx-auto px-4 py-16 md:py-24">
             {activeSector ? (
                 <div>
@@ -475,7 +475,7 @@ const WhoWeServeContent = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {sectors.map((sector) => (
                             <button key={sector.id} onClick={() => handleSetActiveSector(sector.id)} className="block group text-left">
-                                <Card className="text-left shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-2xl bg-white h-full transform hover:-translate-y-2">
+                                <Card className="text-left shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-2xl bg-card h-full transform hover:-translate-y-2">
                                     <CardContent className="p-8 flex flex-col h-full">
                                     <div className="bg-primary/10 rounded-full p-3 mb-4 w-max">
                                         {sector.icon}

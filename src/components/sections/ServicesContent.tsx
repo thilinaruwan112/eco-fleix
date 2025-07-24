@@ -63,7 +63,7 @@ const ItAssetDispositionContent = () => {
             <section>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {features.map(feature => (
-                        <Card key={feature.title} className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <Card key={feature.title} className="shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card">
                            <CardContent className="p-6 flex items-start gap-4">
                                <div className="flex-shrink-0 bg-muted rounded-full p-3">{feature.icon}</div>
                                <div>
@@ -96,7 +96,7 @@ const ItAssetDispositionContent = () => {
             </section>
 
             <section>
-                <Card className="border-l-4 border-primary shadow-lg">
+                <Card className="border-l-4 border-primary shadow-lg bg-card">
                     <CardContent className="p-8">
                        <div className="flex items-start gap-6">
                             <Users className="h-10 w-10 text-primary flex-shrink-0 mt-1" />
@@ -155,7 +155,7 @@ const ItAssetRemanufacturingContent = () => {
         </section>
 
         <section>
-            <Card className="bg-white/60 shadow-lg">
+            <Card className="bg-card/60 shadow-lg">
                 <CardContent className="p-8">
                     <h3 className="text-2xl font-bold mb-6 text-center">The Advantages of Remanufacturing</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -358,7 +358,7 @@ const DataDestructionContent = () => (
     </section>
 
     <section>
-        <Card className="bg-white/60 shadow-lg">
+        <Card className="bg-card/60 shadow-lg">
             <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-6 text-center">Key Benefits</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -379,7 +379,7 @@ const DataDestructionContent = () => (
     </section>
 
     <section className="grid md:grid-cols-2 gap-8">
-        <Card className="shadow-lg">
+        <Card className="shadow-lg bg-card">
             <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-4">
                     <Settings className="h-7 w-7 text-primary" />
@@ -395,7 +395,7 @@ const DataDestructionContent = () => (
                 </ul>
             </CardContent>
         </Card>
-        <Card className="shadow-lg">
+        <Card className="shadow-lg bg-card">
              <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-4">
                     <FileText className="h-7 w-7 text-primary" />
@@ -414,7 +414,7 @@ const DataDestructionContent = () => (
     </section>
     
     <section>
-        <Card className="shadow-lg">
+        <Card className="shadow-lg bg-card">
             <CardContent className="p-8">
                 <h3 className="text-2xl font-bold">Safeguarding Your Business</h3>
                 <p className="mt-4 text-muted-foreground">
@@ -428,7 +428,7 @@ const DataDestructionContent = () => (
     </section>
 
     <section>
-         <Card className="bg-white/60 shadow-lg">
+         <Card className="bg-card/60 shadow-lg">
             <CardContent className="p-8 text-center">
                 <h3 className="text-2xl font-bold">Your Data, Your Control</h3>
                 <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
@@ -479,7 +479,7 @@ const ServicesContent = () => {
   }
 
   return (
-    <div className="bg-white">
+    <div className="bg-background">
         <div className="container mx-auto px-4 py-16 md:py-24">
             {activeService ? (
                 <div>
@@ -501,7 +501,7 @@ const ServicesContent = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                         {services.map((service) => (
                             <button key={service.id} onClick={() => setActiveService(service.id)} className="block group text-left">
-                                <Card className="text-left shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-2xl bg-white h-full transform hover:-translate-y-2">
+                                <Card className="text-left shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-2xl bg-card h-full transform hover:-translate-y-2">
                                     <CardContent className="p-8 flex flex-col h-full">
                                     <div className="bg-primary/10 rounded-full p-3 mb-4 w-max">
                                         {service.icon}

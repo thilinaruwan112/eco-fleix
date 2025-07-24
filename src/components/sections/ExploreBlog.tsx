@@ -15,7 +15,7 @@ const blogPosts = [
     date: 'Mar 10, 2025',
     readTime: '6 min',
     category: 'Data Security',
-    categoryColor: 'bg-red-100 text-red-800',
+    categoryColor: 'bg-red-100 text-red-800 dark:bg-red-900/40 dark:text-red-300',
   },
   {
     image: 'https://placehold.co/600x400.png',
@@ -27,7 +27,7 @@ const blogPosts = [
     date: 'Mar 8, 2025',
     readTime: '5 min',
     category: 'IT Disposal',
-    categoryColor: 'bg-blue-100 text-blue-800',
+    categoryColor: 'bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300',
   },
   {
     image: 'https://placehold.co/600x400.png',
@@ -39,7 +39,7 @@ const blogPosts = [
     date: 'Mar 5, 2025',
     readTime: '7 min',
     category: 'Sustainability',
-    categoryColor: 'bg-green-100 text-green-800',
+    categoryColor: 'bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-300',
   },
   {
     image: 'https://placehold.co/600x400.png',
@@ -51,7 +51,7 @@ const blogPosts = [
     date: 'Mar 3, 2025',
     readTime: '8 min',
     category: 'Compliance',
-    categoryColor: 'bg-yellow-100 text-yellow-800',
+    categoryColor: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-300',
   },
   {
     image: 'https://placehold.co/600x400.png',
@@ -63,7 +63,7 @@ const blogPosts = [
     date: 'Mar 1, 2025',
     readTime: '5 min',
     category: 'Consumer Guide',
-    categoryColor: 'bg-indigo-100 text-indigo-800',
+    categoryColor: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-300',
   },
   {
     image: 'https://placehold.co/600x400.png',
@@ -75,14 +75,14 @@ const blogPosts = [
     date: 'Feb 28, 2025',
     readTime: '6 min',
     category: 'Economy',
-    categoryColor: 'bg-purple-100 text-purple-800',
+    categoryColor: 'bg-purple-100 text-purple-800 dark:bg-purple-900/40 dark:text-purple-300',
   },
 ];
 
 
 const ExploreBlog = () => {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-left mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">

@@ -45,7 +45,7 @@ const ProcessInAction = () => {
           </div>
         </div>
 
-        <Card className="shadow-xl rounded-2xl">
+        <Card className="shadow-xl rounded-2xl bg-card">
             <CardContent className="p-8 grid md:grid-cols-3 gap-8">
                 <div className="space-y-2">
                     <h3 className="font-bold text-lg text-foreground">Challenge</h3>

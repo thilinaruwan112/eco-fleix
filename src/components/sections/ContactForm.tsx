@@ -16,7 +16,7 @@ const ContactForm = () => {
     <section className="py-16 md:py-24 bg-muted/40">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          <Card className="shadow-lg bg-white p-8 rounded-2xl">
+          <Card className="shadow-lg bg-card p-8 rounded-2xl">
             <Tabs defaultValue="send-message">
               <TabsList className="grid w-full grid-cols-2">
                 <TabsTrigger value="send-message">Send Message</TabsTrigger>
@@ -75,7 +75,7 @@ const ContactForm = () => {
               </TabsContent>
             </Tabs>
           </Card>
-          <Card className="shadow-lg bg-white p-8 rounded-2xl">
+          <Card className="shadow-lg bg-card p-8 rounded-2xl">
             <h3 className="text-2xl font-bold text-foreground mb-6">Contact Information</h3>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
@@ -103,14 +103,14 @@ const ContactForm = () => {
             </div>
              <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full mt-8">
               <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="dubai">Dubai Headquarters</TabsTrigger>
-                <TabsTrigger value="sharjah">Sharjah</TabsTrigger>
+                <TabsTrigger value="dubai">Dubai Office</TabsTrigger>
+                <TabsTrigger value="sharjah">Sharjah Office</TabsTrigger>
               </TabsList>
               <TabsContent value="dubai">
                 <div className="mt-4">
                     <div className="flex items-center gap-3 mb-4">
                         <MapPin className="h-5 w-5 text-primary" />
-                        <p className="text-muted-foreground">Business Bay, Dubai, UAE</p>
+                        <p className="text-muted-foreground">Raja Building, Bur Dubai, Dubai</p>
                     </div>
                     <div className="aspect-video w-full rounded-lg overflow-hidden border">
                          <Image src="https://placehold.co/600x400.png" alt="Google Map" width={600} height={400} data-ai-hint="map" className="w-full h-full object-cover"/>
@@ -121,7 +121,7 @@ const ContactForm = () => {
                  <div className="mt-4">
                     <div className="flex items-center gap-3 mb-4">
                         <MapPin className="h-5 w-5 text-primary" />
-                        <p className="text-muted-foreground">Al Qasimia, Sharjah, UAE</p>
+                        <p className="text-muted-foreground">Al Sajaa Industrial Area, Sharjah</p>
                     </div>
                     <div className="aspect-video w-full rounded-lg overflow-hidden border">
                          <Image src="https://placehold.co/600x400.png" alt="Google Map" width={600} height={400} data-ai-hint="map" className="w-full h-full object-cover"/>
