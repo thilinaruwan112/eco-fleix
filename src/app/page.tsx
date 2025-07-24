@@ -1,3 +1,5 @@
+'use client';
+
 import Hero from '@/components/sections/Hero';
 import About from '@/components/sections/About';
 import WhatWeAccept from '@/components/sections/WhatWeAccept';
@@ -13,43 +15,43 @@ import ServicesContent from '@/components/sections/ServicesContent';
 const acceptedItems = [
   {
     icon: <Laptop />,
-    title: 'Desktop, Laptop & Computer Equipment',
-    description: 'Desktops, laptops, and all related computer equipment.',
+    title: 'accepted_item_1_title',
+    description: 'accepted_item_1_desc',
   },
   {
     icon: <Smartphone />,
-    title: 'Smartphones, Tablets & Cell Phones',
-    description: 'Smartphones, tablets, cell phones, and accessories.',
+    title: 'accepted_item_2_title',
+    description: 'accepted_item_2_desc',
   },
   {
     icon: <Camera />,
-    title: 'Camcorders & Digital Cameras',
-    description: 'Camcorders, digital cameras, and other video equipment.',
+    title: 'accepted_item_3_title',
+    description: 'accepted_item_3_desc',
   },
   {
     icon: <Monitor />,
-    title: 'LCD Monitors & Televisions',
-    description: 'Monitors, televisions, and other display equipment.',
+    title: 'accepted_item_4_title',
+    description: 'accepted_item_4_desc',
   },
   {
     icon: <Shield />,
-    title: 'Security Devices',
-    description: 'Security cameras, alarm systems, and other security electronics.',
+    title: 'accepted_item_5_title',
+    description: 'accepted_item_5_desc',
   },
   {
     icon: <Network />,
-    title: 'Network Switches & Equipment',
-    description: 'Routers, switches, modems, and other networking gear.',
+    title: 'accepted_item_6_title',
+    description: 'accepted_item_6_desc',
   },
   {
     icon: <Headphones />,
-    title: 'Audio & Sound Equipments',
-    description: 'Headphones, speakers, amplifiers, and other audio devices.',
+    title: 'accepted_item_7_title',
+    description: 'accepted_item_7_desc',
   },
   {
     icon: <Gamepad2 />,
-    title: 'Games & Game Accessories',
-    description: 'Gaming consoles, controllers, and other gaming accessories.',
+    title: 'accepted_item_8_title',
+    description: 'accepted_item_8_desc',
   },
 ];
 

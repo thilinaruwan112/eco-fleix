@@ -1,6 +1,9 @@
+'use client';
+
 import { Card, CardContent } from '@/components/ui/card';
 import React from 'react';
 import { Badge } from '../ui/badge';
+import { useTranslation } from '@/hooks/use-translation';
 
 interface AcceptedItem {
   icon: React.ReactNode;
@@ -14,16 +17,17 @@ interface WhatWeAcceptProps {
 }
 
 const WhatWeAccept: React.FC<WhatWeAcceptProps> = ({ title, items }) => {
+  const { t } = useTranslation();
   return (
     <section className="bg-gradient-to-br from-green-50 to-blue-50 py-16 md:py-24 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
-           <Badge className="bg-primary/10 text-primary border-transparent mb-4 hover:bg-primary/10">WHAT WE RECYCLE</Badge>
+           <Badge className="bg-primary/10 text-primary border-transparent mb-4 hover:bg-primary/10">{t('what_we_recycle')}</Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            {title}
+            {t(title)}
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            We accept a comprehensive range of electronic items, ensuring they are recycled responsibly and sustainably.
+            {t('we_accept_comprehensive_range')}
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -34,10 +38,10 @@ const WhatWeAccept: React.FC<WhatWeAcceptProps> = ({ title, items }) => {
                   {React.cloneElement(item.icon as React.ReactElement, { className: "h-8 w-8 text-primary group-hover:text-white transition-colors duration-300"})}
                 </div>
                 <h3 className="text-xl font-bold text-card-foreground mb-2 flex-grow">
-                  {item.title}
+                  {t(item.title)}
                 </h3>
                 <p className="text-muted-foreground">
-                  {item.description}
+                  {t(item.description)}
                 </p>
               </CardContent>
             </Card>

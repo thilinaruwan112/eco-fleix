@@ -1,30 +1,35 @@
+'use client';
+
 import { Card, CardContent } from '@/components/ui/card';
 import { TriangleAlert, Leaf, ShieldCheck, Recycle } from 'lucide-react';
 import { Badge } from '../ui/badge';
-
-const challenges = [
-  'E-waste contains toxic materials like lead and mercury that are harmful to the environment and human health.',
-  'Improper disposal poses significant data security risks, exposing sensitive personal and corporate information.',
-  'The volume of electronic waste is growing exponentially worldwide, creating a massive environmental challenge.',
-];
-
-const solutions = [
-    { text: 'Certified environmentally safe processing to neutralize hazardous materials.', icon: <Leaf className="h-5 w-5 text-primary" /> },
-    { text: 'Secure, certified data destruction protocols that guarantee information security.', icon: <ShieldCheck className="h-5 w-5 text-primary" /> },
-    { text: 'State-of-the-art recycling technology for maximum material recovery and reuse.', icon: <Recycle className="h-5 w-5 text-primary" /> },
-];
+import { useTranslation } from '@/hooks/use-translation';
 
 const CriticalRecycling = () => {
+  const { t } = useTranslation();
+
+  const challenges = [
+    t('critical_recycling_challenge_1'),
+    t('critical_recycling_challenge_2'),
+    t('critical_recycling_challenge_3'),
+  ];
+  
+  const solutions = [
+      { text: t('critical_recycling_solution_1'), icon: <Leaf className="h-5 w-5 text-primary" /> },
+      { text: t('critical_recycling_solution_2'), icon: <ShieldCheck className="h-5 w-5 text-primary" /> },
+      { text: t('critical_recycling_solution_3'), icon: <Recycle className="h-5 w-5 text-primary" /> },
+  ];
+
   return (
     <section className="bg-muted/40 py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <Badge className="bg-primary/10 text-primary border-transparent mb-4 hover:bg-primary/10">Why It Matters</Badge>
+          <Badge className="bg-primary/10 text-primary border-transparent mb-4 hover:bg-primary/10">{t('why_it_matters')}</Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            Why Responsible IT Scrap Recycling is Critical
+            {t('critical_recycling_title')}
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Understanding the challenges of e-waste and our effective solutions is key to protecting our planet and your data.
+            {t('critical_recycling_desc')}
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -34,7 +39,7 @@ const CriticalRecycling = () => {
                 <div className="bg-destructive/10 p-3 rounded-full">
                   <TriangleAlert className="h-7 w-7 text-destructive" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground">The Challenge</h3>
+                <h3 className="text-2xl font-bold text-foreground">{t('the_challenge')}</h3>
               </div>
               <ul className="space-y-4">
                 {challenges.map((challenge, index) => (
@@ -52,7 +57,7 @@ const CriticalRecycling = () => {
                 <div className="bg-primary/10 p-3 rounded-full">
                   <Recycle className="h-7 w-7 text-primary" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground">Our Solution</h3>
+                <h3 className="text-2xl font-bold text-foreground">{t('our_solution')}</h3>
               </div>
               <ul className="space-y-4">
                 {solutions.map((solution, index) => (

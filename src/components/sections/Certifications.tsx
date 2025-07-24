@@ -1,41 +1,46 @@
+'use client';
+
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Shield, Recycle, Award, CheckCircle } from 'lucide-react';
-
-const certificationItems = [
-  {
-    icon: <CheckCircle className="h-8 w-8 text-primary" />,
-    title: 'Quality Management',
-    description: 'ISO 9001',
-  },
-  {
-    icon: <Recycle className="h-8 w-8 text-primary" />,
-    title: 'Environmental Management',
-    description: 'ISO 14001',
-  },
-  {
-    icon: <Shield className="h-8 w-8 text-primary" />,
-    title: 'Information Security',
-    description: 'ISO 27001',
-  },
-  {
-    icon: <Award className="h-8 w-8 text-primary" />,
-    title: 'Responsible Recycling',
-    description: 'R2 Certified',
-  },
-];
+import { useTranslation } from '@/hooks/use-translation';
 
 const Certifications = () => {
+  const { t } = useTranslation();
+
+  const certificationItems = [
+    {
+      icon: <CheckCircle className="h-8 w-8 text-primary" />,
+      title: t('certification_1_title'),
+      description: 'ISO 9001',
+    },
+    {
+      icon: <Recycle className="h-8 w-8 text-primary" />,
+      title: t('certification_2_title'),
+      description: 'ISO 14001',
+    },
+    {
+      icon: <Shield className="h-8 w-8 text-primary" />,
+      title: t('certification_3_title'),
+      description: 'ISO 27001',
+    },
+    {
+      icon: <Award className="h-8 w-8 text-primary" />,
+      title: t('certification_4_title'),
+      description: 'R2 Certified',
+    },
+  ];
+
   return (
     <section className="bg-muted/40 py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <Badge variant="secondary" className="mb-4 bg-primary/10 text-primary hover:bg-primary/10">Our Credentials</Badge>
+          <Badge variant="secondary" className="mb-4 bg-primary/10 text-primary hover:bg-primary/10">{t('our_credentials')}</Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            Certifications & Compliance
+            {t('certifications_title')}
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            We adhere to the highest industry standards for quality, security, and environmental responsibility, ensuring your peace of mind.
+            {t('certifications_desc')}
           </p>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">

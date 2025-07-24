@@ -6,7 +6,7 @@ import Footer from '@/components/layout/Footer';
 import WhatsappButton from '@/components/layout/WhatsappButton';
 import Preloader from '@/components/layout/Preloader';
 import { ThemeProvider } from '@/components/layout/ThemeProvider';
-import { TranslationProvider } from '@/hooks/use-translation';
+import { TranslationProvider } from '@/hooks/use-translation.tsx';
 
 export const metadata: Metadata = {
   title: 'EcoCollect Dubai',

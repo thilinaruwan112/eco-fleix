@@ -1,18 +1,22 @@
+'use client';
+
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '../ui/badge';
+import { useTranslation } from '@/hooks/use-translation';
 
 const Testimonials = () => {
+  const { t } = useTranslation();
   return (
     <section className="bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <Badge className="bg-primary/10 text-primary border-transparent mb-4 hover:bg-primary/10">Client Feedback</Badge>
+          <Badge className="bg-primary/10 text-primary border-transparent mb-4 hover:bg-primary/10">{t('client_feedback')}</Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            Trusted by Leading Organizations
+            {t('testimonials_title')}
           </h2>
            <p className="mt-4 text-lg text-muted-foreground">
-            See what our clients have to say about our professional, secure, and responsible e-waste management services.
+            {t('testimonials_desc')}
           </p>
         </div>
         <div className="max-w-3xl mx-auto">
@@ -25,7 +29,7 @@ const Testimonials = () => {
               </svg>
 
               <blockquote className="text-xl text-card-foreground font-medium italic relative z-10">
-                "ECO FLEIX provided exceptional service for our office equipment disposal. Their team was professional, punctual, and provided detailed certificates for all recycled items. Highly recommended for any business looking for responsible e-waste management."
+                "{t('testimonial_quote')}"
               </blockquote>
               <div className="mt-8 flex items-center justify-center gap-4">
                 <Avatar className="h-12 w-12">
@@ -33,8 +37,8 @@ const Testimonials = () => {
                   <AvatarFallback>AM</AvatarFallback>
                 </Avatar>
                 <div>
-                  <p className="font-semibold text-lg text-card-foreground">Ahmed Al Mansouri</p>
-                  <p className="text-muted-foreground">IT Director, TechCorp UAE</p>
+                  <p className="font-semibold text-lg text-card-foreground">{t('testimonial_author')}</p>
+                  <p className="text-muted-foreground">{t('testimonial_author_title')}</p>
                 </div>
               </div>
             </CardContent>

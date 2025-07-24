@@ -13,29 +13,31 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay"
-
-const slides = [
-  {
-    image: 'https://content-provider.payshia.com/eco-fleix/hero-1.webp',
-    title: 'Sustainable E-Waste Recycling for a Greener Dubai',
-    description: 'Professional electronic waste recycling services for businesses and organizations. Secure, certified, and environmentally responsible disposal.',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1581888224138-516a8a1a3e68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxlLXdhc3RlJTIwbWFjaGluZXJ5fGVufDB8fHx8fDE3NTM0NTQ0NjF8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    title: 'Secure Data Destruction for Your Peace of Mind',
-    description: 'We provide certified data wiping and physical destruction services to ensure your sensitive information is permanently erased.',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxidXNpbmVzcyUyMHRlYW0lMjBjb2xsYWJvcmF0aW9ufGVufDB8fHx8fDE3NTM0Mzg4NzN8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    title: 'Corporate IT Asset Disposition Solutions',
-    description: 'Customized ITAD programs to manage your retired assets, maximize value recovery, and ensure full environmental compliance.',
-  },
-];
+import { useTranslation } from '@/hooks/use-translation';
 
 const Hero = () => {
+    const { t } = useTranslation();
     const phoneNumber = '+971529058388';
     const message = "Hello! I'm interested in your e-waste recycling services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    const slides = [
+      {
+        image: 'https://content-provider.payshia.com/eco-fleix/hero-1.webp',
+        title: t('hero_title_1'),
+        description: t('hero_desc_1'),
+      },
+      {
+        image: 'https://images.unsplash.com/photo-1581888224138-516a8a1a3e68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxlLXdhc3RlJTIwbWFjaGluZXJ5fGVufDB8fHx8fDE3NTM0NTQ0NjF8MA&ixlib=rb-4.1.0&q=80&w=1080',
+        title: t('hero_title_2'),
+        description: t('hero_desc_2'),
+      },
+      {
+        image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxidXNpbmVzcyUyMHRlYW0lMjBjb2xsYWJvcmF0aW9ufGVufDB8fHx8fDE3NTM0Mzg4NzN8MA&ixlib=rb-4.1.0&q=80&w=1080',
+        title: t('hero_title_3'),
+        description: t('hero_desc_3'),
+      },
+    ];
 
   return (
       <section className="w-full">
@@ -71,12 +73,12 @@ const Hero = () => {
                       <div className="mt-8 md:mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
                         <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                           <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto">
-                            Schedule Pickup Today <ArrowRight className="ml-2 h-5 w-5" />
+                            {t('schedule_pickup_today')} <ArrowRight className="ml-2 h-5 w-5" />
                           </Button>
                         </a>
                         <a href="/about" className="w-full sm:w-auto">
                           <Button size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-white hover:text-primary w-full sm:w-auto">
-                            Learn More
+                            {t('learn_more')}
                           </Button>
                         </a>
                       </div>

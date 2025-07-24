@@ -1,7 +1,11 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { useTranslation } from '@/hooks/use-translation';
 
 const Cta = () => {
+    const { t } = useTranslation();
     const phoneNumber = '+971529058388';
     const message = "Hello! I'm interested in your e-waste recycling services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
@@ -11,21 +15,21 @@ const Cta = () => {
         <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-8">
             <div className="max-w-xl">
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                    Ready to Start Your E-Waste Journey?
+                    {t('cta_title')}
                 </h2>
                 <p className="mt-4 text-lg text-primary-foreground/90">
-                    Let us help you manage your electronic waste with our proven, secure, and environmentally responsible process.
+                    {t('cta_desc')}
                 </p>
             </div>
             <div className="flex-shrink-0 flex items-center gap-4">
                 <a href="/contact">
                     <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary">
-                        Contact Us
+                        {t('contact_us')}
                     </Button>
                 </a>
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                     <Button size="lg" variant="secondary" className="text-primary hover:bg-gray-200">
-                        Get a Quote
+                        {t('get_a_quote')}
                     </Button>
                 </a>
             </div>

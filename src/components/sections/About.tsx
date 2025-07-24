@@ -1,28 +1,32 @@
+'use client';
+
 import { CheckCircle, Users, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-
-const features = [
-  'Certified data destruction services',
-  'EPA compliant recycling processes',
-  'Free pickup for bulk quantities',
-  'Detailed reporting and certificates',
-];
+import { useTranslation } from '@/hooks/use-translation';
 
 const About = () => {
+  const { t } = useTranslation();
+  
+  const features = [
+    t('about_feature_1'),
+    t('about_feature_2'),
+    t('about_feature_3'),
+    t('about_feature_4'),
+  ];
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <Badge className="bg-primary/10 text-primary border-transparent hover:bg-primary/10">Who We Are</Badge>
+            <Badge className="bg-primary/10 text-primary border-transparent hover:bg-primary/10">{t('who_we_are')}</Badge>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-              Responsible & Reliable E-Waste Recycling Partner
+              {t('about_title')}
             </h2>
             <p className="text-lg text-muted-foreground">
-              At ECO FLEIX, we are dedicated to providing secure and environmentally conscious solutions for your electronic waste. Our certified processes ensure your data is safe and your old electronics are recycled to the highest standards.
+              {t('about_desc')}
             </p>
             <div className="space-y-3">
               {features.map((feature, index) => (
@@ -34,7 +38,7 @@ const About = () => {
             </div>
              <a href="/about">
               <Button variant="outline" className="mt-4">
-                Learn More About Us <ArrowRight className="ml-2 h-4 w-4" />
+                {t('learn_more_about_us')} <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </a>
           </div>
@@ -51,10 +55,10 @@ const About = () => {
               <div className="absolute bottom-0 left-0 p-6 text-white">
                 <Users className="h-10 w-10 mb-2" />
                 <h3 className="text-xl font-bold">
-                  Our Professional Team
+                  {t('our_professional_team')}
                 </h3>
                 <p className="mt-1 text-white/90">
-                  Certified technicians ensuring secure handling of your electronic waste.
+                  {t('our_professional_team_desc')}
                 </p>
               </div>
           </div>

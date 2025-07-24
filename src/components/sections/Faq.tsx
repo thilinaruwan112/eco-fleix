@@ -1,36 +1,42 @@
+'use client';
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '../ui/badge';
+import { useTranslation } from '@/hooks/use-translation';
 
-const faqs = [
+
+const Faq = () => {
+  const { t } = useTranslation();
+
+  const faqs = [
     {
-        question: 'What types of electronics do you accept?',
-        answer: 'We accept a wide range of electronic devices, including laptops, smartphones, tablets, desktop computers, monitors, printers, cables, and more. Please see our "What We Accept" section for a more comprehensive list.'
+        question: t('faq_1_question'),
+        answer: t('faq_1_answer')
     },
     {
-        question: 'Is pickup service free?',
-        answer: 'Yes, our pickup service is completely free for qualifying quantities of e-waste within our service area in Dubai. Contact us with your list of items to see if you qualify.'
+        question: t('faq_2_question'),
+        answer: t('faq_2_answer')
     },
     {
-        question: 'How do you ensure data security?',
-        answer: 'We take data security very seriously. We offer certified data destruction services that are compliant with international standards, ensuring all your sensitive information is securely and permanently erased before recycling.'
+        question: t('faq_3_question'),
+        answer: t('faq_3_answer')
     },
     {
-        question: 'What happens to my e-waste after it\'s collected?',
-        answer: 'Your e-waste is transported to our secure facility where it is sorted, dismantled, and processed. We recover valuable materials for reuse in new products and safely dispose of any hazardous components according to environmental regulations.'
+        question: t('faq_4_question'),
+        answer: t('faq_4_answer')
     }
 ]
 
-const Faq = () => {
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
          <div className="text-center max-w-3xl mx-auto mb-12">
-          <Badge className="bg-primary/10 text-primary border-transparent mb-4 hover:bg-primary/10">Need Help?</Badge>
+          <Badge className="bg-primary/10 text-primary border-transparent mb-4 hover:bg-primary/10">{t('need_help')}</Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            Frequently Asked Questions
+            {t('faq_title')}
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Find answers to common questions about our e-waste recycling services.
+            {t('faq_desc')}
           </p>
         </div>
         <div className="max-w-4xl mx-auto">
