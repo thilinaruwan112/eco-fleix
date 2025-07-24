@@ -1,17 +1,21 @@
+'use client';
+
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { useTranslation } from '@/hooks/use-translation';
 
 const ProcessInAction = () => {
+  const { t } = useTranslation();
   return (
     <section className="py-16 md:py-24 bg-muted/40">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            Process in Action
+            {t('process_in_action_title')}
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Real results from our comprehensive e-waste management process
+            {t('process_in_action_desc')}
           </p>
         </div>
 
@@ -48,21 +52,21 @@ const ProcessInAction = () => {
         <Card className="shadow-xl rounded-2xl bg-card">
             <CardContent className="p-8 grid md:grid-cols-3 gap-8">
                 <div className="space-y-2">
-                    <h3 className="font-bold text-lg text-foreground">Challenge</h3>
+                    <h3 className="font-bold text-lg text-foreground">{t('challenge')}</h3>
                     <p className="text-muted-foreground text-sm">
-                        A major financial corporation needed to securely dispose of 500+ workstations containing sensitive client data while maintaining compliance with federal regulations.
+                        {t('process_in_action_challenge')}
                     </p>
                 </div>
                  <div className="space-y-2">
-                    <h3 className="font-bold text-lg text-foreground">Solution</h3>
+                    <h3 className="font-bold text-lg text-foreground">{t('solution')}</h3>
                     <p className="text-muted-foreground text-sm">
-                        Our team provided on-site data destruction, secure transport, and complete material recovery with full documentation and compliance reporting.
+                        {t('process_in_action_solution')}
                     </p>
                 </div>
                  <div className="space-y-2">
-                    <h3 className="font-bold text-lg text-foreground">Results</h3>
+                    <h3 className="font-bold text-lg text-foreground">{t('results')}</h3>
                     <p className="text-muted-foreground text-sm">
-                        100% data security compliance, 95% material recovery rate, and $50,000 in recovered value returned to the client.
+                        {t('process_in_action_results')}
                     </p>
                 </div>
             </CardContent>

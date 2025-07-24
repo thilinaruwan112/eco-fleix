@@ -7,56 +7,31 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Check, ShieldCheck, Trash2, Shield, AlertTriangle, Settings, FileText, Eye, HelpCircle, Clock, RefreshCw, Box, Package, Recycle, CheckCircle, DollarSign, Leaf, Globe, Settings2, Truck, BarChart3, HardDrive, Cpu, Wrench, CheckSquare, Search, Award, Users, BookUser, BarChartHorizontal, ArrowRight } from 'lucide-react';
 import { Badge } from '../ui/badge';
 import Image from 'next/image';
+import { useTranslation } from '@/hooks/use-translation';
 
 const services = [
-  { id: 'it-asset-remarketing', name: 'IT Asset Remarketing', icon: <Recycle className="h-8 w-8 text-primary" />, description: 'Maximize value from retired IT assets through strategic resale and redeployment.' },
-  { id: 'it-asset-remanufacturing', name: 'IT Asset Remanufacturing', icon: <RefreshCw className="h-8 w-8 text-primary" />, description: 'Breathe new life into aging IT hardware by restoring it to like-new condition.' },
-  { id: 'it-asset-disposition', name: 'IT Asset Disposition', icon: <Package className="h-8 w-8 text-primary" />, description: 'Secure and sustainable management of retired technology assets and data.' },
-  { id: 'data-destruction', name: 'Data Destruction', icon: <ShieldCheck className="h-8 w-8 text-primary" />, description: 'Ensure complete data elimination from all storage devices with certified processes.' },
+  { id: 'it-asset-remarketing', name: 'it_asset_remarketing', icon: <Recycle className="h-8 w-8 text-primary" />, description: 'it_asset_remarketing_desc' },
+  { id: 'it-asset-remanufacturing', name: 'it_asset_remanufacturing', icon: <RefreshCw className="h-8 w-8 text-primary" />, description: 'it_asset_remanufacturing_desc' },
+  { id: 'it-asset-disposition', name: 'it_asset_disposition', icon: <Package className="h-8 w-8 text-primary" />, description: 'it_asset_disposition_desc' },
+  { id: 'data-destruction', name: 'data_destruction', icon: <ShieldCheck className="h-8 w-8 text-primary" />, description: 'data_destruction_desc' },
 ];
-
-const keyBenefits = [
-  { icon: <ShieldCheck className="h-8 w-8 text-green-700" />, title: 'Data Security', description: 'Complete protection of sensitive information' },
-  { icon: <Shield className="h-8 w-8 text-blue-700" />, title: 'Compliance', description: 'Meet regulatory requirements' },
-  { icon: <AlertTriangle className="h-8 w-8 text-green-700" />, title: 'Risk Mitigation', description: 'Eliminate data breach risks' },
-  { icon: <Trash2 className="h-8 w-8 text-blue-700" />, title: 'Environmental Responsibility', description: 'Eco-friendly disposal methods' },
-];
-
-const destructionMethods = [
-  'Physical Hard Drive Shredding',
-  'Degaussing Technology',
-  'Software-based Data Wiping',
-  'SSD Destruction Services',
-];
-
-const comprehensiveSolutions = [
-  'Certificate of Destruction',
-  'Chain of Custody Documentation',
-  'On-site and Off-site Services',
-  'Compliance Reporting',
-];
-
-const yourDataYourControlItems = [
-    { icon: <Eye className="h-8 w-8 text-primary" />, title: 'Witness Destruction' },
-    { icon: <HelpCircle className="h-8 w-8 text-primary" />, title: 'Certified Documentation' },
-    { icon: <Clock className="h-8 w-8 text-primary" />, title: 'Scheduled Services' },
-]
 
 const ItAssetDispositionContent = () => {
+    const { t } = useTranslation();
     const features = [
-        { icon: <Leaf className="h-7 w-7 text-green-600" />, title: 'Eco-Friendly Approach', description: 'We prioritize sustainable practices by maximizing asset reuse and responsible recycling to minimize e-waste and support a healthier planet.' },
-        { icon: <Clock className="h-7 w-7 text-blue-600" />, title: 'Streamlined Process', description: 'Our efficient, hassle-free process covers everything from inventory assessment to final reporting, letting you focus on your core operations.' },
-        { icon: <Shield className="h-7 w-7 text-red-600" />, title: 'Protect Your Data and Reputation', description: 'Complete data eradication from your retired devices protects your reputation and ensures compliance with data protection standards.' },
-        { icon: <BookUser className="h-7 w-7 text-yellow-600" />, title: 'Compliance and Accountability', description: 'We adhere to GDPR, HIPAA, and other regulations, ensuring full compliance and providing transparent accountability throughout the process.' },
+        { icon: <Leaf className="h-7 w-7 text-green-600" />, title: 'itad_feature_1_title', description: 'itad_feature_1_desc' },
+        { icon: <Clock className="h-7 w-7 text-blue-600" />, title: 'itad_feature_2_title', description: 'itad_feature_2_desc' },
+        { icon: <Shield className="h-7 w-7 text-red-600" />, title: 'itad_feature_3_title', description: 'itad_feature_3_desc' },
+        { icon: <BookUser className="h-7 w-7 text-yellow-600" />, title: 'itad_feature_4_title', description: 'itad_feature_4_desc' },
     ];
     return (
         <div id="it-asset-disposition" className="space-y-12">
             <section className="text-center">
-                <Badge className="mb-4 bg-primary/10 text-primary border-transparent">Service Overview</Badge>
-                <h2 className="text-3xl font-bold">IT Asset Disposition (ITAD)</h2>
+                <Badge className="mb-4 bg-primary/10 text-primary border-transparent">{t('service_overview')}</Badge>
+                <h2 className="text-3xl font-bold">{t('it_asset_disposition')}</h2>
                 <div className="w-16 h-1.5 bg-primary my-4 rounded-full mx-auto"></div>
                 <p className="mt-4 max-w-3xl mx-auto text-muted-foreground">
-                    Our IT Asset Disposition (ITAD) service provides a secure and sustainable way to manage retired technology assets. We ensure your data is completely secure while maximizing value recovery and adhering to environmental regulations.
+                    {t('itad_overview_desc')}
                 </p>
             </section>
             
@@ -67,8 +42,8 @@ const ItAssetDispositionContent = () => {
                            <CardContent className="p-6 flex items-start gap-4">
                                <div className="flex-shrink-0 bg-muted rounded-full p-3">{feature.icon}</div>
                                <div>
-                                   <h3 className="font-bold text-lg">{feature.title}</h3>
-                                   <p className="text-muted-foreground text-sm mt-1">{feature.description}</p>
+                                   <h3 className="font-bold text-lg">{t(feature.title)}</h3>
+                                   <p className="text-muted-foreground text-sm mt-1">{t(feature.description)}</p>
                                </div>
                            </CardContent>
                         </Card>
@@ -78,11 +53,11 @@ const ItAssetDispositionContent = () => {
 
             <section className="grid md:grid-cols-2 gap-8 items-center bg-muted/30 p-8 rounded-lg">
                 <div className="space-y-4">
-                    <h3 className="text-2xl font-bold text-foreground">Customized Solutions for Your Business</h3>
+                    <h3 className="text-2xl font-bold text-foreground">{t('itad_custom_solutions_title')}</h3>
                     <p className="text-muted-foreground">
-                        Every business has unique needs. We offer tailored ITAD solutions to fit your specific requirements, whether you need on-site data destruction, detailed asset tracking, or secure logistics. We collaborate with you to create a plan that aligns with your business goals.
+                        {t('itad_custom_solutions_desc')}
                     </p>
-                     <Button>Request a Consultation</Button>
+                     <Button>{t('request_a_consultation')}</Button>
                 </div>
                  <div className="relative h-64 w-full rounded-lg overflow-hidden">
                     <Image 
@@ -101,9 +76,9 @@ const ItAssetDispositionContent = () => {
                        <div className="flex items-start gap-6">
                             <Users className="h-10 w-10 text-primary flex-shrink-0 mt-1" />
                             <div>
-                                <h3 className="text-2xl font-bold">Experience You Can Trust</h3>
+                                <h3 className="text-2xl font-bold">{t('itad_experience_title')}</h3>
                                 <p className="mt-2 text-muted-foreground">
-                                    With years of industry expertise, we have a proven track record of delivering exceptional ITAD services. Our team of specialists is committed to the highest standards of professionalism and customer satisfaction. Trust us to manage your IT assets with precision and integrity.
+                                    {t('itad_experience_desc')}
                                 </p>
                             </div>
                        </div>
@@ -115,12 +90,12 @@ const ItAssetDispositionContent = () => {
                 <Card className="bg-primary text-primary-foreground">
                     <CardContent className="p-8 flex flex-col md:flex-row items-center justify-between gap-6">
                         <div>
-                            <h3 className="text-2xl font-bold">Ready to Dispose Your IT Assets?</h3>
+                            <h3 className="text-2xl font-bold">{t('itad_cta_title')}</h3>
                             <p className="mt-2 text-primary-foreground/90">
-                                Discover how our IT asset disposition can help you manage retired assets securely and sustainably.
+                                {t('itad_cta_desc')}
                             </p>
                         </div>
-                        <Button variant="secondary" size="lg" className="flex-shrink-0">Contact Us Today</Button>
+                        <Button variant="secondary" size="lg" className="flex-shrink-0">{t('contact_us_today')}</Button>
                     </CardContent>
                 </Card>
             </section>
@@ -130,34 +105,35 @@ const ItAssetDispositionContent = () => {
 
 
 const ItAssetRemanufacturingContent = () => {
+    const { t } = useTranslation();
     const benefits = [
-        { icon: <DollarSign className="h-8 w-8 text-primary" />, title: 'Economical Solution', description: 'Revitalize existing IT assets, avoiding high costs of new purchases.' },
-        { icon: <Leaf className="h-8 w-8 text-primary" />, title: 'Eco-Conscious', description: 'Significantly reduce electronic waste and support a circular economy.' },
-        { icon: <Cpu className="h-8 w-8 text-primary" />, title: 'Enhanced Functionality', description: 'Boost hardware and software capabilities to meet current demands.' },
-        { icon: <ShieldCheck className="h-8 w-8 text-primary" />, title: 'Data Integrity', description: 'Your sensitive information is securely managed throughout the process.' },
+        { icon: <DollarSign className="h-8 w-8 text-primary" />, title: 'remanufacturing_benefit_1_title', description: 'remanufacturing_benefit_1_desc' },
+        { icon: <Leaf className="h-8 w-8 text-primary" />, title: 'remanufacturing_benefit_2_title', description: 'remanufacturing_benefit_2_desc' },
+        { icon: <Cpu className="h-8 w-8 text-primary" />, title: 'remanufacturing_benefit_3_title', description: 'remanufacturing_benefit_3_desc' },
+        { icon: <ShieldCheck className="h-8 w-8 text-primary" />, title: 'remanufacturing_benefit_4_title', description: 'remanufacturing_benefit_4_desc' },
     ];
     const processSteps = [
-        { icon: <Search className="h-7 w-7 text-primary" />, title: '1. In-depth Assessment', description: 'We conduct a thorough analysis of your IT assets to determine their remanufacturing potential.' },
-        { icon: <Wrench className="h-7 w-7 text-primary" />, title: '2. Expert Restoration', description: 'Our certified engineers use state-of-the-art tools to repair and upgrade your hardware components.' },
-        { icon: <HardDrive className="h-7 w-7 text-primary" />, title: '3. Secure Data Handling', description: 'We perform secure data wiping and management to protect your confidential information.' },
-        { icon: <CheckSquare className="h-7 w-7 text-primary" />, title: '4. Rigorous Testing', description: 'Every remanufactured asset undergoes extensive quality assurance checks for peak performance.' },
-        { icon: <Award className="h-7 w-7 text-primary" />, title: '5. Warranty & Assurance', description: 'We stand by our work with comprehensive warranty coverage and dedicated support.' },
+        { icon: <Search className="h-7 w-7 text-primary" />, title: 'remanufacturing_step_1_title', description: 'remanufacturing_step_1_desc' },
+        { icon: <Wrench className="h-7 w-7 text-primary" />, title: 'remanufacturing_step_2_title', description: 'remanufacturing_step_2_desc' },
+        { icon: <HardDrive className="h-7 w-7 text-primary" />, title: 'remanufacturing_step_3_title', description: 'remanufacturing_step_3_desc' },
+        { icon: <CheckSquare className="h-7 w-7 text-primary" />, title: 'remanufacturing_step_4_title', description: 'remanufacturing_step_4_desc' },
+        { icon: <Award className="h-7 w-7 text-primary" />, title: 'remanufacturing_step_5_title', description: 'remanufacturing_step_5_desc' },
     ];
     return(
     <div id="it-asset-remanufacturing" className="space-y-12">
         <section>
-            <Badge className="mb-2 bg-primary/10 text-primary border-transparent">Service Overview</Badge>
-            <h2 className="text-3xl font-bold">IT Asset Remanufacturing</h2>
+            <Badge className="mb-2 bg-primary/10 text-primary border-transparent">{t('service_overview')}</Badge>
+            <h2 className="text-3xl font-bold">{t('it_asset_remanufacturing')}</h2>
             <div className="w-16 h-1.5 bg-primary my-4 rounded-full"></div>
             <p className="mt-4 text-muted-foreground">
-                We specialize in breathing new life into your aging IT infrastructure. Our remanufacturing service restores, repairs, and enhances your outdated technology, transforming it to perform like new and extending its operational lifespan.
+                {t('remanufacturing_overview_desc')}
             </p>
         </section>
 
         <section>
             <Card className="bg-card/60 shadow-lg">
                 <CardContent className="p-8">
-                    <h3 className="text-2xl font-bold mb-6 text-center">The Advantages of Remanufacturing</h3>
+                    <h3 className="text-2xl font-bold mb-6 text-center">{t('remanufacturing_advantages_title')}</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                         {benefits.map(item => (
                             <div key={item.title} className="flex flex-col items-center text-center gap-3">
@@ -165,8 +141,8 @@ const ItAssetRemanufacturingContent = () => {
                                     {item.icon}
                                 </div>
                                 <div>
-                                    <h4 className="font-bold">{item.title}</h4>
-                                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                                    <h4 className="font-bold">{t(item.title)}</h4>
+                                    <p className="text-sm text-muted-foreground">{t(item.description)}</p>
                                 </div>
                             </div>
                         ))}
@@ -179,15 +155,15 @@ const ItAssetRemanufacturingContent = () => {
             <div>
                  <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
                     <RefreshCw className="h-7 w-7 text-primary" />
-                    Our Comprehensive Process
+                    {t('remanufacturing_process_title')}
                 </h3>
                 <div className="space-y-6">
                     {processSteps.map((step) => (
                         <div key={step.title} className="flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors">
                             <div className="flex-shrink-0">{step.icon}</div>
                             <div>
-                                <h4 className="font-bold">{step.title}</h4>
-                                <p className="text-sm text-muted-foreground">{step.description}</p>
+                                <h4 className="font-bold">{t(step.title)}</h4>
+                                <p className="text-sm text-muted-foreground">{t(step.description)}</p>
                             </div>
                         </div>
                     ))}
@@ -209,12 +185,12 @@ const ItAssetRemanufacturingContent = () => {
             <Card className="bg-primary text-primary-foreground">
                 <CardContent className="p-8 flex flex-col md:flex-row items-center justify-between gap-6">
                     <div>
-                        <h3 className="text-2xl font-bold">Ready to Upgrade Your Infrastructure?</h3>
+                        <h3 className="text-2xl font-bold">{t('remanufacturing_cta_title')}</h3>
                         <p className="mt-2 text-primary-foreground/90">
-                            Discover how our IT asset remanufacturing can help you save money, reduce e-waste, and boost performance.
+                           {t('remanufacturing_cta_desc')}
                         </p>
                     </div>
-                    <Button variant="secondary" size="lg" className="flex-shrink-0">Contact Us Today</Button>
+                    <Button variant="secondary" size="lg" className="flex-shrink-0">{t('contact_us_today')}</Button>
                 </CardContent>
             </Card>
         </section>
@@ -222,34 +198,36 @@ const ItAssetRemanufacturingContent = () => {
 );
 }
 
-const ItAssetRemarketingContent = () => (
+const ItAssetRemarketingContent = () => {
+    const { t } = useTranslation();
+    return (
     <div id="it-asset-remarketing" className="space-y-12">
         <section>
-            <Badge className="mb-2 bg-primary/10 text-primary border-transparent">Service Overview</Badge>
-            <h2 className="text-3xl font-bold">IT Asset Remarketing</h2>
+            <Badge className="mb-2 bg-primary/10 text-primary border-transparent">{t('service_overview')}</Badge>
+            <h2 className="text-3xl font-bold">{t('it_asset_remarketing')}</h2>
             <div className="w-16 h-1.5 bg-primary my-4 rounded-full"></div>
             <p className="mt-4 text-muted-foreground">
-                IT Asset Remarketing provides a strategic way to handle your company's outdated or surplus technology. Instead of disposal, we focus on reselling or redeploying these assets to maximize their value, lessen your financial outlay on new equipment, and promote environmental sustainability by giving your hardware a second life.
+                {t('remarketing_overview_desc')}
             </p>
         </section>
 
         <section>
             <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
                 <CheckCircle className="h-7 w-7 text-primary" />
-                Benefits of IT Asset Remarketing
+                {t('remarketing_benefits_title')}
             </h3>
             <div className="border-l-4 border-primary pl-6 space-y-6">
                 <div>
-                    <h4 className="font-bold flex items-center gap-2"><DollarSign className="h-5 w-5 text-green-600" />Maximize Value</h4>
-                    <p className="text-muted-foreground ml-7">We help you achieve the highest possible financial return on your outdated IT equipment, boosting your company's budget.</p>
+                    <h4 className="font-bold flex items-center gap-2"><DollarSign className="h-5 w-5 text-green-600" />{t('remarketing_benefit_1_title')}</h4>
+                    <p className="text-muted-foreground ml-7">{t('remarketing_benefit_1_desc')}</p>
                 </div>
                 <div>
-                    <h4 className="font-bold flex items-center gap-2"><Settings2 className="h-5 w-5 text-green-600" />Cost Savings</h4>
-                    <p className="text-muted-foreground ml-7">Lower the expense of new technology acquisitions and replacements by recovering value from your existing assets.</p>
+                    <h4 className="font-bold flex items-center gap-2"><Settings2 className="h-5 w-5 text-green-600" />{t('remarketing_benefit_2_title')}</h4>
+                    <p className="text-muted-foreground ml-7">{t('remarketing_benefit_2_desc')}</p>
                 </div>
                 <div>
-                    <h4 className="font-bold flex items-center gap-2"><Leaf className="h-5 w-5 text-green-600" />Environmental Responsibility</h4>
-                    <p className="text-muted-foreground ml-7">Contribute to a greener planet by extending the functional life of your IT hardware, which minimizes e-waste and supports circular economy principles.</p>
+                    <h4 className="font-bold flex items-center gap-2"><Leaf className="h-5 w-5 text-green-600" />{t('remarketing_benefit_3_title')}</h4>
+                    <p className="text-muted-foreground ml-7">{t('remarketing_benefit_3_desc')}</p>
                 </div>
             </div>
         </section>
@@ -257,43 +235,43 @@ const ItAssetRemarketingContent = () => (
         <section>
             <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
                 <Clock className="h-7 w-7 text-primary" />
-                Our IT Asset Remarketing Process
+                {t('remarketing_process_title')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <Card className="bg-muted/30">
                     <CardContent className="p-6">
                         <div className="flex items-center gap-4">
                             <div className="bg-primary/10 text-primary font-bold rounded-full h-10 w-10 flex items-center justify-center">1</div>
-                            <h4 className="font-bold">Assessment</h4>
+                            <h4 className="font-bold">{t('remarketing_step_1_title')}</h4>
                         </div>
-                        <p className="text-sm text-muted-foreground mt-2">Our team evaluates your IT assets to ascertain their condition, value, and potential for resale.</p>
+                        <p className="text-sm text-muted-foreground mt-2">{t('remarketing_step_1_desc')}</p>
                     </CardContent>
                 </Card>
                 <Card className="bg-muted/30">
                     <CardContent className="p-6">
                         <div className="flex items-center gap-4">
                             <div className="bg-primary/10 text-primary font-bold rounded-full h-10 w-10 flex items-center justify-center">2</div>
-                            <h4 className="font-bold">Refurbishment</h4>
+                            <h4 className="font-bold">{t('remarketing_step_2_title')}</h4>
                         </div>
-                        <p className="text-sm text-muted-foreground mt-2">We professionally recondition and repair assets to ensure they meet market standards for resale.</p>
+                        <p className="text-sm text-muted-foreground mt-2">{t('remarketing_step_2_desc')}</p>
                     </CardContent>
                 </Card>
                 <Card className="bg-muted/30">
                     <CardContent className="p-6">
                         <div className="flex items-center gap-4">
                             <div className="bg-primary/10 text-primary font-bold rounded-full h-10 w-10 flex items-center justify-center">3</div>
-                            <h4 className="font-bold">Market Analysis</h4>
+                            <h4 className="font-bold">{t('remarketing_step_3_title')}</h4>
                         </div>
-                        <p className="text-sm text-muted-foreground mt-2">We perform in-depth market research to find the best sales channels and target buyers for your specific IT equipment.</p>
+                        <p className="text-sm text-muted-foreground mt-2">{t('remarketing_step_3_desc')}</p>
                     </CardContent>
                 </Card>
                  <Card className="bg-muted/30">
                     <CardContent className="p-6">
                         <div className="flex items-center gap-4">
                             <div className="bg-primary/10 text-primary font-bold rounded-full h-10 w-10 flex items-center justify-center">4</div>
-                            <h4 className="font-bold">Resale</h4>
+                            <h4 className="font-bold">{t('remarketing_step_4_title')}</h4>
                         </div>
-                        <p className="text-sm text-muted-foreground mt-2">Our experts handle the complete sales cycle, from strategic marketing to secure transaction processing.</p>
+                        <p className="text-sm text-muted-foreground mt-2">{t('remarketing_step_4_desc')}</p>
                     </CardContent>
                 </Card>
             </div>
@@ -302,18 +280,18 @@ const ItAssetRemarketingContent = () => (
         <section className="grid md:grid-cols-3 gap-8">
             <div className="space-y-2">
                 <Globe className="h-8 w-8 text-primary" />
-                <h4 className="font-bold text-lg">Access a Worldwide Audience</h4>
-                <p className="text-muted-foreground">Go beyond local markets. Our extensive network links you with international buyers, improving your odds of finding a buyer who recognizes the full value of your equipment.</p>
+                <h4 className="font-bold text-lg">{t('remarketing_feature_1_title')}</h4>
+                <p className="text-muted-foreground">{t('remarketing_feature_1_desc')}</p>
             </div>
             <div className="space-y-2">
                 <Leaf className="h-8 w-8 text-primary" />
-                <h4 className="font-bold text-lg">Sustainable Practices</h4>
-                <p className="text-muted-foreground">Opting for remarketing over disposal is a smart environmental choice. You give your hardware a new purpose and play a part in minimizing electronic waste.</p>
+                <h4 className="font-bold text-lg">{t('remarketing_feature_2_title')}</h4>
+                <p className="text-muted-foreground">{t('remarketing_feature_2_desc')}</p>
             </div>
              <div className="space-y-2">
                 <Truck className="h-8 w-8 text-primary" />
-                <h4 className="font-bold text-lg">Streamlined Logistics</h4>
-                <p className="text-muted-foreground">We manage all logistical details for you. After a sale, our team coordinates the packing and shipping, guaranteeing your equipment arrives safely at its new destination.</p>
+                <h4 className="font-bold text-lg">{t('remarketing_feature_3_title')}</h4>
+                <p className="text-muted-foreground">{t('remarketing_feature_3_desc')}</p>
             </div>
         </section>
 
@@ -321,9 +299,9 @@ const ItAssetRemarketingContent = () => (
             <Card className="bg-primary/10 border-l-4 border-primary">
                 <CardContent className="p-8">
                     <BarChart3 className="h-10 w-10 text-primary mb-4" />
-                    <h3 className="text-2xl font-bold">Conclusion</h3>
+                    <h3 className="text-2xl font-bold">{t('conclusion')}</h3>
                     <p className="mt-4 text-muted-foreground italic">
-                        "IT Asset Remarketing is more than just a way to sell old devices; it's a key component of modern asset management. It offers a path to boost your organization's financial health, champion environmental sustainability, and guarantee data security."
+                        "{t('remarketing_conclusion_desc')}"
                     </p>
                 </CardContent>
             </Card>
@@ -333,34 +311,60 @@ const ItAssetRemarketingContent = () => (
             <Card className="bg-primary text-primary-foreground">
                 <CardContent className="p-8 flex flex-col md:flex-row items-center justify-between gap-6">
                     <div>
-                        <h3 className="text-2xl font-bold">Ready to Remarket Your IT Assets?</h3>
+                        <h3 className="text-2xl font-bold">{t('remarketing_cta_title')}</h3>
                         <p className="mt-2 text-primary-foreground/90">
-                            Discover how our IT asset remarketing can help you maximize value and promote sustainability.
+                            {t('remarketing_cta_desc')}
                         </p>
                     </div>
-                    <Button variant="secondary" size="lg" className="flex-shrink-0">Contact Us Today</Button>
+                    <Button variant="secondary" size="lg" className="flex-shrink-0">{t('contact_us_today')}</Button>
                 </CardContent>
             </Card>
         </section>
     </div>
 );
+}
 
+const DataDestructionContent = () => {
+    const { t } = useTranslation();
+    const keyBenefits = [
+      { icon: <ShieldCheck className="h-8 w-8 text-green-700" />, title: 'data_destruction_benefit_1_title', description: 'data_destruction_benefit_1_desc' },
+      { icon: <Shield className="h-8 w-8 text-blue-700" />, title: 'data_destruction_benefit_2_title', description: 'data_destruction_benefit_2_desc' },
+      { icon: <AlertTriangle className="h-8 w-8 text-green-700" />, title: 'data_destruction_benefit_3_title', description: 'data_destruction_benefit_3_desc' },
+      { icon: <Trash2 className="h-8 w-8 text-blue-700" />, title: 'data_destruction_benefit_4_title', description: 'data_destruction_benefit_4_desc' },
+    ];
+    const destructionMethods = [
+      'data_destruction_method_1',
+      'data_destruction_method_2',
+      'data_destruction_method_3',
+      'data_destruction_method_4',
+    ];
+    const comprehensiveSolutions = [
+      'data_destruction_solution_1',
+      'data_destruction_solution_2',
+      'data_destruction_solution_3',
+      'data_destruction_solution_4',
+    ];
+    const yourDataYourControlItems = [
+        { icon: <Eye className="h-8 w-8 text-primary" />, title: 'data_destruction_control_1_title' },
+        { icon: <HelpCircle className="h-8 w-8 text-primary" />, title: 'data_destruction_control_2_title' },
+        { icon: <Clock className="h-8 w-8 text-primary" />, title: 'data_destruction_control_3_title' },
+    ]
 
-const DataDestructionContent = () => (
+    return(
     <div id="data-destruction" className="space-y-12">
     <section>
-        <Badge className="mb-2 bg-primary/10 text-primary border-transparent">Service Overview</Badge>
-        <h2 className="text-3xl font-bold">Data Destruction</h2>
+        <Badge className="mb-2 bg-primary/10 text-primary border-transparent">{t('service_overview')}</Badge>
+        <h2 className="text-3xl font-bold">{t('data_destruction')}</h2>
         <div className="w-16 h-1.5 bg-primary my-4 rounded-full"></div>
         <p className="mt-4 text-muted-foreground">
-        Secure data destruction is critical for protecting sensitive information and maintaining compliance. Our certified processes ensure complete data elimination from all storage devices, providing peace of mind and regulatory compliance for your organization.
+        {t('data_destruction_overview_desc')}
         </p>
     </section>
 
     <section>
         <Card className="bg-card/60 shadow-lg">
             <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-6 text-center">Key Benefits</h3>
+                <h3 className="text-2xl font-bold mb-6 text-center">{t('key_benefits')}</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {keyBenefits.map(item => (
                     <div key={item.title} className="flex flex-col items-center text-center gap-3">
@@ -368,8 +372,8 @@ const DataDestructionContent = () => (
                             {React.cloneElement(item.icon, { className: "h-8 w-8 text-primary group-hover:text-white transition-colors duration-300"})}
                         </div>
                         <div>
-                            <h4 className="font-bold">{item.title}</h4>
-                            <p className="text-sm text-muted-foreground">{item.description}</p>
+                            <h4 className="font-bold">{t(item.title)}</h4>
+                            <p className="text-sm text-muted-foreground">{t(item.description)}</p>
                         </div>
                     </div>
                 ))}
@@ -383,13 +387,13 @@ const DataDestructionContent = () => (
             <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-4">
                     <Settings className="h-7 w-7 text-primary" />
-                    <h3 className="text-xl font-bold">State-of-the-art Data Destruction Methods</h3>
+                    <h3 className="text-xl font-bold">{t('data_destruction_methods_title')}</h3>
                 </div>
                 <ul className="space-y-3">
                 {destructionMethods.map(method => (
                     <li key={method} className="flex items-center gap-3">
                         <Check className="h-5 w-5 text-green-600" />
-                        <span>{method}</span>
+                        <span>{t(method)}</span>
                     </li>
                 ))}
                 </ul>
@@ -399,13 +403,13 @@ const DataDestructionContent = () => (
              <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-4">
                     <FileText className="h-7 w-7 text-primary" />
-                    <h3 className="text-xl font-bold">Comprehensive Solutions</h3>
+                    <h3 className="text-xl font-bold">{t('data_destruction_solutions_title')}</h3>
                 </div>
                 <ul className="space-y-3">
                 {comprehensiveSolutions.map(solution => (
                     <li key={solution} className="flex items-center gap-3">
                         <Check className="h-5 w-5 text-green-600" />
-                        <span>{solution}</span>
+                        <span>{t(solution)}</span>
                     </li>
                 ))}
                 </ul>
@@ -416,12 +420,12 @@ const DataDestructionContent = () => (
     <section>
         <Card className="shadow-lg bg-card">
             <CardContent className="p-8">
-                <h3 className="text-2xl font-bold">Safeguarding Your Business</h3>
+                <h3 className="text-2xl font-bold">{t('data_destruction_safeguarding_title')}</h3>
                 <p className="mt-4 text-muted-foreground">
-                Our data destruction services protect your organization from data breaches, identity theft, and regulatory non-compliance. We follow strict protocols to ensure your sensitive information is completely destroyed beyond recovery.
+                {t('data_destruction_safeguarding_desc_1')}
                 </p>
                 <p className="mt-4 text-muted-foreground">
-                From financial records to customer databases, we handle all types of sensitive data with the highest level of security and professionalism.
+                {t('data_destruction_safeguarding_desc_2')}
                 </p>
             </CardContent>
         </Card>
@@ -430,9 +434,9 @@ const DataDestructionContent = () => (
     <section>
          <Card className="bg-card/60 shadow-lg">
             <CardContent className="p-8 text-center">
-                <h3 className="text-2xl font-bold">Your Data, Your Control</h3>
+                <h3 className="text-2xl font-bold">{t('data_destruction_control_title')}</h3>
                 <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
-                    Maintain complete control over your data destruction process. Our transparent procedures allow you to witness the destruction process and receive detailed documentation for your records.
+                    {t('data_destruction_control_desc')}
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-8">
                     {yourDataYourControlItems.map(item => (
@@ -440,7 +444,7 @@ const DataDestructionContent = () => (
                             <div className="bg-primary/10 rounded-full p-3">
                                 {item.icon}
                             </div>
-                            <h4 className="font-semibold">{item.title}</h4>
+                            <h4 className="font-semibold">{t(item.title)}</h4>
                         </div>
                     ))}
                 </div>
@@ -451,20 +455,22 @@ const DataDestructionContent = () => (
         <Card className="bg-primary text-primary-foreground">
             <CardContent className="p-8 flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
-                    <h3 className="text-2xl font-bold">Ready to Secure Your Data?</h3>
+                    <h3 className="text-2xl font-bold">{t('data_destruction_cta_title')}</h3>
                     <p className="mt-2 text-primary-foreground/90">
-                        Learn how our data destruction services can protect your business from security threats.
+                        {t('data_destruction_cta_desc')}
                     </p>
                 </div>
-                <Button variant="secondary" size="lg" className="flex-shrink-0">Contact Us Today</Button>
+                <Button variant="secondary" size="lg" className="flex-shrink-0">{t('contact_us_today')}</Button>
             </CardContent>
         </Card>
     </section>
     </div>
-);
+    )
+};
 
 
 const ServicesContent = () => {
+  const { t } = useTranslation();
   const [activeService, setActiveService] = useState<string | null>(null);
 
   const renderContent = () => {
@@ -484,7 +490,7 @@ const ServicesContent = () => {
             {activeService ? (
                 <div>
                      <Button onClick={() => setActiveService(null)} variant="outline" className="mb-8">
-                        &larr; Back to All Services
+                        &larr; {t('back_to_all_services')}
                     </Button>
                     {renderContent()}
                 </div>
@@ -492,10 +498,10 @@ const ServicesContent = () => {
                 <div>
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-                            Explore Our Services
+                            {t('explore_our_services')}
                         </h2>
                         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-                            We offer a suite of services designed to handle your IT assets securely, sustainably, and efficiently.
+                            {t('explore_our_services_desc')}
                         </p>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -507,11 +513,11 @@ const ServicesContent = () => {
                                         {service.icon}
                                     </div>
                                     <h3 className="text-lg font-bold text-foreground flex-grow">
-                                        {service.name}
+                                        {t(service.name)}
                                     </h3>
-                                    <p className="text-sm text-muted-foreground mt-2 mb-4 flex-grow">{service.description}</p>
+                                    <p className="text-sm text-muted-foreground mt-2 mb-4 flex-grow">{t(service.description)}</p>
                                     <div className="flex justify-between items-center mt-auto">
-                                        <p className="text-sm font-semibold text-primary">Learn More</p>
+                                        <p className="text-sm font-semibold text-primary">{t('learn_more')}</p>
                                         <ArrowRight className="h-5 w-5 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
                                     </div>
                                     </CardContent>
