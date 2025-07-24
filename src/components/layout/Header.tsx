@@ -48,8 +48,8 @@ const Header = () => {
             </div>
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <NavLink href="#">Home</NavLink>
-            <NavLink href="#">About</NavLink>
+            <NavLink href="/">Home</NavLink>
+            <NavLink href="/about">About</NavLink>
             <NavLink href="#">Blogs</NavLink>
             <NavLink href="#" hasDropdown>Services</NavLink>
             <NavLink href="#" hasDropdown>Who We Serve</NavLink>
@@ -70,8 +70,8 @@ const Header = () => {
                     </SheetTrigger>
                     <SheetContent side="right">
                         <div className="flex flex-col gap-6 pt-12">
-                            <NavLink href="#">Home</NavLink>
-                            <NavLink href="#">About</NavLink>
+                            <NavLink href="/">Home</NavLink>
+                            <NavLink href="/about">About</NavLink>
                             <NavLink href="#">Blogs</NavLink>
                             <NavLink href="#" hasDropdown>Services</NavLink>
                             <NavLink href="#" hasDropdown>Who We Serve</NavLink>
