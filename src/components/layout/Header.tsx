@@ -109,26 +109,26 @@ const Header = () => {
             <NavLink href="/">Home</NavLink>
             <NavLink href="/about">About</NavLink>
             <NavLink href="/blog">Blogs</NavLink>
-            <div onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
-              <DropdownMenu open={servicesOpen} onOpenChange={setServicesOpen}>
-                <DropdownMenuTrigger asChild>
+            <DropdownMenu open={servicesOpen} onOpenChange={setServicesOpen}>
+              <DropdownMenuTrigger asChild>
+                <div onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
                   <NavLink hasDropdown>Services</NavLink>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-screen max-w-6xl" align="start" sideOffset={18}>
-                  <MegaMenu title="Service" items={services} viewAllHref="/services"/>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
-            <div onMouseEnter={() => setWhoWeServeOpen(true)} onMouseLeave={() => setWhoWeServeOpen(false)}>
-              <DropdownMenu open={whoWeServeOpen} onOpenChange={setWhoWeServeOpen}>
-                <DropdownMenuTrigger asChild>
+                </div>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-screen max-w-6xl" align="start" sideOffset={18} onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
+                <MegaMenu title="Service" items={services} viewAllHref="/services"/>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <DropdownMenu open={whoWeServeOpen} onOpenChange={setWhoWeServeOpen}>
+              <DropdownMenuTrigger asChild>
+                <div onMouseEnter={() => setWhoWeServeOpen(true)} onMouseLeave={() => setWhoWeServeOpen(false)}>
                   <NavLink hasDropdown>Who We Serve</NavLink>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-screen max-w-6xl" align="start" sideOffset={18}>
-                  <MegaMenu title="Sector" items={whoWeServe.slice(0,4)} viewAllHref="/who-we-serve"/>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
+                </div>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-screen max-w-6xl" align="start" sideOffset={18} onMouseEnter={() => setWhoWeServeOpen(true)} onMouseLeave={() => setWhoWeServeOpen(false)}>
+                <MegaMenu title="Sector" items={whoWeServe.slice(0,4)} viewAllHref="/who-we-serve"/>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <NavLink href="/our-process">Our Process</NavLink>
             <NavLink href="/contact">Contact</NavLink>
           </nav>
