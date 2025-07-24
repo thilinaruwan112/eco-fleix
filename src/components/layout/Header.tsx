@@ -1,6 +1,6 @@
 'use client';
 
-import { Mail, Phone, Facebook, Twitter, Linkedin, Instagram, ChevronDown, Recycle, Menu, ArrowRight } from 'lucide-react';
+import { Mail, Phone, Facebook, Twitter, Linkedin, Instagram, ChevronDown, Recycle, Menu, ArrowRight, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import {
@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import Image from 'next/image';
 import * as React from 'react';
+import { useTheme } from 'next-themes';
 
 
 const NavLink = ({ children, href, hasDropdown = false }: { children: React.ReactNode, href?: string, hasDropdown?: boolean }) => {
@@ -62,6 +63,22 @@ const MegaMenu = ({title, items, viewAllHref} : {title: string, items: typeof se
         </div>
     </div>
 );
+
+const ThemeToggle = () => {
+    const { setTheme, theme } = useTheme();
+
+    return (
+        <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+        >
+            <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            <span className="sr-only">Toggle theme</span>
+        </Button>
+    )
+}
 
 
 const Header = () => {
@@ -133,6 +150,7 @@ const Header = () => {
             <NavLink href="/contact">Contact</NavLink>
           </nav>
           <div className="flex items-center gap-2">
+            <ThemeToggle />
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                 <Button className="hidden sm:inline-flex">Get a Quote</Button>
             </a>
