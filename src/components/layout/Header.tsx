@@ -51,7 +51,7 @@ const Header = () => {
             <NavLink href="/">Home</NavLink>
             <NavLink href="/about">About</NavLink>
             <NavLink href="/blog">Blogs</NavLink>
-            <NavLink href="#" hasDropdown>Services</NavLink>
+            <NavLink href="/services" hasDropdown>Services</NavLink>
             <NavLink href="#" hasDropdown>Who We Serve</NavLink>
             <NavLink href="#">Our Process</NavLink>
             <NavLink href="#">Contact</NavLink>
@@ -73,7 +73,7 @@ const Header = () => {
                             <NavLink href="/">Home</NavLink>
                             <NavLink href="/about">About</NavLink>
                             <NavLink href="/blog">Blogs</NavLink>
-                            <NavLink href="#" hasDropdown>Services</NavLink>
+                            <NavLink href="/services" hasDropdown>Services</NavLink>
                             <NavLink href="#" hasDropdown>Who We Serve</NavLink>
                             <NavLink href="#">Our Process</NavLink>
                             <NavLink href="#">Contact</NavLink>
