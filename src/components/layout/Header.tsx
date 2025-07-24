@@ -50,7 +50,7 @@ const Header = () => {
           <nav className="hidden md:flex items-center gap-6">
             <NavLink href="/">Home</NavLink>
             <NavLink href="/about">About</NavLink>
-            <NavLink href="#">Blogs</NavLink>
+            <NavLink href="/blog">Blogs</NavLink>
             <NavLink href="#" hasDropdown>Services</NavLink>
             <NavLink href="#" hasDropdown>Who We Serve</NavLink>
             <NavLink href="#">Our Process</NavLink>
@@ -72,7 +72,7 @@ const Header = () => {
                         <div className="flex flex-col gap-6 pt-12">
                             <NavLink href="/">Home</NavLink>
                             <NavLink href="/about">About</NavLink>
-                            <NavLink href="#">Blogs</NavLink>
+                            <NavLink href="/blog">Blogs</NavLink>
                             <NavLink href="#" hasDropdown>Services</NavLink>
                             <NavLink href="#" hasDropdown>Who We Serve</NavLink>
                             <NavLink href="#">Our Process</NavLink>
