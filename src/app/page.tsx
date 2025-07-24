@@ -8,6 +8,7 @@ import Faq from '@/components/sections/Faq';
 import Testimonials from '@/components/sections/Testimonials';
 import Cta from '@/components/sections/Cta';
 import { Laptop, Smartphone, Camera, Monitor } from 'lucide-react';
+import ServicesContent from '@/components/sections/ServicesContent';
 
 const acceptedItems = [
   {
@@ -36,8 +37,8 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       <Hero />
-      <About />
       <WhatWeAccept title="A Wide Range of Accepted E-Waste" items={acceptedItems} />
+      <About />
       <HowItWorks />
       <CriticalRecycling />
       <Certifications />
@@ -47,3 +48,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
