@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Check, ShieldCheck, Trash2, Shield, AlertTriangle, Settings, FileText, Eye, HelpCircle, Clock, RefreshCw, Box, Package, Recycle, CheckCircle, DollarSign, Leaf, Globe, Settings2, Truck, BarChart3, HardDrive, Cpu, Wrench, CheckSquare, Search, Award, Users, BookUser, BarChartHorizontal } from 'lucide-react';
@@ -382,11 +383,11 @@ const ServicesContent = () => {
                         <a href={`#${service.id}`} key={service.id} onClick={(e) => { e.preventDefault(); setActiveService(service.id); const el = document.getElementById(service.id); el?.scrollIntoView({ behavior: 'smooth' }); }}>
                             <Button
                                 variant={activeService === service.id ? 'default' : 'ghost'}
-                                className="w-full justify-start gap-3 h-auto py-2 px-4 text-left whitespace-normal"
+                                className="w-full justify-start gap-3 h-auto py-2 px-4 text-left"
                                 onClick={() => setActiveService(service.id)}
                             >
                                 {service.icon}
-                                <span className="flex-1">{service.name}</span>
+                                <span className="flex-1 whitespace-nowrap">{service.name}</span>
                             </Button>
                         </a>
                         ))}
