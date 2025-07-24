@@ -38,9 +38,9 @@ const certificationItems = [
 
 const Certifications = () => {
   return (
-    <section className="bg-muted/40 py-16 md:py-24">
+    <section className="bg-muted/40 py-12 md:py-20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <Badge variant="secondary" className="mb-4 bg-primary/10 text-primary">Our Credentials</Badge>
           <h2 className="text-3xl font-bold tracking-tight text-foreground">
             CERTIFICATIONS &amp; COMPLIANCE
@@ -49,14 +49,14 @@ const Certifications = () => {
             We adhere to the highest industry standards for quality, security, and environmental responsibility.
           </p>
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {certificationItems.map((item, index) => (
             <Card key={index} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-8 flex flex-col items-center gap-4">
-                <div className="bg-muted rounded-full p-4 mb-2">
+              <CardContent className="p-6 flex flex-col items-center gap-3">
+                <div className="bg-muted rounded-full p-3 mb-2">
                     {item.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-foreground">
+                <h3 className="text-base font-semibold text-foreground">
                   {item.title}
                 </h3>
               </CardContent>
