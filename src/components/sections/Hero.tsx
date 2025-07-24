@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section className="relative w-full h-[500px] text-white">
        <Image
-          src="https://placehold.co/1920x500"
+          src="https://images.unsplash.com/photo-1652658379315-9ff6d19d8929?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxlLXdhc3RlJTIwcmVjeWNsaW5nJTIwYmlufGVufDB8fHx8MTc1MzM0NDQ2Nnww&ixlib=rb-4.1.0&q=80&w=1080"
           alt="E-waste recycling"
           layout="fill"
           objectFit="cover"

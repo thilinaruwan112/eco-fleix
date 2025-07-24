@@ -15,7 +15,7 @@ const ServiceArea = () => {
       <CardContent className="space-y-4">
         <div className="aspect-video w-full overflow-hidden rounded-lg border">
           <Image
-            src="https://placehold.co/800x600"
+            src="https://images.unsplash.com/photo-1573773095589-edd9586b7cf6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxkdWJhaSUyMG1hcHxlbnwwfHx8fDE3NTMzNDQ0NjZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Map of Dubai service area"
             width={800}
             height={600}
