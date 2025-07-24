@@ -53,7 +53,7 @@ const Hero = () => {
       >
         <CarouselContent className="h-full" data-embla-carousel-fade="true">
           {carouselImages.map((image, index) => (
-            <CarouselItem key={index} className="h-full relative">
+            <CarouselItem key={index}>
               <Image
                 src={image.src}
                 alt={image.alt}
