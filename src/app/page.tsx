@@ -11,38 +11,38 @@ import { Laptop, Smartphone, Camera, Monitor } from 'lucide-react';
 
 const acceptedItems = [
   {
-    icon: <Laptop className="h-10 w-10 text-primary" />,
-    title: 'Desktops, Laptops & Computer Equipment',
-    description: 'All types of computers and related hardware',
+    icon: <Laptop />,
+    title: 'Computers & Laptops',
+    description: 'Desktops, laptops, and all related computer equipment.',
   },
   {
-    icon: <Smartphone className="h-10 w-10 text-primary" />,
-    title: 'Smartphones, Tablets & Cell Phones',
-    description: 'Mobile devices and accessories',
+    icon: <Smartphone />,
+    title: 'Mobile Devices',
+    description: 'Smartphones, tablets, cell phones, and accessories.',
   },
   {
-    icon: <Camera className="h-10 w-10 text-primary" />,
-    title: 'Connectors & Digital Cameras',
-    description: 'Cables, adapters, and imaging equipment',
+    icon: <Monitor />,
+    title: 'Displays & Screens',
+    description: 'Monitors, televisions, and other display equipment.',
   },
   {
-    icon: <Monitor className="h-10 w-10 text-primary" />,
-    title: 'LCD Monitors & Televisions',
-    description: 'Display devices and screens',
+    icon: <Camera />,
+    title: 'Peripherals & More',
+    description: 'Cameras, printers, cables, and other electronic accessories.',
   },
 ];
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-16 md:gap-24">
+    <div className="flex flex-col">
       <Hero />
       <About />
-      <WhatWeAccept title="What We Accept" items={acceptedItems} />
+      <WhatWeAccept title="A Wide Range of Accepted E-Waste" items={acceptedItems} />
       <HowItWorks />
-      <Certifications />
       <CriticalRecycling />
-      <Faq />
+      <Certifications />
       <Testimonials />
+      <Faq />
       <Cta />
     </div>
   );

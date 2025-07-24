@@ -1,5 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card';
 import React from 'react';
+import { Badge } from '../ui/badge';
 
 interface AcceptedItem {
   icon: React.ReactNode;
@@ -14,22 +15,28 @@ interface WhatWeAcceptProps {
 
 const WhatWeAccept: React.FC<WhatWeAcceptProps> = ({ title, items }) => {
   return (
-    <section className="bg-muted/40 py-16 md:py-24">
+    <section className="bg-gradient-to-br from-green-50 to-blue-50 py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+           <Badge className="bg-primary/10 text-primary border-transparent mb-4 hover:bg-primary/10">WHAT WE RECYCLE</Badge>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
             {title}
           </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            We accept a comprehensive range of electronic items, ensuring they are recycled responsibly and sustainably.
+          </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {items.map((item, index) => (
-            <Card key={index} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-8 flex flex-col items-center gap-4">
-                {item.icon}
-                <h3 className="text-lg font-semibold text-foreground">
+            <Card key={index} className="text-left shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-2xl bg-white h-full transform hover:-translate-y-2 group">
+              <CardContent className="p-8 flex flex-col h-full">
+                <div className="bg-primary/10 rounded-full p-3 mb-6 w-max group-hover:bg-primary transition-colors duration-300">
+                  {React.cloneElement(item.icon as React.ReactElement, { className: "h-8 w-8 text-primary group-hover:text-white transition-colors duration-300"})}
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2 flex-grow">
                   {item.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground">
                   {item.description}
                 </p>
               </CardContent>

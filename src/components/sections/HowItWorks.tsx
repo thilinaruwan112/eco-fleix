@@ -1,28 +1,29 @@
-import { ClipboardList, Truck, ArrowDownUp, BarChart2 } from 'lucide-react';
-import { Card, CardContent } from '../ui/card';
+import { ClipboardList, Truck, ArrowDownUp, BarChart2, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { Button } from '../ui/button';
+import { Badge } from '../ui/badge';
+import { Card, CardContent } from '../ui/card';
 
 const steps = [
   {
-    icon: <ClipboardList className="h-8 w-8 text-white" />,
-    title: 'Submit List',
-    description: 'Send us your e-waste inventory',
+    icon: <ClipboardList className="h-8 w-8 text-primary" />,
+    title: 'Submit Your List',
+    description: 'Provide an inventory of your e-waste items online or over the phone.',
   },
   {
-    icon: <Truck className="h-8 w-8 text-white" />,
-    title: 'Pickup',
-    description: 'We collect from your location',
+    icon: <Truck className="h-8 w-8 text-primary" />,
+    title: 'Schedule Free Pickup',
+    description: 'We arrange a convenient time to collect the items from your location.',
   },
   {
-    icon: <ArrowDownUp className="h-8 w-8 text-white" />,
-    title: 'Sorting',
-    description: 'Professional categorization',
+    icon: <ArrowDownUp className="h-8 w-8 text-primary" />,
+    title: 'Secure Sorting & Processing',
+    description: 'We sort, securely process, and recycle your items at our certified facility.',
   },
   {
-    icon: <BarChart2 className="h-8 w-8 text-white" />,
-    title: 'Reporting',
-    description: 'Detailed recycling report',
+    icon: <BarChart2 className="h-8 w-8 text-primary" />,
+    title: 'Receive Detailed Reporting',
+    description: 'Get a certificate and report detailing the environmental impact of your recycling.',
   },
 ];
 
@@ -32,52 +33,40 @@ const HowItWorks = () => {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
-    <section className="container mx-auto px-4">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold tracking-tight text-foreground">
-          How Our Scrap Pickup Works
-        </h2>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-        {steps.map((step) => (
-          <div key={step.title} className="flex flex-col items-center text-center">
-            <div className="bg-primary rounded-full p-4 mb-4">
-              {step.icon}
-            </div>
-            <h3 className="text-lg font-semibold text-foreground">{step.title}</h3>
-            <p className="text-muted-foreground text-sm">{step.description}</p>
-          </div>
-        ))}
-      </div>
-      <div className="grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <Image
-            src="https://placehold.co/600x400.png"
-            alt="Technician working on electronics"
-            width={600}
-            height={400}
-            className="rounded-lg w-full h-auto object-cover"
-            data-ai-hint="technician electronics"
-          />
+    <section className="py-16 md:py-24 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <Badge className="bg-primary/10 text-primary border-transparent mb-4 hover:bg-primary/10">Our Process</Badge>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+            Simple & Transparent Process
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            We've streamlined our e-waste pickup service to be as simple and efficient as possible. Here's how it works.
+          </p>
         </div>
-        <Card className="shadow-lg">
-          <CardContent className="p-8">
-            <h3 className="text-2xl font-bold text-foreground">Ready to Get Started?</h3>
-            <p className="text-muted-foreground mt-2 mb-6">
-              Submit your item list or call us directly for immediate assistance.
-            </p>
-            <div className="flex flex-col gap-4">
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="w-full">Submit Item List</Button>
-              </a>
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                <Button size="lg" variant="outline" className="w-full">
-                    Call Us Now
+
+        <div className="relative">
+          <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -translate-y-1/2 -z-10"></div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+            {steps.map((step, index) => (
+              <div key={step.title} className="relative flex flex-col items-center text-center">
+                 <div className="bg-primary/10 rounded-full p-4 mb-4 ring-8 ring-white">
+                    {step.icon}
+                  </div>
+                <h3 className="text-xl font-bold text-foreground mb-2">{step.title}</h3>
+                <p className="text-muted-foreground">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <div className="mt-24 text-center">
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <Button size="lg">
+                    Schedule Your Free Pickup <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-              </a>
-            </div>
-          </CardContent>
-        </Card>
+            </a>
+        </div>
       </div>
     </section>
   );
