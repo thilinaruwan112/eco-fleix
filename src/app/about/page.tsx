@@ -1,5 +1,6 @@
 import AboutHero from '@/components/sections/AboutHero';
 import PioneeringSustainable from '@/components/sections/PioneeringSustainable';
+import WhatWeAccept from '@/components/sections/WhatWeAccept';
 
 export default function AboutPage() {
   return (
@@ -8,6 +9,7 @@ export default function AboutPage() {
       <div className="py-16 md:py-24">
         <PioneeringSustainable />
       </div>
+      <WhatWeAccept />
     </div>
   );
 }
