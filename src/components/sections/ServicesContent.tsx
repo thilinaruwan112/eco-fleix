@@ -109,6 +109,20 @@ const ItAssetDispositionContent = () => {
                     </CardContent>
                 </Card>
             </section>
+
+             <section>
+                <Card className="bg-primary text-primary-foreground">
+                    <CardContent className="p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                        <div>
+                            <h3 className="text-2xl font-bold">Ready to Dispose Your IT Assets?</h3>
+                            <p className="mt-2 text-primary-foreground/90">
+                                Discover how our IT asset disposition can help you manage retired assets securely and sustainably.
+                            </p>
+                        </div>
+                        <Button variant="secondary" size="lg" className="flex-shrink-0">Contact Us Today</Button>
+                    </CardContent>
+                </Card>
+            </section>
         </div>
     );
 };
@@ -313,6 +327,20 @@ const ItAssetRemarketingContent = () => (
                 </CardContent>
             </Card>
         </section>
+
+         <section>
+            <Card className="bg-primary text-primary-foreground">
+                <CardContent className="p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div>
+                        <h3 className="text-2xl font-bold">Ready to Remarket Your IT Assets?</h3>
+                        <p className="mt-2 text-primary-foreground/90">
+                            Discover how our IT asset remarketing can help you maximize value and promote sustainability.
+                        </p>
+                    </div>
+                    <Button variant="secondary" size="lg" className="flex-shrink-0">Contact Us Today</Button>
+                </CardContent>
+            </Card>
+        </section>
     </div>
 );
 
@@ -370,7 +398,9 @@ const ServicesContent = () => {
                 {activeService === 'data-destruction' && (
                     <div id="data-destruction" className="space-y-12">
                     <section>
+                        <Badge className="mb-2 bg-primary/10 text-primary border-transparent">Service Overview</Badge>
                         <h2 className="text-3xl font-bold">Data Destruction</h2>
+                        <div className="w-16 h-1.5 bg-primary my-4 rounded-full"></div>
                         <p className="mt-4 text-muted-foreground">
                         Secure data destruction is critical for protecting sensitive information and maintaining compliance. Our certified processes ensure complete data elimination from all storage devices, providing peace of mind and regulatory compliance for your organization.
                         </p>
@@ -379,11 +409,11 @@ const ServicesContent = () => {
                     <section>
                         <Card className="bg-white/60 shadow-lg">
                             <CardContent className="p-8">
-                                <h3 className="text-2xl font-bold mb-6">Key Benefits</h3>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                                <h3 className="text-2xl font-bold mb-6 text-center">Key Benefits</h3>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                                 {keyBenefits.map(item => (
-                                    <div key={item.title} className="flex items-start gap-4">
-                                        <div className="bg-primary rounded-full p-3 flex-shrink-0">
+                                    <div key={item.title} className="flex flex-col items-center text-center gap-3">
+                                        <div className="bg-primary/10 rounded-full p-3 flex-shrink-0">
                                             {item.icon}
                                         </div>
                                         <div>
@@ -463,6 +493,19 @@ const ServicesContent = () => {
                                         </div>
                                     ))}
                                 </div>
+                            </CardContent>
+                        </Card>
+                    </section>
+                     <section>
+                        <Card className="bg-primary text-primary-foreground">
+                            <CardContent className="p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                                <div>
+                                    <h3 className="text-2xl font-bold">Ready to Secure Your Data?</h3>
+                                    <p className="mt-2 text-primary-foreground/90">
+                                        Learn how our data destruction services can protect your business from security threats.
+                                    </p>
+                                </div>
+                                <Button variant="secondary" size="lg" className="flex-shrink-0">Contact Us Today</Button>
                             </CardContent>
                         </Card>
                     </section>
