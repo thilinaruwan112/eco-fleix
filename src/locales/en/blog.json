@@ -50,5 +50,21 @@
   "browse_category_4_title": "Sustainability",
   "browse_category_4_desc": "How e-waste recycling contributes to a greener planet.",
   "browse_category_4_count": "10 articles",
-  "view_all_categories": "View All Categories"
+  "view_all_categories": "View All Categories",
+  "share_this_article": "Share this article",
+  "blog_p1": "The rapid pace of technological innovation has brought immense benefits, but it has also created a significant challenge: electronic waste, or e-waste. As devices become obsolete faster than ever, the world is grappling with a growing mountain of discarded electronics. This article explores the current state of e-waste, the environmental and health risks it poses, and the critical importance of responsible recycling.",
+  "blog_p2": "E-waste is not just ordinary trash. It contains a complex mix of valuable materials like gold, silver, and copper, as well as hazardous substances such as lead, mercury, and cadmium. When improperly disposed of in landfills, these toxins can leach into the soil and water, contaminating ecosystems and posing serious health risks to nearby communities.",
+  "blog_h2_1": "The Global E-Waste Problem",
+  "blog_p3": "According to a report by the World Health Organization (WHO), the global volume of e-waste is projected to reach 74 million metric tons by 2030, nearly doubling in just 16 years. This staggering figure highlights the urgent need for effective and sustainable e-waste management solutions. The challenges are numerous:",
+  "blog_quote_1": "Only 17.4% of global e-waste was officially documented as properly collected and recycled in 2019. The fate of the remaining 82.6% is unknown, likely dumped, traded, or recycled under inferior conditions.",
+  "blog_p4": "This is where certified e-waste recycling companies play a crucial role. By providing secure and environmentally sound processes, they ensure that valuable materials are recovered and hazardous substances are managed safely.",
+  "blog_li_1_strong": "Resource Depletion",
+  "blog_li_1_text": "Valuable and finite resources are lost when electronics are landfilled instead of recycled.",
+  "blog_li_2_strong": "Data Security",
+  "blog_li_2_text": "Discarded devices can still hold sensitive personal and corporate data, creating significant security risks.",
+  "blog_li_3_strong": "Environmental Pollution",
+  "blog_li_3_text": "Toxic materials contaminate air, water, and soil, harming both wildlife and human health.",
+  "blog_h2_2": "The Path to a Sustainable Future",
+  "blog_p5": "Adopting a circular economy model for electronics is essential. This means designing products for longevity, repairability, and recyclability. As consumers and businesses, we can contribute by choosing responsible recyclers, supporting brands that prioritize sustainability, and advocating for stronger e-waste policies. Together, we can turn the e-waste challenge into an opportunity for innovation and a more sustainable future.",
+  "blog_author_title": "Lead Environmental Scientist"
 }
