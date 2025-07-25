@@ -116,10 +116,10 @@ const otherBlogPosts: BlogPost[] = [
     category: 'explore_blog_post_1_category',
     categoryColor: 'bg-red-100 text-red-800 dark:bg-red-900/40 dark:text-red-300',
     content: [
-      { type: 'paragraph', text: 'blog_p1' },
-      { type: 'heading', text: 'blog_h1' },
-      { type: 'paragraph', text: 'blog_p2' },
-      { type: 'list', items: ['blog_list1_item1', 'blog_list1_item2'] },
+      { type: 'paragraph', text: 'This is the main content for the secure data destruction guide. Add detailed paragraphs here.' },
+      { type: 'heading', text: 'The Importance of Data Wiping' },
+      { type: 'paragraph', text: 'Explain different data wiping standards and their effectiveness.' },
+      { type: 'list', items: ['DoD 5220.22-M', 'NIST 800-88', 'Physical Shredding'] },
     ]
   },
   {
@@ -135,10 +135,13 @@ const otherBlogPosts: BlogPost[] = [
     category: 'explore_blog_post_2_category',
     categoryColor: 'bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300',
     content: [
-      { type: 'paragraph', text: 'blog_p1' },
-      { type: 'heading', text: 'blog_h1' },
-      { type: 'paragraph', text: 'blog_p2' },
-      { type: 'list', items: ['blog_list1_item1', 'blog_list1_item2'] },
+      { type: 'paragraph', text: 'Detailed content about corporate ITAD best practices.' },
+      { type: 'heading', text: 'Maximizing Value Recovery' },
+      { type: 'paragraph', text: 'Discuss remarketing, component harvesting, and other value recovery methods.' },
+      { type: 'checklist', 
+        pros: { title: 'Key Considerations', items: ['Inventory Management', 'Logistics Planning', 'Choosing a Vendor']},
+        cons: { title: 'Common Pitfalls', items: ['Ignoring Data Security', 'Poor Documentation', 'Hidden Costs']}
+      },
     ]
   },
   {
@@ -154,10 +157,14 @@ const otherBlogPosts: BlogPost[] = [
     category: 'explore_blog_post_3_category',
     categoryColor: 'bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-300',
     content: [
-      { type: 'paragraph', text: 'blog_p1' },
-      { type: 'heading', text: 'blog_h1' },
-      { type: 'paragraph', text: 'blog_p2' },
-      { type: 'list', items: ['blog_list1_item1', 'blog_list1_item2'] },
+       { type: 'paragraph', text: 'An in-depth look at how e-waste recycling benefits the environment.'},
+       { type: 'stats', items: [
+        {value: '85%', label: 'of e-waste is improperly discarded'},
+        {value: '70%', label: 'of heavy metals in landfills come from e-waste'},
+        {value: '1 ton', label: 'of recycled circuit boards can yield 40-800x more gold than mined ore'},
+      ]},
+      { type: 'heading', text: 'The Dangers of E-Waste Landfills' },
+      { type: 'paragraph', text: 'Discuss leaching of toxic chemicals like lead, mercury, and cadmium into soil and water.' },
     ]
   },
   {
@@ -173,10 +180,10 @@ const otherBlogPosts: BlogPost[] = [
     category: 'explore_blog_post_4_category',
     categoryColor: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-300',
     content: [
-      { type: 'paragraph', text: 'blog_p1' },
-      { type: 'heading', text: 'blog_h1' },
-      { type: 'paragraph', text: 'blog_p2' },
-      { type: 'list', items: ['blog_list1_item1', 'blog_list1_item2'] },
+      { type: 'paragraph', text: 'A detailed guide to the legal landscape of e-waste in the UAE.' },
+      { type: 'heading', text: 'Key Regulations and Bodies' },
+      { type: 'list', items: ['Dubai Municipality regulations', 'Federal Law No. 24', 'Extended Producer Responsibility (EPR)']},
+      { type: 'alert', title: 'Penalties for Non-Compliance', text: 'Fines and legal action can result from improper disposal. Ensure you partner with a certified recycler.', variant: 'warning'},
     ]
   },
   {
@@ -192,10 +199,13 @@ const otherBlogPosts: BlogPost[] = [
     category: 'explore_blog_post_5_category',
     categoryColor: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-300',
     content: [
-      { type: 'paragraph', text: 'blog_p1' },
-      { type: 'heading', text: 'blog_h1' },
-      { type: 'paragraph', text: 'blog_p2' },
-      { type: 'list', items: ['blog_list1_item1', 'blog_list1_item2'] },
+      { type: 'paragraph', text: 'A step-by-step guide for individuals and businesses.' },
+      { type: 'subheading', text: 'Step 1: Backup Your Data' },
+      { type: 'paragraph', text: 'Before wiping any device, ensure all important files are backed up to the cloud or an external drive.' },
+      { type: 'subheading', text: 'Step 2: Securely Erase Your Data' },
+      { type: 'paragraph', text: 'Perform a factory reset and use data destruction software if necessary. For businesses, professional data wiping is recommended.' },
+      { type: 'subheading', text: 'Step 3: Remove Batteries if Possible' },
+      { type: 'paragraph', text: 'Some devices have removable batteries which should be handled separately.' },
     ]
   },
   {
@@ -211,10 +221,10 @@ const otherBlogPosts: BlogPost[] = [
     category: 'explore_blog_post_6_category',
     categoryColor: 'bg-purple-100 text-purple-800 dark:bg-purple-900/40 dark:text-purple-300',
     content: [
-      { type: 'paragraph', text: 'blog_p1' },
-      { type: 'heading', text: 'blog_h1' },
-      { type: 'paragraph', text: 'blog_p2' },
-      { type: 'list', items: ['blog_list1_item1', 'blog_list1_item2'] },
+      { type: 'paragraph', text: 'Explore how e-waste recycling is a critical component of the circular economy model.' },
+      { type: 'heading', text: 'From Linear to Circular' },
+      { type: 'paragraph', text: 'Discuss the shift from a "take-make-dispose" model to a "reduce-reuse-recycle" model.' },
+      { type: 'list', items: ['Resource Conservation', 'Energy Savings', 'Reduced Pollution', 'Economic Opportunities'] },
     ]
   },
 ];
@@ -228,3 +238,5 @@ export const blogPosts: BlogPost[] = [
 export function getPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug);
 }
+
+    
