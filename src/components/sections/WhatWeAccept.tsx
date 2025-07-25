@@ -4,11 +4,14 @@ import { Card, CardContent } from '@/components/ui/card';
 import React from 'react';
 import { Badge } from '../ui/badge';
 import { useTranslation } from '@/hooks/use-translation';
+import Image from 'next/image';
 
 interface AcceptedItem {
   icon: React.ReactNode;
   title: string;
   description: string;
+  image: string;
+  aiHint: string;
 }
 
 interface WhatWeAcceptProps {
@@ -32,15 +35,28 @@ const WhatWeAccept: React.FC<WhatWeAcceptProps> = ({ title, items }) => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {items.map((item, index) => (
-            <Card key={index} className="text-left shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-2xl bg-card h-full transform hover:-translate-y-2 group">
-              <CardContent className="p-8 flex flex-col h-full">
-                <div className="bg-primary/10 rounded-full p-3 mb-6 w-max group-hover:bg-primary transition-colors duration-300">
-                  {React.cloneElement(item.icon as React.ReactElement, { className: "h-8 w-8 text-primary group-hover:text-white transition-colors duration-300"})}
+            <Card key={index} className="text-left shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-2xl bg-card h-full transform hover:-translate-y-2 group overflow-hidden">
+                <div className="relative h-64">
+                    <Image
+                        src={item.image}
+                        alt={t(item.title)}
+                        layout="fill"
+                        objectFit="cover"
+                        className="w-full h-full transform group-hover:scale-105 transition-transform duration-300"
+                        data-ai-hint={item.aiHint}
+                    />
+                    <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors"></div>
+                    <div className="absolute bottom-0 left-0 p-6 text-white">
+                        <div className="bg-white/20 rounded-full p-3 mb-4 w-max group-hover:bg-white/30 transition-colors duration-300">
+                          {React.cloneElement(item.icon as React.ReactElement, { className: "h-8 w-8 text-white"})}
+                        </div>
+                        <h3 className="text-xl font-bold text-white mb-2 flex-grow">
+                          {t(item.title)}
+                        </h3>
+                    </div>
                 </div>
-                <h3 className="text-xl font-bold text-card-foreground mb-2 flex-grow">
-                  {t(item.title)}
-                </h3>
-                <p className="text-muted-foreground">
+              <CardContent className="p-6 flex flex-col h-full bg-card">
+                <p className="text-muted-foreground text-sm">
                   {t(item.description)}
                 </p>
               </CardContent>
