@@ -24,7 +24,7 @@ const ExploreBlog = ({ posts }: { posts: BlogPost[]}) => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
           {posts.map((post) => (
-            <a key={post.title} href={`/blog/${post.slug}`} className="flex flex-col group">
+            <a key={post.slug} href={`/blog/${post.slug}`} className="flex flex-col group">
               <div className="relative rounded-2xl overflow-hidden mb-4">
                 <Image
                   src={post.image}
