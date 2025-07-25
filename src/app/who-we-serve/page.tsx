@@ -3,6 +3,12 @@ import WhoWeServeContent from '@/components/sections/WhoWeServeContent';
 import CommonChallenges from '@/components/sections/CommonChallenges';
 import { Suspense } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Who We Serve | E-Waste Solutions for Industries in Dubai',
+  description: 'ECO FLEIX provides tailored e-waste recycling and ITAD solutions for corporations, government, education, finance, and healthcare sectors in Dubai and the UAE.',
+};
 
 function WhoWeServeContentSkeleton() {
   return (
