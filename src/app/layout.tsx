@@ -9,8 +9,53 @@ import { ThemeProvider } from '@/components/layout/ThemeProvider';
 import { TranslationProvider } from '@/hooks/use-translation.tsx';
 
 export const metadata: Metadata = {
-  title: 'EcoCollect Dubai',
-  description: 'Sustainable e-waste collection and recycling in Dubai.',
+  title: 'E-Waste Recycling Dubai | IT Asset Disposition | ECO FLEIX',
+  description: 'ECO FLEIX offers professional e-waste recycling and IT asset disposition (ITAD) services in Dubai. We provide secure data destruction, electronics recycling, and sustainable e-waste management for businesses and individuals.',
+  openGraph: {
+    title: 'E-Waste Recycling Dubai | IT Asset Disposition | ECO FLEIX',
+    description: 'Secure, certified, and eco-friendly e-waste recycling services in Dubai. We handle everything from data destruction to material recovery.',
+    url: 'https://www.ecofleixewasterecycling.com',
+    siteName: 'ECO FLEIX E-Waste Recycling Dubai',
+    images: [
+      {
+        url: 'https://content-provider.payshia.com/eco-fleix/og-image-dubai-seo.png',
+        width: 1200,
+        height: 630,
+        alt: 'E-Waste Recycling Facility in Dubai',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'E-Waste Recycling Dubai | IT Asset Disposition | ECO FLEIX',
+    description: 'Your trusted partner for secure and sustainable e-waste management and ITAD in Dubai.',
+    images: ['https://content-provider.payshia.com/eco-fleix/og-image-dubai-seo.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  keywords: [
+    'e-waste recycling dubai',
+    'electronics recycling dubai',
+    'it asset disposition dubai',
+    'itad dubai',
+    'secure data destruction dubai',
+    'e-waste management dubai',
+    'eco fleix',
+    'dubai recycling services',
+    'computer recycling dubai',
+    'laptop recycling dubai',
+  ],
 };
 
 export default function RootLayout({
