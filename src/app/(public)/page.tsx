@@ -28,7 +28,7 @@ const acceptedItems = [
     icon: <Smartphone />,
     title: 'accepted_item_2_title',
     description: 'accepted_item_2_desc',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://content-provider.payshia.com/eco-fleix/categories/mobile-phone.webp',
     aiHint: 'smartphones tablets',
   },
   {
