@@ -6,10 +6,10 @@ import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { ArrowRight } from 'lucide-react';
 import { useTranslation } from '@/hooks/use-translation';
-import { blogPosts } from '@/lib/blog-data';
+import { BlogPost } from '@/lib/blog-data';
 
 
-const ExploreBlog = () => {
+const ExploreBlog = ({ posts }: { posts: BlogPost[]}) => {
   const { t } = useTranslation();
   return (
     <section className="py-16 md:py-24 bg-background">
@@ -23,7 +23,7 @@ const ExploreBlog = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-          {blogPosts.map((post) => (
+          {posts.map((post) => (
             <a key={post.title} href={`/blog/${post.slug}`} className="flex flex-col group">
               <div className="relative rounded-2xl overflow-hidden mb-4">
                 <Image

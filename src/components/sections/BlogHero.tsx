@@ -4,7 +4,12 @@ import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { useTranslation } from '@/hooks/use-translation';
 
-const BlogHero = () => {
+interface BlogHeroProps {
+    searchTerm: string;
+    setSearchTerm: (term: string) => void;
+}
+
+const BlogHero = ({ searchTerm, setSearchTerm }: BlogHeroProps) => {
   const { t } = useTranslation();
   return (
     <section className="relative w-full py-20 md:py-32 bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
@@ -21,6 +26,8 @@ const BlogHero = () => {
             <Input
               placeholder={t('search_for_articles')}
               className="w-full pl-12 h-12 rounded-full bg-background/80 shadow-md focus-visible:ring-primary"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
         </div>
