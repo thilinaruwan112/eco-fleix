@@ -21,7 +21,7 @@ const acceptedItems = [
     icon: <Laptop />,
     title: 'accepted_item_1_title',
     description: 'accepted_item_1_desc',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://content-provider.payshia.com/eco-fleix/categories/computer-waste-optimized.webp',
     aiHint: 'laptops computers',
   },
   {
