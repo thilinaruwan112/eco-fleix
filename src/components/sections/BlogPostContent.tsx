@@ -4,11 +4,10 @@ import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { BlogPost, blogPosts } from '@/lib/blog-data';
+import { BlogPost } from '@/lib/blog-data';
 import { useTranslation } from '@/hooks/use-translation';
-import { Calendar, Clock, ArrowRight, Twitter, Facebook, Linkedin, Link } from 'lucide-react';
+import { Calendar, Clock, Twitter, Facebook, Linkedin, Link } from 'lucide-react';
 
 const SocialShare = () => {
     const { t } = useTranslation();
@@ -30,6 +29,52 @@ const SocialShare = () => {
         </div>
     )
 }
+
+const renderContent = (content: BlogPost['content'], t: (key: string) => string) => {
+  const listItems: string[] = [];
+
+  const renderList = (items: string[]) => (
+    <ul className="space-y-2">
+      {items.map((item, index) => {
+        const [strongKey, textKey] = item.split(':');
+        return (
+          <li key={index}>
+            <strong>{t(strongKey)}</strong>: {t(textKey)}
+          </li>
+        );
+      })}
+    </ul>
+  );
+
+  const elements = content.reduce((acc, part, index) => {
+    if (part.type === 'list') {
+      listItems.push(part.text);
+      if (index === content.length - 1 || content[index + 1].type !== 'list') {
+        acc.push(renderList(listItems.slice()));
+        listItems.length = 0;
+      }
+    } else {
+      if (listItems.length > 0) {
+        acc.push(renderList(listItems.slice()));
+        listItems.length = 0;
+      }
+      switch (part.type) {
+        case 'heading':
+          acc.push(<h2 key={index}>{t(part.text)}</h2>);
+          break;
+        case 'paragraph':
+          acc.push(<p key={index}>{t(part.text)}</p>);
+          break;
+        case 'quote':
+          acc.push(<blockquote key={index}>{t(part.text)}</blockquote>);
+          break;
+      }
+    }
+    return acc;
+  }, [] as React.ReactNode[]);
+
+  return elements;
+};
 
 const BlogPostContent = ({ post }: { post: BlogPost }) => {
   const { t } = useTranslation();
@@ -78,24 +123,7 @@ const BlogPostContent = ({ post }: { post: BlogPost }) => {
 
           {/* Main Content */}
           <article className="prose prose-lg dark:prose-invert max-w-none mx-auto">
-            <p>{t('blog_p1')}</p>
-            <p>{t('blog_p2')}</p>
-            
-            <h2>{t('blog_h2_1')}</h2>
-            <p>{t('blog_p3')}</p>
-            
-            <blockquote>{t('blog_quote_1')}</blockquote>
-
-            <p>{t('blog_p4')}</p>
-
-            <ul>
-                <li><strong>{t('blog_li_1_strong')}</strong>: {t('blog_li_1_text')}</li>
-                <li><strong>{t('blog_li_2_strong')}</strong>: {t('blog_li_2_text')}</li>
-                <li><strong>{t('blog_li_3_strong')}</strong>: {t('blog_li_3_text')}</li>
-            </ul>
-
-            <h2>{t('blog_h2_2')}</h2>
-            <p>{t('blog_p5')}</p>
+             {renderContent(post.content, t)}
           </article>
 
           <Separator className="my-12" />

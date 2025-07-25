@@ -1,3 +1,8 @@
+export interface BlogContentPart {
+  type: 'heading' | 'paragraph' | 'quote' | 'list';
+  text: string;
+}
+
 export interface BlogPost {
   slug: string;
   image: string;
@@ -10,6 +15,7 @@ export interface BlogPost {
   readTime: string;
   category: string;
   categoryColor: string;
+  content: BlogContentPart[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -25,6 +31,19 @@ export const blogPosts: BlogPost[] = [
     readTime: 'latest_insights_read_time',
     category: 'featured_article',
     categoryColor: 'bg-primary/10 text-primary',
+    content: [
+      { type: 'paragraph', text: 'blog_p1' },
+      { type: 'paragraph', text: 'blog_p2' },
+      { type: 'heading', text: 'blog_h2_1' },
+      { type: 'paragraph', text: 'blog_p3' },
+      { type: 'quote', text: 'blog_quote_1' },
+      { type: 'paragraph', text: 'blog_p4' },
+      { type: 'list', text: 'blog_li_1_strong:blog_li_1_text' },
+      { type: 'list', text: 'blog_li_2_strong:blog_li_2_text' },
+      { type: 'list', text: 'blog_li_3_strong:blog_li_3_text' },
+      { type: 'heading', text: 'blog_h2_2' },
+      { type: 'paragraph', text: 'blog_p5' },
+    ]
   },
   {
     slug: 'complete-guide-to-secure-data-destruction',
@@ -38,6 +57,10 @@ export const blogPosts: BlogPost[] = [
     readTime: 'explore_blog_post_1_read_time',
     category: 'explore_blog_post_1_category',
     categoryColor: 'bg-red-100 text-red-800 dark:bg-red-900/40 dark:text-red-300',
+    content: [
+      { type: 'paragraph', text: 'blog_p1' },
+      { type: 'paragraph', text: 'blog_p2' },
+    ]
   },
   {
     slug: 'corporate-it-asset-disposal-best-practices',
@@ -51,6 +74,10 @@ export const blogPosts: BlogPost[] = [
     readTime: 'explore_blog_post_2_read_time',
     category: 'explore_blog_post_2_category',
     categoryColor: 'bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300',
+    content: [
+        { type: 'paragraph', text: 'blog_p1' },
+        { type: 'paragraph', text: 'blog_p2' },
+    ]
   },
   {
     slug: 'environmental-impact-of-e-waste-recycling',
@@ -64,6 +91,10 @@ export const blogPosts: BlogPost[] = [
     readTime: 'explore_blog_post_3_read_time',
     category: 'explore_blog_post_3_category',
     categoryColor: 'bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-300',
+    content: [
+      { type: 'paragraph', text: 'blog_p1' },
+      { type: 'paragraph', text: 'blog_p2' },
+    ]
   },
   {
     slug: 'uae-e-waste-regulations-what-businesses-need-to-know',
@@ -77,6 +108,10 @@ export const blogPosts: BlogPost[] = [
     readTime: 'explore_blog_post_4_read_time',
     category: 'explore_blog_post_4_category',
     categoryColor: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-300',
+    content: [
+      { type: 'paragraph', text: 'blog_p1' },
+      { type: 'paragraph', text: 'blog_p2' },
+    ]
   },
   {
     slug: 'how-to-prepare-your-devices-for-e-waste-recycling',
@@ -90,6 +125,10 @@ export const blogPosts: BlogPost[] = [
     readTime: 'explore_blog_post_5_read_time',
     category: 'explore_blog_post_5_category',
     categoryColor: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-300',
+    content: [
+      { type: 'paragraph', text: 'blog_p1' },
+      { type: 'paragraph', text: 'blog_p2' },
+    ]
   },
   {
     slug: 'the-role-of-e-waste-in-the-circular-economy',
@@ -103,6 +142,10 @@ export const blogPosts: BlogPost[] = [
     readTime: 'explore_blog_post_6_read_time',
     category: 'explore_blog_post_6_category',
     categoryColor: 'bg-purple-100 text-purple-800 dark:bg-purple-900/40 dark:text-purple-300',
+    content: [
+      { type: 'paragraph', text: 'blog_p1' },
+      { type: 'paragraph', text: 'blog_p2' },
+    ]
   },
 ];
 
