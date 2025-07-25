@@ -28,15 +28,20 @@ const Hero = () => {
         description: t('hero_desc_1'),
       },
       {
-        image: 'https://images.unsplash.com/photo-1581888224138-516a8a1a3e68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxlLXdhc3RlJTIwbWFjaGluZXJ5fGVufDB8fHx8fDE3NTM0NTQ0NjF8MA&ixlib=rb-4.1.0&q=80&w=1080',
+        image: 'https://content-provider.payshia.com/eco-fleix/hero-2.webp',
         title: t('hero_title_2'),
         description: t('hero_desc_2'),
       },
       {
-        image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxidXNpbmVzcyUyMHRlYW0lMjBjb2xsYWJvcmF0aW9ufGVufDB8fHx8fDE3NTM0Mzg4NzN8MA&ixlib=rb-4.1.0&q=80&w=1080',
+        image: 'https://content-provider.payshia.com/eco-fleix/hero-3.webp',
         title: t('hero_title_3'),
         description: t('hero_desc_3'),
       },
+      {
+        image: 'https://content-provider.payshia.com/eco-fleix/hero-4.webp',
+        title: t('hero_title_4'),
+        description: t('hero_desc_4'),
+      }
     ];
 
   return (

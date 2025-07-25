@@ -1,4 +1,3 @@
-'use client';
 
 import Hero from '@/components/sections/Hero';
 import About from '@/components/sections/About';
@@ -10,7 +9,12 @@ import Faq from '@/components/sections/Faq';
 import Testimonials from '@/components/sections/Testimonials';
 import Cta from '@/components/sections/Cta';
 import { Laptop, Smartphone, Camera, Monitor, Shield, Network, Headphones, Gamepad2 } from 'lucide-react';
-import ServicesContent from '@/components/sections/ServicesContent';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'E-Waste Recycling Dubai | IT Asset Disposition | ECO FLEIX',
+  description: 'ECO FLEIX offers professional e-waste recycling and IT asset disposition (ITAD) services in Dubai. We provide secure data destruction, electronics recycling, and sustainable e-waste management for businesses and individuals.',
+};
 
 const acceptedItems = [
   {

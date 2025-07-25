@@ -46,10 +46,12 @@ const LatestInsights = () => {
                 <span>{t('latest_insights_read_time')}</span>
               </div>
             </div>
+            <a href="/blog/the-future-of-e-waste-management-in-dubai">
              <Button size="lg" className="mt-6 bg-white text-primary hover:bg-white/90">
                 {t('read_full_article')}
                 <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
+            </a>
           </div>
         </div>
       </div>

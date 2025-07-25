@@ -3,6 +3,12 @@ import ContactForm from '@/components/sections/ContactForm';
 import Faq from '@/components/sections/Faq';
 import TalkToUs from '@/components/sections/TalkToUs';
 import Cta from '@/components/sections/Cta';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact Us | E-Waste Recycling & ITAD Services in Dubai',
+  description: 'Contact ECO FLEIX for e-waste recycling, IT asset disposition (ITAD), and secure data destruction services in Dubai. Schedule a free pickup or get a quote today.',
+};
 
 export default function ContactPage() {
   return (
