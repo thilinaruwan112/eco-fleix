@@ -1,7 +1,16 @@
-export interface BlogContentPart {
-  type: 'heading' | 'paragraph' | 'quote' | 'list';
-  text: string;
-}
+export type BlogContentPart = {
+  type: 'heading' | 'subheading' | 'paragraph' | 'list' | 'alert' | 'table' | 'checklist' | 'stats' | 'cta';
+  text?: string;
+  items?: any[];
+  title?: string;
+  variant?: 'default' | 'warning';
+  headers?: string[];
+  rows?: string[][];
+  pros?: { title: string; items: string[] };
+  cons?: { title: string; items: string[] };
+  props?: any;
+};
+
 
 export interface BlogPost {
   slug: string;
@@ -23,8 +32,8 @@ export const blogPosts: BlogPost[] = [
     slug: 'the-future-of-e-waste-management-in-dubai',
     image: 'https://images.unsplash.com/photo-1603436039103-a434191370b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlLXdhc3RlJTIwcmVjeWNsaW5nJTIwZmFjdG9yeXxlbnwwfHx8fDE3NTM0NTA3ODV8MA&ixlib=rb-4.1.0&q=80&w=1080',
     aiHint: 'e-waste recycling factory',
-    title: 'latest_insights_title',
-    description: 'blog_hero_desc',
+    title: 'blog_detail_title',
+    description: 'blog_detail_description',
     author: 'Dr. Sarah Ahmed',
     authorAiHint: 'woman portrait',
     date: 'Mar 15, 2025',
@@ -32,17 +41,65 @@ export const blogPosts: BlogPost[] = [
     category: 'featured_article',
     categoryColor: 'bg-primary/10 text-primary',
     content: [
-      { type: 'paragraph', text: 'blog_p1' },
-      { type: 'paragraph', text: 'blog_p2' },
-      { type: 'heading', text: 'blog_h2_1' },
-      { type: 'paragraph', text: 'blog_p3' },
-      { type: 'quote', text: 'blog_quote_1' },
-      { type: 'paragraph', text: 'blog_p4' },
-      { type: 'list', text: 'blog_li_1_strong:blog_li_1_text' },
-      { type: 'list', text: 'blog_li_2_strong:blog_li_2_text' },
-      { type: 'list', text: 'blog_li_3_strong:blog_li_3_text' },
-      { type: 'heading', text: 'blog_h2_2' },
-      { type: 'paragraph', text: 'blog_p5' },
+      { type: 'paragraph', text: 'blog_p1'},
+      { type: 'heading', text: 'blog_h1'},
+      { type: 'paragraph', text: 'blog_p2'},
+      { type: 'list', items: ['blog_list1_item1', 'blog_list1_item2', 'blog_list1_item3']},
+      { type: 'heading', text: 'blog_h2'},
+      { type: 'subheading', text: 'blog_h3'},
+      { type: 'list', items: ['blog_list2_item1', 'blog_list2_item2', 'blog_list2_item3']},
+      { type: 'subheading', text: 'blog_h4'},
+      { type: 'list', items: ['blog_list3_item1', 'blog_list3_item2']},
+      { type: 'alert', title: 'blog_alert1_title', text: 'blog_alert1_text', variant: 'warning'},
+      { type: 'heading', text: 'blog_h5'},
+      { type: 'subheading', text: 'blog_h6'},
+      { type: 'list', items: ['blog_list4_item1', 'blog_list4_item2', 'blog_list4_item3', 'blog_list4_item4']},
+      { type: 'subheading', text: 'blog_h7'},
+      { type: 'table', headers: ['blog_table1_header1', 'blog_table1_header2', 'blog_table1_header3', 'blog_table1_header4'], rows: [
+          ['blog_table1_row1_col1', 'blog_table1_row1_col2', 'blog_table1_row1_col3', 'blog_table1_row1_col4'],
+          ['blog_table1_row2_col1', 'blog_table1_row2_col2', 'blog_table1_row2_col3', 'blog_table1_row2_col4'],
+          ['blog_table1_row3_col1', 'blog_table1_row3_col2', 'blog_table1_row3_col3', 'blog_table1_row3_col4'],
+          ['blog_table1_row4_col1', 'blog_table1_row4_col2', 'blog_table1_row4_col3', 'blog_table1_row4_col4'],
+          ['blog_table1_row5_col1', 'blog_table1_row5_col2', 'blog_table1_row5_col3', 'blog_table1_row5_col4'],
+      ]},
+      { type: 'subheading', text: 'blog_h8'},
+      { type: 'paragraph', text: 'blog_p3'},
+      { type: 'checklist', 
+        pros: { title: 'blog_checklist1_pros_title', items: ['blog_checklist1_pros_item1', 'blog_checklist1_pros_item2', 'blog_checklist1_pros_item3', 'blog_checklist1_pros_item4', 'blog_checklist1_pros_item5']},
+        cons: { title: 'blog_checklist1_cons_title', items: ['blog_checklist1_cons_item1', 'blog_checklist1_cons_item2', 'blog_checklist1_cons_item3', 'blog_checklist1_cons_item4', 'blog_checklist1_cons_item5']}
+      },
+      { type: 'heading', text: 'blog_h9'},
+      { type: 'paragraph', text: 'blog_p4'},
+      { type: 'stats', items: [
+        {value: '95%', label: 'blog_stat1_label'},
+        {value: '80%', label: 'blog_stat2_label'},
+        {value: '70%', label: 'blog_stat3_label'},
+      ]},
+      { type: 'subheading', text: 'blog_h10'},
+      { type: 'paragraph', text: 'blog_p5'},
+      { type: 'list', items: ['blog_list5_item1', 'blog_list5_item2', 'blog_list5_item3', 'blog_list5_item4']},
+      { type: 'heading', text: 'blog_h11'},
+      { type: 'subheading', text: 'blog_h12'},
+      { type: 'list', items: ['blog_list6_item1', 'blog_list6_item2', 'blog_list6_item3', 'blog_list6_item4']},
+      { type: 'subheading', text: 'blog_h13'},
+      { type: 'paragraph', text: 'blog_p6'},
+      { type: 'alert', title: 'blog_alert2_title', text: 'blog_alert2_text', variant: 'default'},
+      { type: 'heading', text: 'blog_h14'},
+      { type: 'paragraph', text: 'blog_p7'},
+      { type: 'subheading', text: 'blog_h15'},
+      { type: 'list', items: ['blog_list7_item1', 'blog_list7_item2', 'blog_list7_item3', 'blog_list7_item4']},
+      { type: 'alert', title: 'blog_alert3_title', text: 'blog_alert3_text', variant: 'default'},
+      { type: 'heading', text: 'blog_h16'},
+      { type: 'paragraph', text: 'blog_p8'},
+      { type: 'paragraph', text: 'blog_p9'},
+      { type: 'cta', props: {
+        title: 'blog_cta_title',
+        desc: 'blog_cta_desc',
+        button1Text: 'blog_cta_button1',
+        button1Link: '/contact',
+        button2Text: 'blog_cta_button2',
+        button2Link: '/our-process'
+      }}
     ]
   },
   {

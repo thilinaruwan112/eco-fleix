@@ -5,9 +5,20 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { BlogPost } from '@/lib/blog-data';
+import { BlogPost, BlogContentPart } from '@/lib/blog-data';
 import { useTranslation } from '@/hooks/use-translation';
 import { Calendar, Clock, Twitter, Facebook, Linkedin, Link } from 'lucide-react';
+import { 
+  BlogParagraph,
+  BlogHeading,
+  BlogSubHeading,
+  BlogList,
+  BlogAlert,
+  BlogTable,
+  BlogChecklist,
+  BlogStatCard,
+  BlogCallToAction,
+} from './BlogComponents';
 
 const SocialShare = () => {
     const { t } = useTranslation();
@@ -30,51 +41,44 @@ const SocialShare = () => {
     )
 }
 
-const renderContent = (content: BlogPost['content'], t: (key: string) => string) => {
-  const listItems: string[] = [];
-
-  const renderList = (items: string[]) => (
-    <ul className="space-y-2">
-      {items.map((item, index) => {
-        const [strongKey, textKey] = item.split(':');
+const renderContent = (content: BlogContentPart[]) => {
+  return content.map((part, index) => {
+    switch (part.type) {
+      case 'heading':
+        return <BlogHeading key={index} text={part.text} />;
+      case 'subheading':
+        return <BlogSubHeading key={index} text={part.text} />;
+      case 'paragraph':
+        return <BlogParagraph key={index} text={part.text} />;
+      case 'list':
+        return <BlogList key={index} items={part.items!} />;
+      case 'alert':
+        return <BlogAlert key={index} title={part.title!} text={part.text} variant={part.variant} />;
+      case 'table':
+        return <BlogTable key={index} headers={part.headers!} rows={part.rows!} />;
+      case 'checklist':
         return (
-          <li key={index}>
-            <strong>{t(strongKey)}</strong>: {t(textKey)}
-          </li>
+          <div key={index} className="grid md:grid-cols-2 gap-8 my-6">
+            <BlogChecklist title={part.pros!.title} items={part.pros!.items} type="pros" />
+            <BlogChecklist title={part.cons!.title} items={part.cons!.items} type="cons" />
+          </div>
         );
-      })}
-    </ul>
-  );
-
-  const elements = content.reduce((acc, part, index) => {
-    if (part.type === 'list') {
-      listItems.push(part.text);
-      if (index === content.length - 1 || content[index + 1].type !== 'list') {
-        acc.push(renderList(listItems.slice()));
-        listItems.length = 0;
-      }
-    } else {
-      if (listItems.length > 0) {
-        acc.push(renderList(listItems.slice()));
-        listItems.length = 0;
-      }
-      switch (part.type) {
-        case 'heading':
-          acc.push(<h2 key={index}>{t(part.text)}</h2>);
-          break;
-        case 'paragraph':
-          acc.push(<p key={index}>{t(part.text)}</p>);
-          break;
-        case 'quote':
-          acc.push(<blockquote key={index}>{t(part.text)}</blockquote>);
-          break;
-      }
+      case 'stats':
+        return (
+          <div key={index} className="grid md:grid-cols-3 gap-8 my-12">
+            {part.items!.map((stat, i) => (
+              <BlogStatCard key={i} value={stat.value} label={stat.label} />
+            ))}
+          </div>
+        );
+      case 'cta':
+        return <BlogCallToAction key={index} {...part.props!} />;
+      default:
+        return null;
     }
-    return acc;
-  }, [] as React.ReactNode[]);
-
-  return elements;
+  });
 };
+
 
 const BlogPostContent = ({ post }: { post: BlogPost }) => {
   const { t } = useTranslation();
@@ -122,8 +126,8 @@ const BlogPostContent = ({ post }: { post: BlogPost }) => {
           </div>
 
           {/* Main Content */}
-          <article className="prose prose-lg dark:prose-invert max-w-none mx-auto">
-             {renderContent(post.content, t)}
+          <article className="prose-lg dark:prose-invert max-w-none mx-auto space-y-4">
+             {renderContent(post.content)}
           </article>
 
           <Separator className="my-12" />
