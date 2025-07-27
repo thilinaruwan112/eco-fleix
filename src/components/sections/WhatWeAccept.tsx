@@ -5,6 +5,8 @@ import React from 'react';
 import { Badge } from '../ui/badge';
 import { useTranslation } from '@/hooks/use-translation';
 import Image from 'next/image';
+import { Button } from '../ui/button';
+import { ArrowRight } from 'lucide-react';
 
 interface AcceptedItem {
   icon: React.ReactNode;
@@ -35,31 +37,35 @@ const WhatWeAccept: React.FC<WhatWeAcceptProps> = ({ title, items }) => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {items.map((item, index) => (
-            <Card key={index} className="text-left shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-2xl bg-card h-full transform hover:-translate-y-2 group overflow-hidden">
-                <div className="relative h-64">
-                    <Image
-                        src={item.image}
-                        alt={t(item.title)}
-                        layout="fill"
-                        objectFit="cover"
-                        className="w-full h-full transform group-hover:scale-105 transition-transform duration-300"
-                        data-ai-hint={item.aiHint}
-                    />
-                    <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors"></div>
-                    <div className="absolute bottom-0 left-0 p-6 text-white">
-                        <div className="bg-white/20 rounded-full p-3 mb-4 w-max group-hover:bg-white/30 transition-colors duration-300">
-                          {React.cloneElement(item.icon as React.ReactElement, { className: "h-8 w-8 text-white"})}
-                        </div>
-                        <h3 className="text-xl font-bold text-white mb-2 flex-grow">
-                          {t(item.title)}
-                        </h3>
+             <Card key={index} className="group relative flex flex-col overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+              <div className="relative h-56 w-full">
+                  <Image
+                      src={item.image}
+                      alt={t(item.title)}
+                      layout="fill"
+                      objectFit="cover"
+                      className="transition-transform duration-300 group-hover:scale-105"
+                      data-ai-hint={item.aiHint}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              </div>
+
+              <div className="absolute bottom-0 left-0 right-0 p-4 pt-12">
+                <div className="relative">
+                    <div className="absolute bottom-full left-0 right-0 h-16 bg-gradient-to-t from-background to-transparent"></div>
+                    <div className="bg-background p-4 rounded-lg shadow-md relative">
+                       <h3 className="text-lg font-bold text-foreground truncate">{t(item.title)}</h3>
+                       <div className="h-20 overflow-hidden relative mt-2">
+                          <p className="text-sm text-muted-foreground opacity-100 transition-opacity duration-300 group-hover:opacity-0">{t(item.description)}</p>
+                          <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <Button variant="outline" size="sm">
+                              {t('learn_more')} <ArrowRight className="ml-2 h-4 w-4" />
+                            </Button>
+                          </div>
+                      </div>
                     </div>
                 </div>
-              <CardContent className="p-6 flex flex-col h-full bg-card">
-                <p className="text-muted-foreground text-sm">
-                  {t(item.description)}
-                </p>
-              </CardContent>
+              </div>
             </Card>
           ))}
         </div>
