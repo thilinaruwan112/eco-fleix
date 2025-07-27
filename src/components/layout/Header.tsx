@@ -138,12 +138,13 @@ const Header = () => {
       </div>
       <div className="border-b border-t border-border/50">
         <div className="container mx-auto px-4 flex items-center justify-between h-20">
-          <a href="/" className="flex items-center gap-2">
-            <Recycle className="h-8 w-8 text-primary" />
-            <div className='flex flex-col'>
-              <span className="font-bold text-lg md:text-2xl text-primary">ECO FLEIX</span>
-              <span className="text-xs text-foreground/70 -mt-1">{t('company_subtitle')}</span>
-            </div>
+          <a href="/" className="flex items-center">
+            <Image 
+              src="https://content-provider.payshia.com/eco-fleix/logo-horizontal.png" 
+              alt="ECO FLEIX Logo"
+              width={180}
+              height={40}
+            />
           </a>
           <nav className="hidden md:flex items-center gap-6">
             <NavLink href="/">{t('home')}</NavLink>

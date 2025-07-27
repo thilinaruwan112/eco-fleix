@@ -4,6 +4,7 @@ import { Recycle, MapPin, Phone, Mail, Globe } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/use-translation';
+import Image from 'next/image';
 
 const Footer = () => {
     const { t } = useTranslation();
@@ -14,8 +15,12 @@ const Footer = () => {
             {/* Logo and Description */}
             <div className="space-y-4">
                <a href="/" className="flex items-center gap-2">
-                    <Recycle className="h-8 w-8 text-primary" />
-                    <span className="font-bold text-xl text-white">ECO FLEIX</span>
+                    <Image 
+                      src="https://content-provider.payshia.com/eco-fleix/logo-eflix.png" 
+                      alt="ECO FLEIX Logo"
+                      width={60}
+                      height={60}
+                    />
                 </a>
               <p className="text-gray-400">
                 {t('footer_desc')}
