@@ -24,16 +24,19 @@ const Hero = () => {
     const slides = [
       {
         image: 'https://content-provider.payshia.com/eco-fleix/hero-design-optimized.webp',
+        mobileImage: 'https://content-provider.payshia.com/eco-fleix/hero-mobile-1-optimized.webp',
         title: t('hero_title_1'),
         description: t('hero_desc_1'),
       },
       {
         image: 'https://content-provider.payshia.com/eco-fleix/hero-new-2-optimized.webp',
+        mobileImage: 'https://content-provider.payshia.com/eco-fleix/hero-mobile-2-optimized.webp',
         title: 'E-Waste Recycling',
         description: t('hero_desc_1'),
       },
       {
         image: 'https://content-provider.payshia.com/eco-fleix/hero-3.jpg-optimized.webp',
+        mobileImage: 'https://content-provider.payshia.com/eco-fleix/hero-mobile-3-optimized.webp',
         title: 'Data Destruction',
         description: t('hero_desc_2'),
       }
@@ -54,13 +57,24 @@ const Hero = () => {
             {slides.map((slide, index) => (
               <CarouselItem key={index}>
                 <div className="relative w-full h-[90vh] min-h-[600px] text-white">
-                  <Image
-                    src={slide.image}
-                    alt={slide.title}
-                    layout="fill"
-                    objectFit="cover"
-                    priority={index === 0}
-                  />
+                  <div className="hidden md:block w-full h-full">
+                    <Image
+                      src={slide.image}
+                      alt={slide.title}
+                      layout="fill"
+                      objectFit="cover"
+                      priority={index === 0}
+                    />
+                  </div>
+                  <div className="block md:hidden w-full h-full">
+                     <Image
+                      src={slide.mobileImage}
+                      alt={slide.title}
+                      layout="fill"
+                      objectFit="cover"
+                      priority={index === 0}
+                    />
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent z-10" />
                   <div className="container mx-auto px-4 z-20 relative flex flex-col justify-center h-full text-center">
                     <div className="max-w-4xl mx-auto">
