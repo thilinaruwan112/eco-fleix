@@ -26,17 +26,17 @@ const NavLink = ({ children, href, hasDropdown = false }: { children: React.Reac
 };
 
 const services = [
-  { name: 'it_asset_remarketing', href: '/services#it-asset-remarketing', description: 'it_asset_remarketing_desc_short', image: 'https://placehold.co/400x400.png', aiHint: 'refurbished laptops' },
-  { name: 'it_asset_remanufacturing', href: '/services#it-asset-remanufacturing', description: 'it_asset_remanufacturing_desc_short', image: 'https://placehold.co/400x400.png', aiHint: 'technician repairing computer' },
-  { name: 'it_asset_disposition', href: '/services#it-asset-disposition', description: 'it_asset_disposition_desc_short', image: 'https://placehold.co/400x400.png', aiHint: 'e-waste collection bins' },
-  { name: 'data_destruction', href: '/services#data-destruction', description: 'data_destruction_desc_short', image: 'https://placehold.co/400x400.png', aiHint: 'hard drive shredder' },
+  { name: 'it_asset_remarketing', href: '/services#it-asset-remarketing', description: 'it_asset_remarketing_desc_short', image: 'https://images.unsplash.com/photo-1589913649361-56d3f8762bc7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxyZWZ1cmJpc2hlZCUyMGxhcHRvcHN8ZW58MHx8fHwxNzUzNjM5NDA0fDA&ixlib=rb-4.1.0&q=80&w=1080', aiHint: 'refurbished laptops' },
+  { name: 'it_asset_remanufacturing', href: '/services#it-asset-remanufacturing', description: 'it_asset_remanufacturing_desc_short', image: 'https://images.unsplash.com/photo-1724475439756-675ec5ee4053?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx0ZWNobmljaWFuJTIwcmVwYWlyaW5nJTIwY29tcHV0ZXJ8ZW58MHx8fHwxNzUzNjM5NDA0fDA&ixlib=rb-4.1.0&q=80&w=1080', aiHint: 'technician repairing computer' },
+  { name: 'it_asset_disposition', href: '/services#it-asset-disposition', description: 'it_asset_disposition_desc_short', image: 'https://images.unsplash.com/photo-1582748298043-0c0d31aa506e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxlLXdhc3RlJTIwY29sbGVjdGlvbiUyMGJpbnN8ZW58MHx8fHwxNzUzNjM5NDAzfDA&ixlib=rb-4.1.0&q=80&w=1080', aiHint: 'e-waste collection bins' },
+  { name: 'data_destruction', href: '/services#data-destruction', description: 'data_destruction_desc_short', image: 'https://images.unsplash.com/photo-1582184131482-5806da4a05c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxoYXJkJTIwZHJpdmUlMjBzaHJlZGRlcnxlbnwwfHx8fDE3NTM2Mzk0MDN8MA&ixlib=rb-4.1.0&q=80&w=1080', aiHint: 'hard drive shredder' },
 ];
 
 const whoWeServe = [
-    { name: 'corporations', href: '/who-we-serve#corporations', description: 'corporations_desc', image: 'https://placehold.co/400x400.png', aiHint: 'modern office building' },
-    { name: 'government_agencies', href: '/who-we-serve#government-agencies', description: 'government_agencies_desc', image: 'https://placehold.co/400x400.png', aiHint: 'government building' },
-    { name: 'educational_institutions', href: '/who-we-serve#educational-institutions', description: 'educational_institutions_desc', image: 'https://placehold.co/400x400.png', aiHint: 'university campus' },
-    { name: 'financial_institutions', href: '/who-we-serve#financial-institutions', description: 'financial_institutions_desc', image: 'https://placehold.co/400x400.png', aiHint: 'bank building exterior' },
+    { name: 'corporations', href: '/who-we-serve#corporations', description: 'corporations_desc', image: 'https://images.unsplash.com/photo-1703355685722-2996b01483be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBvZmZpY2UlMjBidWlsZGluZ3xlbnwwfHx8fDE3NTM2Mzk3NTh8MA&ixlib=rb-4.1.0&q=80&w=1080', aiHint: 'modern office building' },
+    { name: 'government_agencies', href: '/who-we-serve#government-agencies', description: 'government_agencies_desc', image: 'https://images.unsplash.com/photo-1523292562811-8fa7962a78c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxnb3Zlcm5tZW50JTIwYnVpbGRpbmd8ZW58MHx8fHwxNzUzNjM5NzU4fDA&ixlib=rb-4.1.0&q=80&w=1080', aiHint: 'government building' },
+    { name: 'educational_institutions', href: '/who-we-serve#educational-institutions', description: 'educational_institutions_desc', image: 'https://images.unsplash.com/photo-1642130935796-1409d7e075dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc1MzYzOTc1OHww&ixlib=rb-4.1.0&q=80&w=1080', aiHint: 'university campus' },
+    { name: 'financial_institutions', href: '/who-we-serve#financial-institutions', description: 'financial_institutions_desc', image: 'https://images.unsplash.com/photo-1702396221197-4ed573fec8c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxiYW5rJTIwYnVpbGRpbmclMjBleHRlcmlvcnxlbnwwfHx8fDE3NTM2Mzk3NTh8MA&ixlib=rb-4.1.0&q=80&w=1080', aiHint: 'bank building exterior' },
     { name: 'healthcare_medical', href: '/who-we-serve#healthcare-medical', description: 'healthcare_medical_desc', image: 'https://placehold.co/400x400.png', aiHint: 'hospital building' },
 ];
 
@@ -138,12 +138,14 @@ const Header = () => {
       </div>
       <div className="border-b border-t border-border/50">
         <div className="container mx-auto px-4 flex items-center justify-between h-20">
-          <a href="/" className="flex items-center gap-2">
-            <Recycle className="h-8 w-8 text-primary" />
-            <div className='flex flex-col'>
-              <span className="font-bold text-lg md:text-2xl text-primary">ECO FLEIX</span>
-              <span className="text-xs text-foreground/70 -mt-1">{t('company_subtitle')}</span>
-            </div>
+          <a href="/" className="flex items-center">
+            <Image 
+              src="https://content-provider.payshia.com/eco-fleix/logo-horizontal.png" 
+              alt="ECO FLEIX Logo"
+              width={180}
+              height={40}
+              className="dark:filter dark:grayscale dark:invert"
+            />
           </a>
           <nav className="hidden md:flex items-center gap-6">
             <NavLink href="/">{t('home')}</NavLink>
