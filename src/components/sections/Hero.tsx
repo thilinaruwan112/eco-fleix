@@ -57,22 +57,22 @@ const Hero = () => {
             {slides.map((slide, index) => (
               <CarouselItem key={index}>
                 <div className="relative w-full h-[90vh] min-h-[600px] text-white">
-                  <div className="hidden md:block w-full h-full">
+                  <div className="absolute inset-0">
                     <Image
                       src={slide.image}
                       alt={slide.title}
                       layout="fill"
                       objectFit="cover"
                       priority={index === 0}
+                      className="hidden md:block"
                     />
-                  </div>
-                  <div className="block md:hidden w-full h-full">
-                     <Image
+                    <Image
                       src={slide.mobileImage}
                       alt={slide.title}
                       layout="fill"
                       objectFit="cover"
                       priority={index === 0}
+                      className="block md:hidden"
                     />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent z-10" />
