@@ -13,7 +13,7 @@ const OurProcessSteps = () => {
     {
       icon: <Truck className="h-8 w-8 text-primary" />,
       title: 'our_process_step_1_title',
-      image: 'https://images.unsplash.com/photo-1582575223332-cb3c80461517?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0ZWNobmljaWFucyUyMGxvYWRpbmclMjB0cnVja3xlbnwwfHx8fDE3NTM3NjY5MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      image: 'https://images.unsplash.com/photo-1582748298043-0c0d31aa506e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZWxlY3Ryb25pYyUyMHdhc3RlfGVufDB8fHx8MTc1MzY0MDE1MXww&ixlib=rb-4.1.0&q=80&w=1080',
       aiHint: 'technicians loading truck',
       benefits: [
         'our_process_step_1_benefit_1',
