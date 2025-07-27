@@ -20,7 +20,7 @@ const Footer = () => {
                       alt="ECO FLEIX Logo"
                       width={60}
                       height={60}
-                      className="dark:brightness-0 dark:invert"
+                      className="dark:invert"
                     />
                 </a>
               <p className="text-gray-400">
