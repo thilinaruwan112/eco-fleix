@@ -144,6 +144,7 @@ const Header = () => {
               alt="ECO FLEIX Logo"
               width={180}
               height={40}
+              className="dark:brightness-0 dark:invert"
             />
           </a>
           <nav className="hidden md:flex items-center gap-6">
