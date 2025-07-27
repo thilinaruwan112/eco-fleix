@@ -29,7 +29,7 @@ export interface BlogPost {
 
 const futureOfEwastePost: BlogPost = {
   slug: 'the-future-of-e-waste-management-in-dubai',
-  image: 'https://images.unsplash.com/photo-1603436039103-a434191370b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlLXdhc3RlJTIwcmVjeWNsaW5nJTIwZmFjdG9yeXxlbnwwfHx8fDE3NTM0NTA3ODV8MA&ixlib=rb-4.1.0&q=80&w=1080',
+  image: 'https://images.unsplash.com/photo-1645520718652-9342896b0eec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxlLXdhc3RlJTIwcmVjeWNsaW5nJTIwZmFjdG9yeXxlbnwwfHx8fDE3NTM2MzkzMzd8MA&ixlib=rb-4.1.0&q=80&w=1080',
   aiHint: 'e-waste recycling factory',
   title: 'blog_detail_title',
   description: 'blog_detail_description',
@@ -105,7 +105,7 @@ const futureOfEwastePost: BlogPost = {
 const otherBlogPosts: BlogPost[] = [
   {
     slug: 'complete-guide-to-secure-data-destruction',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://images.unsplash.com/photo-1652195019227-4f3d3f599959?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzaHJlZGRlZCUyMGhhcmQlMjBkcml2ZXN8ZW58MHx8fHwxNzUzNjM5MzcwfDA&ixlib=rb-4.1.0&q=80&w=1080',
     aiHint: 'shredded hard drives',
     title: 'explore_blog_post_1_title',
     description: 'explore_blog_post_1_desc',
@@ -143,7 +143,7 @@ const otherBlogPosts: BlogPost[] = [
   },
   {
     slug: 'corporate-it-asset-disposal-best-practices',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxvZmZpY2UlMjBjb21wdXRlcnN8ZW58MHx8fHwxNzUzNjM5MzcwfDA&ixlib=rb-4.1.0&q=80&w=1080',
     aiHint: 'office computers',
     title: 'explore_blog_post_2_title',
     description: 'explore_blog_post_2_desc',
@@ -174,7 +174,7 @@ const otherBlogPosts: BlogPost[] = [
   },
   {
     slug: 'environmental-impact-of-e-waste-recycling',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://images.unsplash.com/photo-1637064719709-0928e058f140?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxyZWN5Y2xpbmclMjBzeW1ib2wlMjBtb25pdG9yfGVufDB8fHx8MTc1MzYzOTM2OXww&ixlib=rb-4.1.0&q=80&w=1080',
     aiHint: 'recycling symbol monitor',
     title: 'explore_blog_post_3_title',
     description: 'explore_blog_post_3_desc',
@@ -206,7 +206,7 @@ const otherBlogPosts: BlogPost[] = [
   },
   {
     slug: 'uae-e-waste-regulations-what-businesses-need-to-know',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://images.unsplash.com/photo-1554224155-cfa08c2a758f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb21wbGlhbmNlJTIwZG9jdW1lbnRzfGVufDB8fHx8MTc1MzYzOTM2OXww&ixlib=rb-4.1.0&q=80&w=1080',
     aiHint: 'compliance documents',
     title: 'explore_blog_post_4_title',
     description: 'explore_blog_post_4_desc',
@@ -236,7 +236,7 @@ const otherBlogPosts: BlogPost[] = [
   },
   {
     slug: 'how-to-prepare-your-devices-for-e-waste-recycling',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://images.unsplash.com/photo-1595392030002-dd3bcc0ca05a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxvbGQlMjBtb2JpbGUlMjBwaG9uZXN8ZW58MHx8fHwxNzUzNjM5MzY5fDA&ixlib=rb-4.1.0&q=80&w=1080',
     aiHint: 'old mobile phones',
     title: 'explore_blog_post_5_title',
     description: 'explore_blog_post_5_desc',
@@ -266,7 +266,7 @@ const otherBlogPosts: BlogPost[] = [
   },
   {
     slug: 'the-role-of-e-waste-in-the-circular-economy',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://images.unsplash.com/photo-1728042743444-527919e2443d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjaXJjdWxhciUyMGVjb25vbXklMjBkaWFncmFtfGVufDB8fHx8MTc1MzYzOTM2OXww&ixlib=rb-4.1.0&q=80&w=1080',
     aiHint: 'circular economy diagram',
     title: 'explore_blog_post_6_title',
     description: 'explore_blog_post_6_desc',
