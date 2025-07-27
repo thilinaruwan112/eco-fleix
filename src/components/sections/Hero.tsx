@@ -29,13 +29,13 @@ const Hero = () => {
       },
       {
         image: 'https://content-provider.payshia.com/eco-fleix/hero-new-2-optimized.webp',
-        title: t('hero_title_2'),
-        description: t('hero_desc_2'),
+        title: 'E-Waste Recycling',
+        description: t('hero_desc_1'),
       },
       {
         image: 'https://content-provider.payshia.com/eco-fleix/hero-3.jpg-optimized.webp',
-        title: t('hero_title_3'),
-        description: t('hero_desc_3'),
+        title: 'Data Destruction',
+        description: t('hero_desc_2'),
       }
     ];
 
