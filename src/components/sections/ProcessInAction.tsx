@@ -31,7 +31,7 @@ const ProcessInAction = () => {
           </div>
           <div className="relative h-64 rounded-xl overflow-hidden shadow-lg">
             <Image
-              src="https://images.unsplash.com/photo-1579684385127-6f13e506b5d5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtZWRpY2FsJTIwZXF1aXBtZW50fGVufDB8fHx8fDE3NTM3NjY5NjB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+              src="https://images.unsplash.com/photo-1595464144526-5fb181b74625?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwZXF1aXBtZW50fGVufDB8fHx8MTc1MzY0MzEzMHww&ixlib=rb-4.1.0&q=80&w=1080"
               alt="Medical equipment"
               layout="fill"
               objectFit="cover"
