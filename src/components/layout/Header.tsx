@@ -33,10 +33,10 @@ const services = [
 ];
 
 const whoWeServe = [
-    { name: 'corporations', href: '/who-we-serve#corporations', description: 'corporations_desc', image: 'https://placehold.co/400x400.png', aiHint: 'modern office building' },
-    { name: 'government_agencies', href: '/who-we-serve#government-agencies', description: 'government_agencies_desc', image: 'https://placehold.co/400x400.png', aiHint: 'government building' },
-    { name: 'educational_institutions', href: '/who-we-serve#educational-institutions', description: 'educational_institutions_desc', image: 'https://placehold.co/400x400.png', aiHint: 'university campus' },
-    { name: 'financial_institutions', href: '/who-we-serve#financial-institutions', description: 'financial_institutions_desc', image: 'https://placehold.co/400x400.png', aiHint: 'bank building exterior' },
+    { name: 'corporations', href: '/who-we-serve#corporations', description: 'corporations_desc', image: 'https://images.unsplash.com/photo-1703355685722-2996b01483be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBvZmZpY2UlMjBidWlsZGluZ3xlbnwwfHx8fDE3NTM2Mzk3NTh8MA&ixlib=rb-4.1.0&q=80&w=1080', aiHint: 'modern office building' },
+    { name: 'government_agencies', href: '/who-we-serve#government-agencies', description: 'government_agencies_desc', image: 'https://images.unsplash.com/photo-1523292562811-8fa7962a78c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxnb3Zlcm5tZW50JTIwYnVpbGRpbmd8ZW58MHx8fHwxNzUzNjM5NzU4fDA&ixlib=rb-4.1.0&q=80&w=1080', aiHint: 'government building' },
+    { name: 'educational_institutions', href: '/who-we-serve#educational-institutions', description: 'educational_institutions_desc', image: 'https://images.unsplash.com/photo-1642130935796-1409d7e075dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc1MzYzOTc1OHww&ixlib=rb-4.1.0&q=80&w=1080', aiHint: 'university campus' },
+    { name: 'financial_institutions', href: '/who-we-serve#financial-institutions', description: 'financial_institutions_desc', image: 'https://images.unsplash.com/photo-1702396221197-4ed573fec8c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxiYW5rJTIwYnVpbGRpbmclMjBleHRlcmlvcnxlbnwwfHx8fDE3NTM2Mzk3NTh8MA&ixlib=rb-4.1.0&q=80&w=1080', aiHint: 'bank building exterior' },
     { name: 'healthcare_medical', href: '/who-we-serve#healthcare-medical', description: 'healthcare_medical_desc', image: 'https://placehold.co/400x400.png', aiHint: 'hospital building' },
 ];
 
