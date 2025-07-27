@@ -14,6 +14,72 @@ import { useTranslation } from '@/hooks/use-translation';
 const ContactForm = () => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('dubai');
+  const phoneNumber = '971529058388';
+
+  // State for Send Message form
+  const [messageForm, setMessageForm] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    company: '',
+    service: '',
+    foundUs: '',
+    message: '',
+  });
+
+  // State for Schedule Pickup form
+  const [pickupForm, setPickupForm] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    company: '',
+    address: '',
+    details: '',
+  });
+
+  const handleMessageFormChange = (field: string, value: string) => {
+    setMessageForm(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handlePickupFormChange = (field: string, value: string) => {
+    setPickupForm(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleMessageSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const { fullName, email, phone, company, service, foundUs, message } = messageForm;
+    const whatsappMessage = `*New Message Inquiry*
+
+*Full Name:* ${fullName}
+*Email:* ${email}
+*Phone:* ${phone}
+*Company:* ${company || 'N/A'}
+*Service Required:* ${service}
+*How did you find us?:* ${foundUs}
+
+*Message:*
+${message}`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const handlePickupSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const { fullName, email, phone, company, address, details } = pickupForm;
+    const whatsappMessage = `*New Pickup Request*
+
+*Full Name:* ${fullName}
+*Email:* ${email}
+*Phone:* ${phone}
+*Company:* ${company || 'N/A'}
+*Pickup Address:* ${address}
+
+*E-waste Details:*
+${details}`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section className="py-16 md:py-24 bg-muted/40">
       <div className="container mx-auto px-4">
@@ -25,16 +91,16 @@ const ContactForm = () => {
                 <TabsTrigger value="schedule-pickup">{t('schedule_free_pickup')}</TabsTrigger>
               </TabsList>
               <TabsContent value="send-message">
-                <form className="space-y-4 mt-6">
+                <form onSubmit={handleMessageSubmit} className="space-y-4 mt-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <Input placeholder={t('full_name')} />
-                    <Input type="email" placeholder={t('email')} />
+                    <Input placeholder={t('full_name')} value={messageForm.fullName} onChange={(e) => handleMessageFormChange('fullName', e.target.value)} required />
+                    <Input type="email" placeholder={t('email')} value={messageForm.email} onChange={(e) => handleMessageFormChange('email', e.target.value)} required />
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <Input type="tel" placeholder={t('phone_number')} />
-                    <Input placeholder={t('company_name')} />
+                    <Input type="tel" placeholder={t('phone_number')} value={messageForm.phone} onChange={(e) => handleMessageFormChange('phone', e.target.value)} required />
+                    <Input placeholder={t('company_name')} value={messageForm.company} onChange={(e) => handleMessageFormChange('company', e.target.value)} />
                   </div>
-                  <Select>
+                  <Select onValueChange={(value) => handleMessageFormChange('service', value)} value={messageForm.service}>
                     <SelectTrigger>
                       <SelectValue placeholder={t('service_required')} />
                     </SelectTrigger>
@@ -45,7 +111,7 @@ const ContactForm = () => {
                       <SelectItem value="data-destruction">{t('data_destruction')}</SelectItem>
                     </SelectContent>
                   </Select>
-                  <Select>
+                  <Select onValueChange={(value) => handleMessageFormChange('foundUs', value)} value={messageForm.foundUs}>
                     <SelectTrigger>
                       <SelectValue placeholder={t('how_did_you_find_us')} />
                     </SelectTrigger>
@@ -56,23 +122,23 @@ const ContactForm = () => {
                       <SelectItem value="other">{t('other')}</SelectItem>
                     </SelectContent>
                   </Select>
-                  <Textarea placeholder={t('message')} rows={4} />
-                  <Button className="w-full">{t('send_message')} <ArrowRight className="ml-2 h-4 w-4" /></Button>
+                  <Textarea placeholder={t('message')} rows={4} value={messageForm.message} onChange={(e) => handleMessageFormChange('message', e.target.value)} required />
+                  <Button type="submit" className="w-full">{t('send_message')} <ArrowRight className="ml-2 h-4 w-4" /></Button>
                 </form>
               </TabsContent>
               <TabsContent value="schedule-pickup">
-                 <form className="space-y-4 mt-6">
+                 <form onSubmit={handlePickupSubmit} className="space-y-4 mt-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <Input placeholder={t('full_name')} />
-                    <Input type="email" placeholder={t('email')} />
+                    <Input placeholder={t('full_name')} value={pickupForm.fullName} onChange={(e) => handlePickupFormChange('fullName', e.target.value)} required />
+                    <Input type="email" placeholder={t('email')} value={pickupForm.email} onChange={(e) => handlePickupFormChange('email', e.target.value)} required />
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <Input type="tel" placeholder={t('phone_number')} />
-                    <Input placeholder={t('company_name')} />
+                    <Input type="tel" placeholder={t('phone_number')} value={pickupForm.phone} onChange={(e) => handlePickupFormChange('phone', e.target.value)} required />
+                    <Input placeholder={t('company_name')} value={pickupForm.company} onChange={(e) => handlePickupFormChange('company', e.target.value)} />
                   </div>
-                   <Input placeholder={t('pickup_address')} />
-                   <Textarea placeholder={t('ewaste_details')} rows={4}/>
-                  <Button className="w-full">{t('schedule_pickup')} <ArrowRight className="ml-2 h-4 w-4" /></Button>
+                   <Input placeholder={t('pickup_address')} value={pickupForm.address} onChange={(e) => handlePickupFormChange('address', e.target.value)} required />
+                   <Textarea placeholder={t('ewaste_details')} rows={4} value={pickupForm.details} onChange={(e) => handlePickupFormChange('details', e.target.value)} required />
+                  <Button type="submit" className="w-full">{t('schedule_pickup')} <ArrowRight className="ml-2 h-4 w-4" /></Button>
                 </form>
               </TabsContent>
             </Tabs>
