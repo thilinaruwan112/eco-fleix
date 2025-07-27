@@ -39,8 +39,8 @@ const OurProcessSteps = () => {
     {
       icon: <Recycle className="h-8 w-8 text-primary" />,
       title: 'our_process_step_3_title',
-      image: 'https://images.unsplash.com/photo-1603436039103-a434191370b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlLXdhc3RlJTIwcmVjeWNsaW5nJTIwZmFjdG9yeXxlbnwwfHx8fDE3NTM0NTA3ODV8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      aiHint: 'e-waste recycling factory',
+      image: 'https://images.unsplash.com/photo-1604188233349-8451125a0729?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxlbGVjdHJvbmljJTIwd2FzdGUlMjBzb3J0aW5nfGVufDB8fHx8MTc1Mzk2NzY5N3ww&ixlib=rb-4.1.0&q=80&w=1080',
+      aiHint: 'electronic waste sorting',
       benefits: [
         'our_process_step_3_benefit_1',
         'our_process_step_3_benefit_2',
