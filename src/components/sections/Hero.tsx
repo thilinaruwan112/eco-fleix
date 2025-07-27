@@ -23,24 +23,19 @@ const Hero = () => {
 
     const slides = [
       {
-        image: 'https://content-provider.payshia.com/eco-fleix/hero-1.webp',
+        image: 'https://content-provider.payshia.com/eco-fleix/hero-design-optimized.webp',
         title: t('hero_title_1'),
         description: t('hero_desc_1'),
       },
       {
-        image: 'https://content-provider.payshia.com/eco-fleix/hero-2.webp',
+        image: 'https://content-provider.payshia.com/eco-fleix/hero-new-2-optimized.webp',
         title: t('hero_title_2'),
         description: t('hero_desc_2'),
       },
       {
-        image: 'https://content-provider.payshia.com/eco-fleix/hero-3.webp',
+        image: 'https://content-provider.payshia.com/eco-fleix/hero-3.jpg-optimized.webp',
         title: t('hero_title_3'),
         description: t('hero_desc_3'),
-      },
-      {
-        image: 'https://content-provider.payshia.com/eco-fleix/hero-4.webp',
-        title: t('hero_title_4'),
-        description: t('hero_desc_4'),
       }
     ];
 
