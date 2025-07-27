@@ -84,7 +84,7 @@ const ContactForm = () => {
                 <div className="bg-primary/10 p-3 rounded-full"><Mail className="h-6 w-6 text-primary" /></div>
                 <div>
                   <h4 className="font-semibold text-lg">{t('email')}</h4>
-                  <a href="mailto:ecofleixewasterecyclinguae@gmail.com" className="text-muted-foreground hover:text-primary">ecofleixewasterecyclinguae@gmail.com</a>
+                  <a href="mailto:info@eferecycling.com" className="text-muted-foreground hover:text-primary">info@eferecycling.com</a>
                 </div>
               </div>
                <div className="flex items-start gap-4">

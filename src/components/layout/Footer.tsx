@@ -50,7 +50,7 @@ const Footer = () => {
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="h-5 w-5" />
-                  <span>ecofleixewasterecyclinguae@gmail.com</span>
+                  <span>info@eferecycling.com</span>
                 </li>
                  <li className="flex items-center gap-3">
                   <Globe className="h-5 w-5" />

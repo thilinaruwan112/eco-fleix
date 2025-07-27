@@ -28,7 +28,7 @@ const TalkToUs = () => {
       title: 'talk_to_us_option_3_title',
       description: 'talk_to_us_option_3_desc',
       buttonText: 'talk_to_us_option_3_button',
-      href: 'mailto:ecofleixewasterecyclinguae@gmail.com',
+      href: 'mailto:info@eferecycling.com',
     },
   ];
   return (
