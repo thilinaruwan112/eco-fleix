@@ -26,7 +26,7 @@ const OurProcessSteps = () => {
     {
       icon: <Shield className="h-8 w-8 text-primary" />,
       title: 'our_process_step_2_title',
-      image: 'https://images.unsplash.com/photo-1555949963-ff9808253635?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzZXJ2ZXIlMjByb29tfGVufDB8fHx8fDE3NTM0NTYyODV8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      image: 'https://images.unsplash.com/photo-1714846201700-35b42d937158?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxN3x8ZGF0YSUyMGRlc3RydWN0aW9ufGVufDB8fHx8MTc1MzY0MDA2N3ww&ixlib=rb-4.1.0&q=80&w=1080',
       aiHint: 'server room',
       benefits: [
         'our_process_step_2_benefit_1',
