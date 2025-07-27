@@ -26,10 +26,10 @@ const NavLink = ({ children, href, hasDropdown = false }: { children: React.Reac
 };
 
 const services = [
-  { name: 'it_asset_remarketing', href: '/services#it-asset-remarketing', description: 'it_asset_remarketing_desc_short', image: 'https://placehold.co/400x400.png', aiHint: 'refurbished laptops' },
-  { name: 'it_asset_remanufacturing', href: '/services#it-asset-remanufacturing', description: 'it_asset_remanufacturing_desc_short', image: 'https://placehold.co/400x400.png', aiHint: 'technician repairing computer' },
-  { name: 'it_asset_disposition', href: '/services#it-asset-disposition', description: 'it_asset_disposition_desc_short', image: 'https://placehold.co/400x400.png', aiHint: 'e-waste collection bins' },
-  { name: 'data_destruction', href: '/services#data-destruction', description: 'data_destruction_desc_short', image: 'https://placehold.co/400x400.png', aiHint: 'hard drive shredder' },
+  { name: 'it_asset_remarketing', href: '/services#it-asset-remarketing', description: 'it_asset_remarketing_desc_short', image: 'https://images.unsplash.com/photo-1589913649361-56d3f8762bc7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxyZWZ1cmJpc2hlZCUyMGxhcHRvcHN8ZW58MHx8fHwxNzUzNjM5NDA0fDA&ixlib=rb-4.1.0&q=80&w=1080', aiHint: 'refurbished laptops' },
+  { name: 'it_asset_remanufacturing', href: '/services#it-asset-remanufacturing', description: 'it_asset_remanufacturing_desc_short', image: 'https://images.unsplash.com/photo-1724475439756-675ec5ee4053?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx0ZWNobmljaWFuJTIwcmVwYWlyaW5nJTIwY29tcHV0ZXJ8ZW58MHx8fHwxNzUzNjM5NDA0fDA&ixlib=rb-4.1.0&q=80&w=1080', aiHint: 'technician repairing computer' },
+  { name: 'it_asset_disposition', href: '/services#it-asset-disposition', description: 'it_asset_disposition_desc_short', image: 'https://images.unsplash.com/photo-1582748298043-0c0d31aa506e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxlLXdhc3RlJTIwY29sbGVjdGlvbiUyMGJpbnN8ZW58MHx8fHwxNzUzNjM5NDAzfDA&ixlib=rb-4.1.0&q=80&w=1080', aiHint: 'e-waste collection bins' },
+  { name: 'data_destruction', href: '/services#data-destruction', description: 'data_destruction_desc_short', image: 'https://images.unsplash.com/photo-1582184131482-5806da4a05c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxoYXJkJTIwZHJpdmUlMjBzaHJlZGRlcnxlbnwwfHx8fDE3NTM2Mzk0MDN8MA&ixlib=rb-4.1.0&q=80&w=1080', aiHint: 'hard drive shredder' },
 ];
 
 const whoWeServe = [
@@ -144,7 +144,7 @@ const Header = () => {
               alt="ECO FLEIX Logo"
               width={180}
               height={40}
-              className="dark:invert"
+              className="dark:filter dark:grayscale dark:invert"
             />
           </a>
           <nav className="hidden md:flex items-center gap-6">
