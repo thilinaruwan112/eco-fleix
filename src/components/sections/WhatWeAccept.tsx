@@ -37,7 +37,7 @@ const WhatWeAccept: React.FC<WhatWeAcceptProps> = ({ title, items }) => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {items.map((item, index) => (
-             <Card key={index} className="group relative flex flex-col overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+             <Card key={index} className="group flex flex-col overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 bg-card">
               <div className="relative h-56 w-full">
                   <Image
                       src={item.image}
@@ -47,25 +47,19 @@ const WhatWeAccept: React.FC<WhatWeAcceptProps> = ({ title, items }) => {
                       className="transition-transform duration-300 group-hover:scale-105"
                       data-ai-hint={item.aiHint}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                   <div className="absolute inset-x-0 bottom-0 p-4">
+                     <div className="bg-primary/80 backdrop-blur-sm text-primary-foreground text-center rounded-lg px-4 py-2 text-lg font-bold">
+                       {t(item.title)}
+                     </div>
+                   </div>
               </div>
 
-              <div className="absolute bottom-0 left-0 right-0 p-4 pt-12">
-                <div className="relative">
-                    <div className="absolute bottom-full left-0 right-0 h-16 bg-gradient-to-t from-background to-transparent"></div>
-                    <div className="bg-background p-4 rounded-lg shadow-md relative">
-                       <h3 className="text-lg font-bold text-foreground truncate">{t(item.title)}</h3>
-                       <div className="h-20 overflow-hidden relative mt-2">
-                          <p className="text-sm text-muted-foreground opacity-100 transition-opacity duration-300 group-hover:opacity-0">{t(item.description)}</p>
-                          <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                            <Button variant="outline" size="sm">
-                              {t('learn_more')} <ArrowRight className="ml-2 h-4 w-4" />
-                            </Button>
-                          </div>
-                      </div>
-                    </div>
-                </div>
-              </div>
+              <CardContent className="p-6 flex flex-col flex-grow">
+                <p className="text-sm text-muted-foreground mb-4 flex-grow">{t(item.description)}</p>
+                <Button variant="outline" size="sm" className="w-full mt-auto">
+                    {t('learn_more')}
+                </Button>
+              </CardContent>
             </Card>
           ))}
         </div>
