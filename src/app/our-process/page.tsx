@@ -2,7 +2,7 @@ import OurProcessHero from '@/components/sections/OurProcessHero';
 import OurProcessSteps from '@/components/sections/OurProcessSteps';
 import Faq from '@/components/sections/Faq';
 import Cta from '@/components/sections/Cta';
-import ProcessInAction from '@/components/sections/ProcessInAction';
+import HowItWorks from '@/components/sections/HowItWorks';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function OurProcessPage() {
     <div className="flex flex-col">
       <OurProcessHero />
       <OurProcessSteps />
-      <ProcessInAction />
+      <HowItWorks />
       <Faq />
       <Cta />
     </div>

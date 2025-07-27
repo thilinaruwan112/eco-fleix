@@ -7,6 +7,9 @@ import { useTranslation } from '@/hooks/use-translation';
 
 const TalkToUs = () => {
   const { t } = useTranslation();
+  const phoneNumber = '971529058388';
+  const scheduleMessage = "Hello! I'd like to schedule a meeting to discuss your e-waste recycling services.";
+  const scheduleWhatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(scheduleMessage)}`;
 
   const contactOptions = [
     {
@@ -21,14 +24,14 @@ const TalkToUs = () => {
       title: 'talk_to_us_option_2_title',
       description: 'talk_to_us_option_2_desc',
       buttonText: 'talk_to_us_option_2_button',
-      href: '#',
+      href: scheduleWhatsappUrl,
     },
     {
       icon: <Mail className="h-8 w-8 text-white" />,
       title: 'talk_to_us_option_3_title',
       description: 'talk_to_us_option_3_desc',
       buttonText: 'talk_to_us_option_3_button',
-      href: 'mailto:ecofleixewasterecyclinguae@gmail.com',
+      href: 'mailto:info@eferecycling.com',
     },
   ];
   return (
@@ -48,7 +51,7 @@ const TalkToUs = () => {
                 </div>
                 <h3 className="text-xl font-bold text-foreground">{t(option.title)}</h3>
                 <p className="text-muted-foreground mt-2 mb-6 flex-grow">{t(option.description)}</p>
-                <a href={option.href} className="w-full mt-auto">
+                <a href={option.href} target={option.href.startsWith('https://wa.me/') ? '_blank' : undefined} rel={option.href.startsWith('https://wa.me/') ? 'noopener noreferrer' : undefined} className="w-full mt-auto">
                   <Button className="w-full">{t(option.buttonText)}</Button>
                 </a>
               </CardContent>

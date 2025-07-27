@@ -116,9 +116,9 @@ const Header = () => {
       <div className="bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 flex justify-between items-center py-2 text-xs">
           <div className="flex items-center gap-2 md:gap-4 flex-wrap">
-            <a href="mailto:ecofleixewasterecyclinguae@gmail.com" className="flex items-center gap-2">
+            <a href="mailto:info@eferecycling.com" className="flex items-center gap-2">
               <Mail className="h-4 w-4" />
-              <span>ecofleixewasterecyclinguae@gmail.com</span>
+              <span>info@eferecycling.com</span>
             </a>
             <a href="tel:+971529058388" className="hidden sm:flex items-center gap-2">
               <Phone className="h-4 w-4" />
