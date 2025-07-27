@@ -5,8 +5,6 @@ import React from 'react';
 import { Badge } from '../ui/badge';
 import { useTranslation } from '@/hooks/use-translation';
 import Image from 'next/image';
-import { Button } from '../ui/button';
-import { ArrowRight } from 'lucide-react';
 
 interface AcceptedItem {
   icon: React.ReactNode;
@@ -55,10 +53,7 @@ const WhatWeAccept: React.FC<WhatWeAcceptProps> = ({ title, items }) => {
               </div>
 
               <CardContent className="p-6 flex flex-col flex-grow">
-                <p className="text-sm text-muted-foreground mb-4 flex-grow">{t(item.description)}</p>
-                <Button variant="outline" size="sm" className="w-full mt-auto">
-                    {t('learn_more')}
-                </Button>
+                <p className="text-sm text-muted-foreground flex-grow">{t(item.description)}</p>
               </CardContent>
             </Card>
           ))}
