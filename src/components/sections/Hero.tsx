@@ -16,7 +16,7 @@ import Autoplay from "embla-carousel-autoplay"
 import { useTranslation } from '@/hooks/use-translation';
 
 const Hero = () => {
-    const { t } = useTranslation();
+    const { t, language } = useTranslation();
     const phoneNumber = '+971529058388';
     const message = "Hello! I'm interested in your e-waste recycling services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
@@ -32,20 +32,21 @@ const Hero = () => {
         image: 'https://content-provider.payshia.com/eco-fleix/hero-new-2-optimized.webp',
         mobileImage: 'https://content-provider.payshia.com/eco-fleix/hero-mobile-2-optimized.webp',
         titleKey: 'hero_title_2',
-        descriptionKey: 'hero_desc_1',
+        descriptionKey: 'hero_desc_2',
       },
       {
         image: 'https://content-provider.payshia.com/eco-fleix/hero-3.jpg-optimized.webp',
         mobileImage: 'https://content-provider.payshia.com/eco-fleix/hero-mobile-3-optimized.webp',
         titleKey: 'hero_title_3',
-        descriptionKey: 'hero_desc_2',
+        descriptionKey: 'hero_desc_3',
       }
     ];
 
   return (
       <section className="w-full">
-        <Carousel 
-            opts={{ loop: true }}
+        <Carousel
+            key={language}
+            opts={{ loop: true, direction: language === 'ar' ? 'rtl' : 'ltr' }}
             plugins={[
                 Autoplay({
                   delay: 5000,
