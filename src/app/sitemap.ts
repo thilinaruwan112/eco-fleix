@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { blogPosts } from '@/lib/blog-data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.ecofleixewasterecycling.com';
+  const baseUrl = 'https://eferecycling.com';
 
   const staticRoutes = [
     '',
