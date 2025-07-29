@@ -31,13 +31,13 @@ const Hero = () => {
       {
         image: 'https://content-provider.payshia.com/eco-fleix/hero-new-2-optimized.webp',
         mobileImage: 'https://content-provider.payshia.com/eco-fleix/hero-mobile-2-optimized.webp',
-        titleKey: 'E-Waste Recycling',
+        titleKey: 'hero_title_2',
         descriptionKey: 'hero_desc_1',
       },
       {
         image: 'https://content-provider.payshia.com/eco-fleix/hero-3.jpg-optimized.webp',
         mobileImage: 'https://content-provider.payshia.com/eco-fleix/hero-mobile-3-optimized.webp',
-        titleKey: 'Data Destruction',
+        titleKey: 'hero_title_3',
         descriptionKey: 'hero_desc_2',
       }
     ];
