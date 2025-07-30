@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'E-Waste Recycling Dubai | IT Asset Disposition | ECO FLEIX',
     description: 'Secure, certified, and eco-friendly e-waste recycling services in Dubai. We handle everything from data destruction to material recovery.',
-    url: 'https://www.ecofleixewasterecycling.com',
+    url: 'https://eferecycling.com',
     siteName: 'ECO FLEIX E-Waste Recycling Dubai',
     images: [
       {

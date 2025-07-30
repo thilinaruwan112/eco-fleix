@@ -54,7 +54,7 @@ const Footer = () => {
                 </li>
                  <li className="flex items-center gap-3">
                   <Globe className="h-5 w-5" />
-                  <span>www.ecofleixewasterecycling.com</span>
+                  <span>www.eferecycling.com</span>
                 </li>
               </ul>
             </div>

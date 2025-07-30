@@ -16,7 +16,7 @@ import Autoplay from "embla-carousel-autoplay"
 import { useTranslation } from '@/hooks/use-translation';
 
 const Hero = () => {
-    const { t } = useTranslation();
+    const { t, language } = useTranslation();
     const phoneNumber = '+971529058388';
     const message = "Hello! I'm interested in your e-waste recycling services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
@@ -25,27 +25,28 @@ const Hero = () => {
       {
         image: 'https://content-provider.payshia.com/eco-fleix/hero-design-optimized.webp',
         mobileImage: 'https://content-provider.payshia.com/eco-fleix/hero-mobile-1-optimized.webp',
-        title: t('hero_title_1'),
-        description: t('hero_desc_1'),
+        titleKey: 'hero_title_1',
+        descriptionKey: 'hero_desc_1',
       },
       {
         image: 'https://content-provider.payshia.com/eco-fleix/hero-new-2-optimized.webp',
         mobileImage: 'https://content-provider.payshia.com/eco-fleix/hero-mobile-2-optimized.webp',
-        title: 'E-Waste Recycling',
-        description: t('hero_desc_1'),
+        titleKey: 'hero_title_2',
+        descriptionKey: 'hero_desc_2',
       },
       {
         image: 'https://content-provider.payshia.com/eco-fleix/hero-3.jpg-optimized.webp',
         mobileImage: 'https://content-provider.payshia.com/eco-fleix/hero-mobile-3-optimized.webp',
-        title: 'Data Destruction',
-        description: t('hero_desc_2'),
+        titleKey: 'hero_title_3',
+        descriptionKey: 'hero_desc_3',
       }
     ];
 
   return (
       <section className="w-full">
-        <Carousel 
-            opts={{ loop: true }}
+        <Carousel
+            key={language}
+            opts={{ loop: true, direction: language === 'ar' ? 'rtl' : 'ltr' }}
             plugins={[
                 Autoplay({
                   delay: 5000,
@@ -60,7 +61,7 @@ const Hero = () => {
                   <div className="absolute inset-0">
                     <Image
                       src={slide.image}
-                      alt={slide.title}
+                      alt={t(slide.titleKey)}
                       layout="fill"
                       objectFit="cover"
                       priority={index === 0}
@@ -68,7 +69,7 @@ const Hero = () => {
                     />
                     <Image
                       src={slide.mobileImage}
-                      alt={slide.title}
+                      alt={t(slide.titleKey)}
                       layout="fill"
                       objectFit="cover"
                       priority={index === 0}
@@ -79,10 +80,10 @@ const Hero = () => {
                   <div className="container mx-auto px-4 z-20 relative flex flex-col justify-center h-full text-center">
                     <div className="max-w-4xl mx-auto">
                       <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
-                        {slide.title}
+                        {t(slide.titleKey)}
                       </h1>
                       <p className="max-w-2xl mx-auto mt-4 md:mt-6 text-base md:text-lg text-primary-foreground/90">
-                        {slide.description}
+                        {t(slide.descriptionKey)}
                       </p>
                       <div className="mt-8 md:mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
                         <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">

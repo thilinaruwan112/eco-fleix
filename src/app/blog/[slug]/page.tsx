@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${title} | ECO FLEIX Blog`,
       description: description,
-      url: `https://www.ecofleixewasterecycling.com/blog/${post.slug}`,
+      url: `https://eferecycling.com/blog/${post.slug}`,
       images: [
         {
           url: post.image,
