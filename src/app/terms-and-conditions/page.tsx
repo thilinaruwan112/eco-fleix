@@ -32,12 +32,12 @@ export default function TermsAndConditionsPage() {
 
             <h2>8. Contact Us</h2>
             <p>If you have any questions about these Terms, please contact us at:</p>
-            <p>
+            <address>
                 ECO FLEIX<br />
                 Al Raffa Street, Bur Dubai, Dubai<br />
                 info@eferecycling.com<br />
                 +971 54 456 3685
-            </p>
+            </address>
         </LegalContent>
     );
 }
