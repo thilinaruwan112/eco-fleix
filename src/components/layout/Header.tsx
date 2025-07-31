@@ -106,7 +106,7 @@ const LanguageToggle = () => {
 const Header = () => {
   const [servicesOpen, setServicesOpen] = React.useState(false);
   const [whoWeServeOpen, setWhoWeServeOpen] = React.useState(false);
-  const phoneNumber = '+971529058388';
+  const phoneNumber = '+971544563685';
   const message = "Hello! I'm interested in your e-waste recycling services.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   const { t } = useTranslation();
@@ -120,9 +120,9 @@ const Header = () => {
               <Mail className="h-4 w-4" />
               <span>info@eferecycling.com</span>
             </a>
-            <a href="tel:+971529058388" className="hidden sm:flex items-center gap-2">
+            <a href="tel:+971544563685" className="hidden sm:flex items-center gap-2">
               <Phone className="h-4 w-4" />
-              <span>+971 52 905 8388</span>
+              <span>+971 54 456 3685</span>
             </a>
           </div>
           <div className="hidden md:flex items-center gap-4">
@@ -247,3 +247,5 @@ const Header = () => {
 };
 
 export default Header;
+
+    

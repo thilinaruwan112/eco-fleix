@@ -14,7 +14,7 @@ import { useTranslation } from '@/hooks/use-translation';
 const ContactForm = () => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('dubai');
-  const phoneNumber = '971529058388';
+  const phoneNumber = '971544563685';
 
   // State for Send Message form
   const [messageForm, setMessageForm] = useState({
@@ -206,3 +206,5 @@ ${details}`;
 };
 
 export default ContactForm;
+
+    
