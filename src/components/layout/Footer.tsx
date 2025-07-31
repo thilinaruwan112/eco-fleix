@@ -54,7 +54,7 @@ const Footer = () => {
                 </li>
                  <li className="flex items-center gap-3">
                   <Globe className="h-5 w-5" />
-                  <span>www.eferecycling.com</span>
+                  <a href="https://eferecycling.com" className="hover:text-white">www.eferecycling.com</a>
                 </li>
               </ul>
             </div>
@@ -85,9 +85,9 @@ const Footer = () => {
             <div className="container mx-auto px-4 py-6 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500 gap-4">
                 <p>&copy; {new Date().getFullYear()} ECO FLEIX. {t('all_rights_reserved')}</p>
                 <div className="flex flex-wrap justify-center gap-4 items-center">
-                    <a href="#" className="hover:text-white">{t('privacy_policy')}</a>
-                    <a href="#" className="hover:text-white">{t('terms_of_service')}</a>
-                    <a href="#" className="hover:text-white">{t('cookie_policy')}</a>
+                    <a href="/privacy-policy" className="hover:text-white">{t('privacy_policy')}</a>
+                    <a href="/terms-and-conditions" className="hover:text-white">{t('terms_of_service')}</a>
+                    <a href="/cookie-policy" className="hover:text-white">{t('cookie_policy')}</a>
                 </div>
             </div>
         </div>
@@ -96,5 +96,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-    
