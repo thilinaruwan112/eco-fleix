@@ -181,9 +181,6 @@ ${details}`;
                         <MapPin className="h-5 w-5 text-primary" />
                         <p className="text-muted-foreground">{t('dubai_office_address')}</p>
                     </div>
-                    <div className="aspect-video w-full rounded-lg overflow-hidden border">
-                         <Image src="https://placehold.co/600x400.png" alt="Google Map" width={600} height={400} data-ai-hint="map" className="w-full h-full object-cover"/>
-                    </div>
                 </div>
               </TabsContent>
               <TabsContent value="sharjah">
@@ -191,9 +188,6 @@ ${details}`;
                     <div className="flex items-center gap-3 mb-4">
                         <MapPin className="h-5 w-5 text-primary" />
                         <p className="text-muted-foreground">{t('sharjah_office_address')}</p>
-                    </div>
-                    <div className="aspect-video w-full rounded-lg overflow-hidden border">
-                         <Image src="https://placehold.co/600x400.png" alt="Google Map" width={600} height={400} data-ai-hint="map" className="w-full h-full object-cover"/>
                     </div>
                 </div>
               </TabsContent>
