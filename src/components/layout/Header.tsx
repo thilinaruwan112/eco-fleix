@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Mail, Phone, Facebook, Twitter, Linkedin, Instagram, ChevronDown, Recycle, Menu, ArrowRight, Sun, Moon, Globe } from 'lucide-react';
@@ -13,12 +14,22 @@ import Image from 'next/image';
 import * as React from 'react';
 import { useTheme } from 'next-themes';
 import { useTranslation } from '@/hooks/use-translation';
+import { usePathname } from 'next/navigation';
+import { cn } from '@/lib/utils';
 
 
 const NavLink = ({ children, href, hasDropdown = false }: { children: React.ReactNode, href?: string, hasDropdown?: boolean }) => {
+  const pathname = usePathname();
+  const isActive = href === '/' ? pathname === href : href && pathname.startsWith(href);
   const Comp = href ? 'a' : 'div';
   return (
-      <Comp href={href} className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors cursor-pointer">
+      <Comp 
+        href={href} 
+        className={cn(
+            "flex items-center gap-1 text-sm font-medium transition-colors cursor-pointer",
+            isActive ? "text-primary" : "text-foreground/80 hover:text-primary"
+        )}
+      >
         {children}
         {hasDropdown && <ChevronDown className="h-4 w-4" />}
       </Comp>
@@ -106,7 +117,7 @@ const LanguageToggle = () => {
 const Header = () => {
   const [servicesOpen, setServicesOpen] = React.useState(false);
   const [whoWeServeOpen, setWhoWeServeOpen] = React.useState(false);
-  const phoneNumber = '+971529058388';
+  const phoneNumber = '+971544563685';
   const message = "Hello! I'm interested in your e-waste recycling services.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   const { t } = useTranslation();
@@ -120,9 +131,9 @@ const Header = () => {
               <Mail className="h-4 w-4" />
               <span>info@eferecycling.com</span>
             </a>
-            <a href="tel:+971529058388" className="hidden sm:flex items-center gap-2">
+            <a href="tel:+971544563685" className="hidden sm:flex items-center gap-2">
               <Phone className="h-4 w-4" />
-              <span>+971 52 905 8388</span>
+              <span>+971 54 456 3685</span>
             </a>
           </div>
           <div className="hidden md:flex items-center gap-4">
@@ -154,7 +165,7 @@ const Header = () => {
             <DropdownMenu open={servicesOpen} onOpenChange={setServicesOpen}>
                 <DropdownMenuTrigger asChild>
                     <div onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)} className="py-2">
-                      <NavLink hasDropdown>{t('services')}</NavLink>
+                      <NavLink hasDropdown href="/services">{t('services')}</NavLink>
                     </div>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent 
@@ -170,7 +181,7 @@ const Header = () => {
             <DropdownMenu open={whoWeServeOpen} onOpenChange={setWhoWeServeOpen}>
                 <DropdownMenuTrigger asChild>
                     <div onMouseEnter={() => setWhoWeServeOpen(true)} onMouseLeave={() => setWhoWeServeOpen(false)} className="py-2">
-                      <NavLink hasDropdown>{t('who_we_serve')}</NavLink>
+                      <NavLink hasDropdown href="/who-we-serve">{t('who_we_serve')}</NavLink>
                     </div>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent 

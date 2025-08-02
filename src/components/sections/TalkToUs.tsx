@@ -7,7 +7,7 @@ import { useTranslation } from '@/hooks/use-translation';
 
 const TalkToUs = () => {
   const { t } = useTranslation();
-  const phoneNumber = '971529058388';
+  const phoneNumber = '+971544563685';
   const scheduleMessage = "Hello! I'd like to schedule a meeting to discuss your e-waste recycling services.";
   const scheduleWhatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(scheduleMessage)}`;
 
@@ -17,7 +17,7 @@ const TalkToUs = () => {
       title: 'talk_to_us_option_1_title',
       description: 'talk_to_us_option_1_desc',
       buttonText: 'talk_to_us_option_1_button',
-      href: 'tel:+971529058388',
+      href: 'tel:+971544563685',
     },
     {
       icon: <Calendar className="h-8 w-8 text-white" />,
@@ -64,3 +64,5 @@ const TalkToUs = () => {
 };
 
 export default TalkToUs;
+
+    

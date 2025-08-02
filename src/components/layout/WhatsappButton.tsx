@@ -15,7 +15,7 @@ const WhatsAppIcon = () => (
 
 
 const WhatsappButton = () => {
-    const phoneNumber = '+971529058388'; // Replaced with your WhatsApp number
+    const phoneNumber = '+971544563685';
     const message = "Hello! I'm interested in your e-waste recycling services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
@@ -35,3 +35,5 @@ const WhatsappButton = () => {
 };
 
 export default WhatsappButton;
+
+    

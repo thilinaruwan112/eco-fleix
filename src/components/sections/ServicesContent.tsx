@@ -4,7 +4,7 @@ import { useState } from 'react';
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Check, ShieldCheck, Trash2, Shield, AlertTriangle, Settings, FileText, Eye, HelpCircle, Clock, RefreshCw, Box, Package, Recycle, CheckCircle, DollarSign, Leaf, Globe, Settings2, Truck, BarChart3, HardDrive, Cpu, Wrench, CheckSquare, Search, Award, Users, BookUser, BarChartHorizontal, ArrowRight } from 'lucide-react';
+import { Check, ShieldCheck, Trash2, Shield, AlertTriangle, Settings, FileText, Eye, HelpCircle, Clock, RefreshCw, Box, Package, Recycle, CheckCircle, DollarSign, Leaf, Globe, Settings2, Truck, BarChart3, HardDrive, Cpu, Wrench, CheckSquare, Search, Award, Users, BookUser, BarChartHorizontal, ArrowRight, Mail, MessageSquare } from 'lucide-react';
 import { Badge } from '../ui/badge';
 import Image from 'next/image';
 import { useTranslation } from '@/hooks/use-translation';
@@ -18,6 +18,13 @@ const services = [
 
 const ItAssetDispositionContent = () => {
     const { t } = useTranslation();
+    const phoneNumber = '+971544563685';
+    const message = `Hello! I'm interested in IT Asset Disposition services.`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const email = 'info@eferecycling.com';
+    const emailSubject = `Inquiry about IT Asset Disposition Services`;
+    const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(emailSubject)}`;
+
     const features = [
         { icon: <Leaf className="h-7 w-7 text-green-600" />, title: 'itad_feature_1_title', description: 'itad_feature_1_desc' },
         { icon: <Clock className="h-7 w-7 text-blue-600" />, title: 'itad_feature_2_title', description: 'itad_feature_2_desc' },
@@ -95,7 +102,20 @@ const ItAssetDispositionContent = () => {
                                 {t('itad_cta_desc')}
                             </p>
                         </div>
-                        <Button variant="secondary" size="lg" className="flex-shrink-0">{t('contact_us_today')}</Button>
+                        <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+                            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                                <Button variant="secondary" size="lg" className="w-full">
+                                    <MessageSquare className="mr-2 h-5 w-5" />
+                                    WhatsApp
+                                </Button>
+                            </a>
+                            <a href={mailtoUrl}>
+                                 <Button variant="secondary" size="lg" className="w-full">
+                                    <Mail className="mr-2 h-5 w-5" />
+                                    Email
+                                </Button>
+                            </a>
+                        </div>
                     </CardContent>
                 </Card>
             </section>
@@ -106,6 +126,13 @@ const ItAssetDispositionContent = () => {
 
 const ItAssetRemanufacturingContent = () => {
     const { t } = useTranslation();
+    const phoneNumber = '+971544563685';
+    const message = `Hello! I'm interested in IT Asset Remanufacturing services.`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const email = 'info@eferecycling.com';
+    const emailSubject = `Inquiry about IT Asset Remanufacturing Services`;
+    const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(emailSubject)}`;
+
     const benefits = [
         { icon: <DollarSign className="h-8 w-8 text-primary" />, title: 'remanufacturing_benefit_1_title', description: 'remanufacturing_benefit_1_desc' },
         { icon: <Leaf className="h-8 w-8 text-primary" />, title: 'remanufacturing_benefit_2_title', description: 'remanufacturing_benefit_2_desc' },
@@ -190,7 +217,20 @@ const ItAssetRemanufacturingContent = () => {
                            {t('remanufacturing_cta_desc')}
                         </p>
                     </div>
-                    <Button variant="secondary" size="lg" className="flex-shrink-0">{t('contact_us_today')}</Button>
+                     <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+                            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                                <Button variant="secondary" size="lg" className="w-full">
+                                    <MessageSquare className="mr-2 h-5 w-5" />
+                                    WhatsApp
+                                </Button>
+                            </a>
+                            <a href={mailtoUrl}>
+                                 <Button variant="secondary" size="lg" className="w-full">
+                                    <Mail className="mr-2 h-5 w-5" />
+                                    Email
+                                </Button>
+                            </a>
+                        </div>
                 </CardContent>
             </Card>
         </section>
@@ -200,6 +240,13 @@ const ItAssetRemanufacturingContent = () => {
 
 const ItAssetRemarketingContent = () => {
     const { t } = useTranslation();
+    const phoneNumber = '+971544563685';
+    const message = `Hello! I'm interested in IT Asset Remarketing services.`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const email = 'info@eferecycling.com';
+    const emailSubject = `Inquiry about IT Asset Remarketing Services`;
+    const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(emailSubject)}`;
+    
     return (
     <div id="it-asset-remarketing" className="space-y-12">
         <section>
@@ -316,7 +363,20 @@ const ItAssetRemarketingContent = () => {
                             {t('remarketing_cta_desc')}
                         </p>
                     </div>
-                    <Button variant="secondary" size="lg" className="flex-shrink-0">{t('contact_us_today')}</Button>
+                     <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+                            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                                <Button variant="secondary" size="lg" className="w-full">
+                                    <MessageSquare className="mr-2 h-5 w-5" />
+                                    WhatsApp
+                                </Button>
+                            </a>
+                            <a href={mailtoUrl}>
+                                 <Button variant="secondary" size="lg" className="w-full">
+                                    <Mail className="mr-2 h-5 w-5" />
+                                    Email
+                                </Button>
+                            </a>
+                        </div>
                 </CardContent>
             </Card>
         </section>
@@ -326,6 +386,13 @@ const ItAssetRemarketingContent = () => {
 
 const DataDestructionContent = () => {
     const { t } = useTranslation();
+    const phoneNumber = '+971544563685';
+    const message = `Hello! I'm interested in Data Destruction services.`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const email = 'info@eferecycling.com';
+    const emailSubject = `Inquiry about Data Destruction Services`;
+    const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(emailSubject)}`;
+
     const keyBenefits = [
       { icon: <ShieldCheck className="h-8 w-8 text-green-700" />, title: 'data_destruction_benefit_1_title', description: 'data_destruction_benefit_1_desc' },
       { icon: <Shield className="h-8 w-8 text-blue-700" />, title: 'data_destruction_benefit_2_title', description: 'data_destruction_benefit_2_desc' },
@@ -460,7 +527,20 @@ const DataDestructionContent = () => {
                         {t('data_destruction_cta_desc')}
                     </p>
                 </div>
-                <Button variant="secondary" size="lg" className="flex-shrink-0">{t('contact_us_today')}</Button>
+                 <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+                    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                        <Button variant="secondary" size="lg" className="w-full">
+                            <MessageSquare className="mr-2 h-5 w-5" />
+                            WhatsApp
+                        </Button>
+                    </a>
+                    <a href={mailtoUrl}>
+                         <Button variant="secondary" size="lg" className="w-full">
+                            <Mail className="mr-2 h-5 w-5" />
+                            Email
+                        </Button>
+                    </a>
+                </div>
             </CardContent>
         </Card>
     </section>
