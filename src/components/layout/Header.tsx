@@ -20,7 +20,7 @@ import { cn } from '@/lib/utils';
 
 const NavLink = ({ children, href, hasDropdown = false }: { children: React.ReactNode, href?: string, hasDropdown?: boolean }) => {
   const pathname = usePathname();
-  const isActive = href && pathname === href;
+  const isActive = href === '/' ? pathname === href : href && pathname.startsWith(href);
   const Comp = href ? 'a' : 'div';
   return (
       <Comp 
@@ -165,7 +165,7 @@ const Header = () => {
             <DropdownMenu open={servicesOpen} onOpenChange={setServicesOpen}>
                 <DropdownMenuTrigger asChild>
                     <div onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)} className="py-2">
-                      <NavLink hasDropdown>{t('services')}</NavLink>
+                      <NavLink hasDropdown href="/services">{t('services')}</NavLink>
                     </div>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent 
@@ -181,7 +181,7 @@ const Header = () => {
             <DropdownMenu open={whoWeServeOpen} onOpenChange={setWhoWeServeOpen}>
                 <DropdownMenuTrigger asChild>
                     <div onMouseEnter={() => setWhoWeServeOpen(true)} onMouseLeave={() => setWhoWeServeOpen(false)} className="py-2">
-                      <NavLink hasDropdown>{t('who_we_serve')}</NavLink>
+                      <NavLink hasDropdown href="/who-we-serve">{t('who_we_serve')}</NavLink>
                     </div>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent 
@@ -258,5 +258,3 @@ const Header = () => {
 };
 
 export default Header;
-
-    
