@@ -4,7 +4,7 @@ import { useState } from 'react';
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Check, ShieldCheck, Trash2, Shield, AlertTriangle, Settings, FileText, Eye, HelpCircle, Clock, RefreshCw, Box, Package, Recycle, CheckCircle, DollarSign, Leaf, Globe, Settings2, Truck, BarChart3, HardDrive, Cpu, Wrench, CheckSquare, Search, Award, Users, BookUser, BarChartHorizontal, ArrowRight, Mail, MessageSquare } from 'lucide-react';
+import { Check, ShieldCheck, Trash2, Shield, AlertTriangle, Settings, FileText, Eye, HelpCircle, Clock, RefreshCw, Package, Recycle, CheckCircle, DollarSign, Leaf, Globe, Settings2, Truck, HardDrive, Cpu, Wrench, CheckSquare, Search, Award, Users, BookUser, ArrowRight, Mail, MessageSquare } from 'lucide-react';
 import { Badge } from '../ui/badge';
 import Image from 'next/image';
 import { useTranslation } from '@/hooks/use-translation';
@@ -345,10 +345,9 @@ const ItAssetRemarketingContent = () => {
         <section>
             <Card className="bg-primary/10 border-l-4 border-primary">
                 <CardContent className="p-8">
-                    <BarChart3 className="h-10 w-10 text-primary mb-4" />
                     <h3 className="text-2xl font-bold">{t('conclusion')}</h3>
                     <p className="mt-4 text-muted-foreground italic">
-                        "{t('remarketing_conclusion_desc')}"
+                        &quot;{t('remarketing_conclusion_desc')}&quot;
                     </p>
                 </CardContent>
             </Card>

@@ -1,10 +1,8 @@
 'use client';
 
 import { ClipboardList, Truck, ArrowDownUp, BarChart2, ArrowRight } from 'lucide-react';
-import Image from 'next/image';
 import { Button } from '../ui/button';
 import { Badge } from '../ui/badge';
-import { Card, CardContent } from '../ui/card';
 import { useTranslation } from '@/hooks/use-translation';
 
 const HowItWorks = () => {
@@ -52,7 +50,7 @@ const HowItWorks = () => {
         <div className="relative">
           <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 dark:bg-gray-700 -translate-y-1/2 -z-10"></div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
-            {steps.map((step, index) => (
+            {steps.map((step) => (
               <div key={step.title} className="relative flex flex-col items-center text-center">
                  <div className="bg-primary/10 rounded-full p-4 mb-4 ring-8 ring-background">
                     {step.icon}
@@ -77,5 +75,3 @@ const HowItWorks = () => {
 };
 
 export default HowItWorks;
-
-    

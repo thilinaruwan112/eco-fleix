@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { useTranslation } from '@/hooks/use-translation';
 
 const ProcessInAction = () => {

@@ -1,14 +1,14 @@
 export type BlogContentPart = {
   type: 'heading' | 'subheading' | 'paragraph' | 'list' | 'alert' | 'table' | 'checklist' | 'stats' | 'cta';
   text?: string;
-  items?: any[];
+  items?: string[] | { value: string; label: string }[];
   title?: string;
   variant?: 'default' | 'warning';
   headers?: string[];
   rows?: string[][];
   pros?: { title: string; items: string[] };
   cons?: { title: string; items: string[] };
-  props?: any;
+  props?: Record<string, string>;
 };
 
 
@@ -306,5 +306,3 @@ export const blogPosts: BlogPost[] = [
 export function getPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug);
 }
-
-    
