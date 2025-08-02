@@ -10,10 +10,10 @@ export default function TermsAndConditionsPage() {
     return (
         <LegalContent title="Terms and Conditions" lastUpdated="July 27, 2024">
             <h2>1. Agreement to Terms</h2>
-            <p>By using our website, eferecycling.com (the "Site"), and our services, you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our Site or services.</p>
+            <p>By using our website, eferecycling.com (the &quot;Site&quot;), and our services, you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our Site or services.</p>
             
             <h2>2. Services</h2>
-            <p>ECO FLEIX provides e-waste recycling, IT asset disposition (ITAD), and data destruction services. All services are provided "as is" and are subject to the terms outlined herein. We reserve the right to modify or discontinue services at any time.</p>
+            <p>ECO FLEIX provides e-waste recycling, IT asset disposition (ITAD), and data destruction services. All services are provided &quot;as is&quot; and are subject to the terms outlined herein. We reserve the right to modify or discontinue services at any time.</p>
 
             <h2>3. User Responsibilities</h2>
             <p>You agree to provide accurate information when requesting services, including details about the e-waste to be collected. You are responsible for backing up any data from your devices before they are collected for recycling or destruction. While we offer secure data destruction, we are not liable for any data loss that occurs before the assets are in our possession.</p>
