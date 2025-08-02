@@ -1,7 +1,7 @@
 
 'use client';
 
-import { Mail, Phone, Facebook, Twitter, Linkedin, Instagram, ChevronDown, Recycle, Menu, ArrowRight, Sun, Moon, Globe } from 'lucide-react';
+import { Mail, Phone, Facebook, Twitter, Linkedin, Instagram, ChevronDown, Menu, ArrowRight, Sun, Moon, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import {
@@ -16,15 +16,16 @@ import { useTheme } from 'next-themes';
 import { useTranslation } from '@/hooks/use-translation';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 
 const NavLink = ({ children, href, hasDropdown = false }: { children: React.ReactNode, href?: string, hasDropdown?: boolean }) => {
   const pathname = usePathname();
   const isActive = href === '/' ? pathname === href : href && pathname.startsWith(href);
-  const Comp = href ? 'a' : 'div';
+  const Comp = href ? Link : 'div';
   return (
       <Comp 
-        href={href} 
+        href={href || ''} 
         className={cn(
             "flex items-center gap-1 text-sm font-medium transition-colors cursor-pointer",
             isActive ? "text-primary" : "text-foreground/80 hover:text-primary"
@@ -60,19 +61,19 @@ const MegaMenu = ({title, items, viewAllHref} : {title: string, items: {name: st
                 <h3 className="text-xl font-bold text-foreground">{t('shop_by_title', { title: t(title) })}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{t('discover_our_collections')}</p>
             </div>
-            <a href={viewAllHref} className="flex items-center text-sm font-semibold text-primary mt-4 hover:underline">
+            <Link href={viewAllHref} className="flex items-center text-sm font-semibold text-primary mt-4 hover:underline">
                 {t('view_all')} <ArrowRight className="ml-1 h-4 w-4" />
-            </a>
+            </Link>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 col-span-4">
             {items.map(item => (
-                <a key={item.name} href={item.href} className="group">
+                <Link key={item.name} href={item.href} className="group">
                     <div className="aspect-square relative rounded-lg overflow-hidden mb-2">
                          <Image src={item.image} alt={t(item.name)} layout="fill" objectFit="cover" className="transform group-hover:scale-105 transition-transform" data-ai-hint={item.aiHint}/>
                     </div>
                     <h4 className="font-semibold text-foreground text-sm group-hover:text-primary">{t(item.name)}</h4>
                     <p className="text-xs text-muted-foreground">{t(item.description)}</p>
-                </a>
+                </Link>
             ))}
         </div>
     </div>
@@ -149,7 +150,7 @@ const Header = () => {
       </div>
       <div className="border-b border-t border-border/50">
         <div className="container mx-auto px-4 flex items-center justify-between h-20">
-          <a href="/" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <Image 
               src="https://content-provider.payshia.com/eco-fleix/logo-horizontal.png" 
               alt="ECO FLEIX Logo"
@@ -157,7 +158,7 @@ const Header = () => {
               height={40}
               className="dark:filter dark:grayscale dark:invert"
             />
-          </a>
+          </Link>
           <nav className="hidden md:flex items-center gap-6">
             <NavLink href="/">{t('home')}</NavLink>
             <NavLink href="/about">{t('about')}</NavLink>

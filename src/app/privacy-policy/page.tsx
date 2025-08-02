@@ -10,7 +10,7 @@ export default function PrivacyPolicyPage() {
     return (
         <LegalContent title="Privacy Policy" lastUpdated="July 27, 2024">
             <h2>1. Introduction</h2>
-            <p>Welcome to ECO FLEIX ("we," "our," "us"). We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website eferecycling.com, including any other media form, media channel, mobile website, or mobile application related or connected thereto (collectively, the "Site").</p>
+            <p>Welcome to ECO FLEIX (&quot;we,&quot; &quot;our,&quot; &quot;us&quot;). We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website eferecycling.com, including any other media form, media channel, mobile website, or mobile application related or connected thereto (collectively, the &quot;Site&quot;).</p>
 
             <h2>2. Information We Collect</h2>
             <p>We may collect information about you in a variety of ways. The information we may collect on the Site includes:</p>

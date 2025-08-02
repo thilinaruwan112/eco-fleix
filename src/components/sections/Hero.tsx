@@ -3,8 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { ArrowRight } from 'lucide-react';
 import {
   Carousel,
   CarouselContent,
@@ -14,6 +13,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay"
 import { useTranslation } from '@/hooks/use-translation';
+import Link from 'next/link';
 
 // test
 const Hero = () => {
@@ -92,11 +92,11 @@ const Hero = () => {
                             {t('schedule_pickup_today')} <ArrowRight className="ml-2 h-5 w-5" />
                           </Button>
                         </a>
-                        <a href="/about" className="w-full sm:w-auto">
+                        <Link href="/about" className="w-full sm:w-auto">
                           <Button size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-white hover:text-primary w-full sm:w-auto">
                             {t('learn_more_about_us')}
                           </Button>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -112,5 +112,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-    

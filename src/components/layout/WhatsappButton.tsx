@@ -1,7 +1,5 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-
 const WhatsAppIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -35,5 +33,3 @@ const WhatsappButton = () => {
 };
 
 export default WhatsappButton;
-
-    

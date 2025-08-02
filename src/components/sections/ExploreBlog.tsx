@@ -1,12 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { ArrowRight } from 'lucide-react';
 import { useTranslation } from '@/hooks/use-translation';
 import { BlogPost } from '@/lib/blog-data';
+import Link from 'next/link';
 
 
 const ExploreBlog = ({ posts }: { posts: BlogPost[]}) => {
@@ -37,7 +37,7 @@ const ExploreBlog = ({ posts }: { posts: BlogPost[]}) => {
           {posts.map((post) => {
             const authorImage = authorImages[post.author] || 'https://placehold.co/40x40.png';
             return (
-            <a key={post.slug} href={`/blog/${post.slug}`} className="flex flex-col group">
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="flex flex-col group">
               <div className="relative rounded-2xl overflow-hidden mb-4">
                 <Image
                   src={post.image}
@@ -68,7 +68,7 @@ const ExploreBlog = ({ posts }: { posts: BlogPost[]}) => {
                   {t('read_more')} <ArrowRight className="h-4 w-4" />
                 </span>
               </div>
-            </a>
+            </Link>
           )})}
         </div>
       </div>

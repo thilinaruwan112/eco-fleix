@@ -1,10 +1,11 @@
 'use client';
 
-import { Recycle, MapPin, Phone, Mail, Globe } from 'lucide-react';
+import { MapPin, Phone, Mail, Globe } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/use-translation';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer = () => {
     const { t } = useTranslation();
@@ -14,7 +15,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Logo and Description */}
             <div className="space-y-4">
-               <a href="/" className="flex items-center gap-2">
+               <Link href="/" className="flex items-center gap-2">
                     <Image 
                       src="https://content-provider.payshia.com/eco-fleix/logo-eflix.png" 
                       alt="ECO FLEIX Logo"
@@ -22,7 +23,7 @@ const Footer = () => {
                       height={60}
                       className="dark:invert"
                     />
-                </a>
+                </Link>
               <p className="text-gray-400">
                 {t('footer_desc')}
               </p>
@@ -63,10 +64,10 @@ const Footer = () => {
             <div className="space-y-4">
               <h3 className="font-semibold text-lg">{t('quick_links')}</h3>
               <ul className="space-y-2">
-                <li><a href="/" className="text-gray-400 hover:text-white">{t('home')}</a></li>
-                <li><a href="/about" className="text-gray-400 hover:text-white">{t('about')}</a></li>
-                <li><a href="/services" className="text-gray-400 hover:text-white">{t('services')}</a></li>
-                <li><a href="/contact" className="text-gray-400 hover:text-white">{t('contact')}</a></li>
+                <li><Link href="/" className="text-gray-400 hover:text-white">{t('home')}</Link></li>
+                <li><Link href="/about" className="text-gray-400 hover:text-white">{t('about')}</Link></li>
+                <li><Link href="/services" className="text-gray-400 hover:text-white">{t('services')}</Link></li>
+                <li><Link href="/contact" className="text-gray-400 hover:text-white">{t('contact')}</Link></li>
               </ul>
             </div>
 
@@ -85,9 +86,9 @@ const Footer = () => {
             <div className="container mx-auto px-4 py-6 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500 gap-4">
                 <p>&copy; {new Date().getFullYear()} ECO FLEIX. {t('all_rights_reserved')}</p>
                 <div className="flex flex-wrap justify-center gap-4 items-center">
-                    <a href="/privacy-policy" className="hover:text-white">{t('privacy_policy')}</a>
-                    <a href="/terms-and-conditions" className="hover:text-white">{t('terms_of_service')}</a>
-                    <a href="/cookie-policy" className="hover:text-white">{t('cookie_policy')}</a>
+                    <Link href="/privacy-policy" className="hover:text-white">{t('privacy_policy')}</Link>
+                    <Link href="/terms-and-conditions" className="hover:text-white">{t('terms_of_service')}</Link>
+                    <Link href="/cookie-policy" className="hover:text-white">{t('cookie_policy')}</Link>
                 </div>
             </div>
         </div>

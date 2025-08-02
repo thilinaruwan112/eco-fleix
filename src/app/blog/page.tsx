@@ -11,7 +11,7 @@ import { useTranslation } from '@/hooks/use-translation';
 export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [isSearchFocused, setIsSearchFocused] = useState(false);
-  const { t, language } = useTranslation();
+  const { t } = useTranslation();
   const searchContainerRef = useRef<HTMLDivElement>(null);
 
   const filteredBlogPosts = useMemo(() => {
@@ -31,7 +31,7 @@ export default function BlogPage() {
         category.includes(lowercasedSearchTerm)
       );
     });
-  }, [searchTerm, t, language]);
+  }, [searchTerm, t]);
 
   const allPosts = useMemo(() => {
     // This memo is to avoid re-filtering all posts on every render of ExploreBlog
