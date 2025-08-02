@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay"
 import { useTranslation } from '@/hooks/use-translation';
-
+// test
 const Hero = () => {
     const { t, language } = useTranslation();
     const phoneNumber = '+971544563685';
