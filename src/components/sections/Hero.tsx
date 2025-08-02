@@ -94,7 +94,7 @@ const Hero = () => {
                         </a>
                         <a href="/about" className="w-full sm:w-auto">
                           <Button size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-white hover:text-primary w-full sm:w-auto">
-                            {t('learn_more')}
+                            {t('learn_more_about_us')}
                           </Button>
                         </a>
                       </div>
