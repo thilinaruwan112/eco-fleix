@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Mail, Phone, Facebook, Twitter, Linkedin, Instagram, ChevronDown, Recycle, Menu, ArrowRight, Sun, Moon, Globe } from 'lucide-react';
@@ -13,12 +14,22 @@ import Image from 'next/image';
 import * as React from 'react';
 import { useTheme } from 'next-themes';
 import { useTranslation } from '@/hooks/use-translation';
+import { usePathname } from 'next/navigation';
+import { cn } from '@/lib/utils';
 
 
 const NavLink = ({ children, href, hasDropdown = false }: { children: React.ReactNode, href?: string, hasDropdown?: boolean }) => {
+  const pathname = usePathname();
+  const isActive = href && pathname === href;
   const Comp = href ? 'a' : 'div';
   return (
-      <Comp href={href} className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors cursor-pointer">
+      <Comp 
+        href={href} 
+        className={cn(
+            "flex items-center gap-1 text-sm font-medium transition-colors cursor-pointer",
+            isActive ? "text-primary" : "text-foreground/80 hover:text-primary"
+        )}
+      >
         {children}
         {hasDropdown && <ChevronDown className="h-4 w-4" />}
       </Comp>
