@@ -8,6 +8,7 @@ import WhatsappButton from '@/components/layout/WhatsappButton';
 import Preloader from '@/components/layout/Preloader';
 import { ThemeProvider } from '@/components/layout/ThemeProvider';
 import { TranslationProvider } from '@/hooks/use-translation.tsx';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'E-Waste Recycling Dubai | IT Asset Disposition | ECO FLEIX',
@@ -68,6 +69,16 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-0VT1C4GFG4"></Script>
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-0VT1C4GFG4');
+          `}
+        </Script>
         <link rel="icon" href="https://content-provider.payshia.com/eco-fleix/app-icon/favicon.ico" sizes="any" />
         <link rel="icon" href="https://content-provider.payshia.com/eco-fleix/app-icon/favicon-16x16.png" type="image/png" sizes="16x16" />
         <link rel="icon" href="https://content-provider.payshia.com/eco-fleix/app-icon/favicon-32x32.png" type="image/png" sizes="32x32" />
