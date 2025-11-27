@@ -8,7 +8,7 @@ import CriticalRecycling from '@/components/sections/CriticalRecycling';
 import Faq from '@/components/sections/Faq';
 import Testimonials from '@/components/sections/Testimonials';
 import Cta from '@/components/sections/Cta';
-import { Laptop, Smartphone, Camera, Monitor, Shield, Network, Headphones, Gamepad2 } from 'lucide-react';
+import { Laptop, Smartphone, Camera, Monitor, Shield, Network, Headphones, Gamepad2, Server, HardDrive, Printer, Speaker, Router, Projector, Recycle } from 'lucide-react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -72,6 +72,104 @@ const acceptedItems = [
     description: 'accepted_item_8_desc',
     image: 'https://content-provider.payshia.com/eco-fleix/what-we-collect/game-optimized.webp',
     aiHint: 'gaming consoles',
+  },
+  {
+    icon: <Gamepad2 />,
+    title: 'Gaming Desktop',
+    description: 'High-performance gaming desktops and components.',
+    image: 'https://picsum.photos/seed/gd/600/400',
+    aiHint: 'gaming desktop',
+  },
+  {
+    icon: <Monitor />,
+    title: 'Normal Desktops',
+    description: 'Standard desktop computers for home or office use.',
+    image: 'https://picsum.photos/seed/nd/600/400',
+    aiHint: 'office computer',
+  },
+  {
+    icon: <Server />,
+    title: 'Networking Server',
+    description: 'Servers and other networking infrastructure.',
+    image: 'https://picsum.photos/seed/ns/600/400',
+    aiHint: 'network server',
+  },
+  {
+    icon: <Network />,
+    title: 'Networking Switch',
+    description: 'Network switches of all sizes.',
+    image: 'https://picsum.photos/seed/nsw/600/400',
+    aiHint: 'network switch',
+  },
+  {
+    icon: <Printer />,
+    title: 'HP Laser Printer',
+    description: 'All models of HP laser printers.',
+    image: 'https://picsum.photos/seed/hplp/600/400',
+    aiHint: 'laser printer',
+  },
+  {
+    icon: <HardDrive />,
+    title: 'Hard Drive, SSD/HDD',
+    description: 'Internal and external hard drives, including SSDs and HDDs.',
+    image: 'https://picsum.photos/seed/hdd/600/400',
+    aiHint: 'hard drives',
+  },
+  {
+    icon: <Cpu />,
+    title: 'Motherboards',
+    description: 'Computer motherboards and other internal components.',
+    image: 'https://picsum.photos/seed/mb/600/400',
+    aiHint: 'computer motherboard',
+  },
+  {
+    icon: <Speaker />,
+    title: 'Music Speakers',
+    description: 'Speakers and audio systems.',
+    image: 'https://picsum.photos/seed/ms/600/400',
+    aiHint: 'audio speakers',
+  },
+  {
+    icon: <Gamepad2 />,
+    title: 'Gaming Consoles (PS1-PS5)',
+    description: 'All generations of PlayStation and other gaming consoles.',
+    image: 'https://picsum.photos/seed/ps/600/400',
+    aiHint: 'playstation consoles',
+  },
+  {
+    icon: <Printer />,
+    title: 'HP Toners',
+    description: 'Used and unused HP toner cartridges.',
+    image: 'https://picsum.photos/seed/hpt/600/400',
+    aiHint: 'printer toner',
+  },
+  {
+    icon: <Router />,
+    title: 'Routers',
+    description: 'Wireless and wired internet routers.',
+    image: 'https://picsum.photos/seed/rtr/600/400',
+    aiHint: 'internet router',
+  },
+  {
+    icon: <Projector />,
+    title: 'Projectors',
+    description: 'Digital and office projectors.',
+    image: 'https://picsum.photos/seed/proj/600/400',
+    aiHint: 'office projector',
+  },
+  {
+    icon: <Recycle />,
+    title: 'E Waste & E Scrap Buyers',
+    description: 'We purchase bulk e-waste and electronic scrap.',
+    image: 'https://picsum.photos/seed/ews/600/400',
+    aiHint: 'e-waste pile',
+  },
+   {
+    icon: <Recycle />,
+    title: 'Recycling Service',
+    description: 'Comprehensive recycling services for all electronics.',
+    image: 'https://picsum.photos/seed/rs/600/400',
+    aiHint: 'recycling symbol',
   },
 ];
 
