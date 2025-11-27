@@ -8,7 +8,7 @@ import CriticalRecycling from '@/components/sections/CriticalRecycling';
 import Faq from '@/components/sections/Faq';
 import Testimonials from '@/components/sections/Testimonials';
 import Cta from '@/components/sections/Cta';
-import { Laptop, Smartphone, Camera, Monitor, Shield, Network, Headphones, Gamepad2, Server, HardDrive, Printer, Speaker, Router, Projector, Recycle } from 'lucide-react';
+import { Laptop, Smartphone, Camera, Monitor, Shield, Network, Headphones, Gamepad2, Server, HardDrive, Printer, Speaker, Router, Projector, Recycle, Cpu } from 'lucide-react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {

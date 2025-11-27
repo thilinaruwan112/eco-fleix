@@ -1,3 +1,4 @@
+
 import type {NextConfig} from 'next';
 import withPWAInit from "@ducanh2912/next-pwa";
 
@@ -16,6 +17,12 @@ const nextConfig: NextConfig = {
   },
   images: {
     remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+        port: '',
+        pathname: '/**',
+      },
       {
         protocol: 'https',
         hostname: 'placehold.co',
