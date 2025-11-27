@@ -17,6 +17,7 @@ import { useTranslation } from '@/hooks/use-translation';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import { acceptedItems } from '@/lib/accepted-items';
 
 
 const NavLink = ({ children, href, hasDropdown = false }: { children: React.ReactNode, href?: string, hasDropdown?: boolean }) => {
@@ -52,7 +53,7 @@ const whoWeServe = [
     { name: 'healthcare_medical', href: '/who-we-serve#healthcare-medical', description: 'healthcare_medical_desc', image: 'https://placehold.co/400x400.png', aiHint: 'hospital building' },
 ];
 
-const MegaMenu = ({title, items, viewAllHref} : {title: string, items: {name: string, href: string, description: string, image: string, aiHint: string}[], viewAllHref: string}) => {
+const MegaMenu = ({title, items, viewAllHref} : {title: string, items: any[], viewAllHref: string}) => {
     const { t } = useTranslation();
     return (
     <div className="grid grid-cols-1 md:grid-cols-5 gap-6 p-6 w-full max-w-6xl">
@@ -67,11 +68,11 @@ const MegaMenu = ({title, items, viewAllHref} : {title: string, items: {name: st
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 col-span-4">
             {items.map(item => (
-                <Link key={item.name} href={item.href} className="group">
+                <Link key={item.title} href={viewAllHref} className="group">
                     <div className="aspect-square relative rounded-lg overflow-hidden mb-2">
-                         <Image src={item.image} alt={t(item.name)} layout="fill" objectFit="cover" className="transform group-hover:scale-105 transition-transform" data-ai-hint={item.aiHint}/>
+                         <Image src={item.image} alt={t(item.title)} layout="fill" objectFit="cover" className="transform group-hover:scale-105 transition-transform" data-ai-hint={item.aiHint}/>
                     </div>
-                    <h4 className="font-semibold text-foreground text-sm group-hover:text-primary">{t(item.name)}</h4>
+                    <h4 className="font-semibold text-foreground text-sm group-hover:text-primary">{t(item.title)}</h4>
                     <p className="text-xs text-muted-foreground">{t(item.description)}</p>
                 </Link>
             ))}
@@ -118,6 +119,7 @@ const LanguageToggle = () => {
 const Header = () => {
   const [servicesOpen, setServicesOpen] = React.useState(false);
   const [whoWeServeOpen, setWhoWeServeOpen] = React.useState(false);
+  const [whatWeAcceptOpen, setWhatWeAcceptOpen] = React.useState(false);
   const phoneNumber = '+971544563685';
   const message = "Hello! I'm interested in your e-waste recycling services.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
@@ -179,6 +181,22 @@ const Header = () => {
                     <MegaMenu title="service" items={services} viewAllHref="/services"/>
                 </DropdownMenuContent>
             </DropdownMenu>
+             <DropdownMenu open={whatWeAcceptOpen} onOpenChange={setWhatWeAcceptOpen}>
+                <DropdownMenuTrigger asChild>
+                    <div onMouseEnter={() => setWhatWeAcceptOpen(true)} onMouseLeave={() => setWhatWeAcceptOpen(false)} className="py-2">
+                      <NavLink hasDropdown href="/what-we-accept">{t('what_we_accept')}</NavLink>
+                    </div>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent 
+                    align="center" 
+                    sideOffset={18} 
+                    className="w-screen max-w-6xl"
+                    onMouseEnter={() => setWhatWeAcceptOpen(true)} 
+                    onMouseLeave={() => setWhatWeAcceptOpen(false)}
+                >
+                    <MegaMenu title="item" items={acceptedItems.slice(0,4)} viewAllHref="/what-we-accept"/>
+                </DropdownMenuContent>
+            </DropdownMenu>
             <DropdownMenu open={whoWeServeOpen} onOpenChange={setWhoWeServeOpen}>
                 <DropdownMenuTrigger asChild>
                     <div onMouseEnter={() => setWhoWeServeOpen(true)} onMouseLeave={() => setWhoWeServeOpen(false)} className="py-2">
@@ -230,6 +248,7 @@ const Header = () => {
                                 ))}
                               </DropdownMenuContent>
                             </DropdownMenu>
+                             <NavLink href="/what-we-accept">{t('what_we_accept')}</NavLink>
                             <DropdownMenu>
                               <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors focus-visible:outline-none">
                                 {t('who_we_serve')} <ChevronDown className="h-4 w-4" />
