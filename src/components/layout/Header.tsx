@@ -3,7 +3,7 @@
 
 import { Mail, Phone, Facebook, Twitter, Linkedin, Instagram, ChevronDown, Menu, ArrowRight, Sun, Moon, Globe, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -275,11 +275,6 @@ const Header = () => {
                                     className="dark:filter dark:grayscale dark:invert"
                                     />
                                 </Link>
-                                <SheetClose asChild>
-                                    <Button variant="ghost" size="icon">
-                                        <X className="h-6 w-6" />
-                                    </Button>
-                                </SheetClose>
                             </div>
                             <div className="flex-grow overflow-y-auto p-6">
                                 <div className="flex flex-col gap-2">
