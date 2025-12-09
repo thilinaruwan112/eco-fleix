@@ -1,3 +1,4 @@
+
 import WhoWeServeHero from '@/components/sections/WhoWeServeHero';
 import WhoWeServeContent from '@/components/sections/WhoWeServeContent';
 import CommonChallenges from '@/components/sections/CommonChallenges';
@@ -8,6 +9,9 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Who We Serve | E-Waste Solutions for Industries in Dubai',
   description: 'ECO FLEIX provides tailored e-waste recycling and ITAD solutions for corporations, government, education, finance, and healthcare sectors in Dubai and the UAE.',
+  alternates: {
+    canonical: '/who-we-serve',
+  },
 };
 
 function WhoWeServeContentSkeleton() {

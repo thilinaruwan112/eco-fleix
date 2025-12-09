@@ -1,9 +1,13 @@
+
 import type { Metadata } from 'next';
 import { LegalContent } from '@/components/layout/LegalContent';
 
 export const metadata: Metadata = {
   title: 'Cookie Policy | ECO FLEIX',
   description: 'Learn about the cookies used on the ECO FLEIX website. Understand how we use cookies to improve your browsing experience.',
+  alternates: {
+    canonical: '/cookie-policy',
+  },
 };
 
 export default function CookiePolicyPage() {

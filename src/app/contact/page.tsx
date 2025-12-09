@@ -1,3 +1,4 @@
+
 import ContactHero from '@/components/sections/ContactHero';
 import ContactForm from '@/components/sections/ContactForm';
 import Faq from '@/components/sections/Faq';
@@ -8,6 +9,9 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Contact Us | E-Waste Recycling & ITAD Services in Dubai',
   description: 'Contact ECO FLEIX for e-waste recycling, IT asset disposition (ITAD), and secure data destruction services in Dubai. Schedule a free pickup or get a quote today.',
+  alternates: {
+    canonical: '/contact',
+  },
 };
 
 export default function ContactPage() {

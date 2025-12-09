@@ -1,9 +1,13 @@
+
 import type { Metadata } from 'next';
 import { LegalContent } from '@/components/layout/LegalContent';
 
 export const metadata: Metadata = {
   title: 'Terms and Conditions | ECO FLEIX',
   description: 'Read the Terms and Conditions for using ECO FLEIX\'s services and website. Understand your rights and responsibilities.',
+  alternates: {
+    canonical: '/terms-and-conditions',
+  },
 };
 
 export default function TermsAndConditionsPage() {

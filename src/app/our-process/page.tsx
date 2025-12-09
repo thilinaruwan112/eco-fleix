@@ -1,3 +1,4 @@
+
 import OurProcessHero from '@/components/sections/OurProcessHero';
 import OurProcessSteps from '@/components/sections/OurProcessSteps';
 import Faq from '@/components/sections/Faq';
@@ -8,6 +9,9 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Our Process | Secure & Transparent E-Waste Recycling in Dubai',
   description: 'Discover the secure and transparent e-waste recycling process at ECO FLEIX in Dubai. From collection and data destruction to final reporting, we ensure responsible ITAD.',
+  alternates: {
+    canonical: '/our-process',
+  },
 };
 
 export default function OurProcessPage() {

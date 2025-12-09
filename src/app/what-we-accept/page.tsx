@@ -8,6 +8,9 @@ import Faq from '@/components/sections/Faq';
 export const metadata: Metadata = {
   title: 'What We Accept | E-Waste Recycling Dubai | ECO FLEIX',
   description: 'View the comprehensive list of electronic items we accept for recycling at ECO FLEIX. We handle everything from laptops and servers to household electronics.',
+  alternates: {
+    canonical: '/what-we-accept',
+  },
 };
 
 export default function WhatWeAcceptPage() {

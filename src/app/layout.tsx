@@ -11,8 +11,12 @@ import { TranslationProvider } from '@/hooks/use-translation.tsx';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://eferecycling.com'),
   title: 'E-Waste Recycling Dubai | IT Asset Disposition | ECO FLEIX',
   description: 'ECO FLEIX offers professional e-waste recycling and IT asset disposition (ITAD) services in Dubai. We provide secure data destruction, electronics recycling, and sustainable e-waste management for businesses and individuals.',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'E-Waste Recycling Dubai | IT Asset Disposition | ECO FLEIX',
     description: 'Secure, certified, and eco-friendly e-waste recycling services in Dubai. We handle everything from data destruction to material recovery.',
