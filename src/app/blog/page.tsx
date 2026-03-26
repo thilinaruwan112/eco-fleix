@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useMemo, useRef, useEffect } from 'react';
@@ -7,6 +8,15 @@ import LatestInsights from '@/components/sections/LatestInsights';
 import BrowseByCategory from '@/components/sections/BrowseByCategory';
 import { blogPosts, BlogPost } from '@/lib/blog-data';
 import { useTranslation } from '@/hooks/use-translation';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Blog | ECO FLEIX E-Waste Recycling Insights',
+  description: 'Explore the latest articles, guides, and insights on e-waste recycling, IT asset disposition, data security, and sustainability from the experts at ECO FLEIX.',
+  alternates: {
+    canonical: '/blog',
+  },
+};
 
 export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState('');

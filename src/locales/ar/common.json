@@ -1,3 +1,4 @@
+
 {
   "connect_with_us": "تواصل معنا",
   "company_subtitle": "شركة إعادة تدوير النفايات الإلكترونية",
@@ -6,6 +7,7 @@
   "blogs": "المدونات",
   "services": "الخدمات",
   "who_we_serve": "من نخدم",
+  "what_we_accept": "ماذا نقبل",
   "our_process": "عمليتنا",
   "contact": "اتصل بنا",
   "get_a_quote": "احصل على عرض سعر",
@@ -34,6 +36,7 @@
   "view_all": "عرض الكل",
   "service": "الخدمة",
   "sector": "القطاع",
+  "item": "العنصر",
   "it_asset_remarketing": "إعادة تسويق أصول تكنولوجيا المعلومات",
   "it_asset_remanufacturing": "إعادة تصنيع أصول تكنولوجيا المعلومات",
   "it_asset_disposition": "التخلص من أصول تكنولوجيا المعلومات",
@@ -52,5 +55,3 @@
   "solution": "الحل",
   "results": "النتائج"
 }
-
-    

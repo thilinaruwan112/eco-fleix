@@ -1,6 +1,6 @@
 'use client';
 
-import { MapPin, Phone, Mail, Globe } from 'lucide-react';
+import { MapPin, Phone, Mail, Globe, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/use-translation';
@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Logo and Description */}
-            <div className="space-y-4">
+            <div className="space-y-6">
                <Link href="/" className="flex items-center gap-2">
                     <Image 
                       src="https://content-provider.payshia.com/eco-fleix/logo-eflix.png" 
@@ -27,6 +27,20 @@ const Footer = () => {
               <p className="text-gray-400">
                 {t('footer_desc')}
               </p>
+              <div className="flex items-center gap-4">
+                <a href="https://www.facebook.com/profile.php?id=61574545556514" target="_blank" rel="noopener noreferrer" className="bg-gray-700 p-2 rounded-full hover:bg-primary transition-colors" aria-label="Facebook">
+                  <Facebook className="h-5 w-5" />
+                </a>
+                <a href="https://x.com/eferecycling" target="_blank" rel="noopener noreferrer" className="bg-gray-700 p-2 rounded-full hover:bg-primary transition-colors" aria-label="Twitter">
+                  <Twitter className="h-5 w-5" />
+                </a>
+                <a href="https://www.linkedin.com/company/eco-fleix-electronics-recycling/" target="_blank" rel="noopener noreferrer" className="bg-gray-700 p-2 rounded-full hover:bg-primary transition-colors" aria-label="LinkedIn">
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <a href="https://www.instagram.com/eferecycling_uae/" target="_blank" rel="noopener noreferrer" className="bg-gray-700 p-2 rounded-full hover:bg-primary transition-colors" aria-label="Instagram">
+                  <Instagram className="h-5 w-5" />
+                </a>
+              </div>
             </div>
 
             {/* Contact Info */}
