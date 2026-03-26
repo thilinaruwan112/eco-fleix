@@ -1,7 +1,6 @@
-
 'use client';
 
-import { Mail, Phone, Facebook, Twitter, Linkedin, Instagram, ChevronDown, Menu, ArrowRight, Sun, Moon, Globe, X } from 'lucide-react';
+import { Mail, Phone, Facebook, Twitter, Linkedin, Instagram, ChevronDown, Menu, ArrowRight, Sun, Moon, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import {
@@ -44,7 +43,7 @@ const services = [
   { name: 'it_asset_remarketing', href: '/services#it-asset-remarketing', description: 'it_asset_remarketing_desc_short', image: 'https://images.unsplash.com/photo-1589913649361-56d3f8762bc7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxyZWZ1cmJpc2hlZCUyMGxhcHRvcHN8ZW58MHx8fHwxNzUzNjM5NDA0fDA&ixlib=rb-4.1.0&q=80&w=1080', aiHint: 'refurbished laptops' },
   { name: 'it_asset_remanufacturing', href: '/services#it-asset-remanufacturing', description: 'it_asset_remanufacturing_desc_short', image: 'https://images.unsplash.com/photo-1724475439756-675ec5ee4053?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx0ZWNobmljaWFuJTIwcmVwYWlyaW5nJTIwY29tcHV0ZXJ8ZW58MHx8fHwxNzUzNjM5NDA0fDA&ixlib=rb-4.1.0&q=80&w=1080', aiHint: 'technician repairing computer' },
   { name: 'it_asset_disposition', href: '/services#it-asset-disposition', description: 'it_asset_disposition_desc_short', image: 'https://images.unsplash.com/photo-1582748298043-0c0d31aa506e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxlLXdhc3RlJTIwY29sbGVjdGlvbiUyMGJpbnN8ZW58MHx8fHwxNzUzNjM5NDAzfDA&ixlib=rb-4.1.0&q=80&w=1080', aiHint: 'e-waste collection bins' },
-  { name: 'data_destruction', href: '/services#data-destruction', description: 'data_destruction_desc_short', image: 'https://images.unsplash.com/photo-1582184131482-5806da4a05c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxoYXJkJTIwZHJpdmUlMjBzaHJlZGRlcnxlbnwwfHx8fDE3NTM2Mzk0MDN8MA&ixlib=rb-4.1.0&q=80&w=1080', aiHint: 'hard drive shredder' },
+  { name: 'data_destruction', href: '/services#data-destruction', description: 'data_destruction_desc_short', image: 'https://images.unsplash.com/photo-1582184131482-5806da4a05c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxoYXJkJTIwZHJpdmUlMjBzaHJlZGRlcnxlbnwwfHx8fDE3NTM2Mzk0MDN8MA&ixlib=rb-4.1.0&q=80&w=1080', aiHint: 'hard drive shredder' },
 ];
 
 const whoWeServe = [
@@ -72,7 +71,7 @@ const MegaMenu = ({title, items, viewAllHref} : {title: string, items: any[], vi
             {items.map((item: AcceptedItem) => (
                 <Link key={item.title} href={viewAllHref} className="group">
                     <div className="aspect-square relative rounded-lg overflow-hidden mb-2">
-                         <Image src={item.image} alt={t(item.title)} fill objectFit="cover" className="transform group-hover:scale-105 transition-transform" data-ai-hint={item.aiHint}/>
+                         <Image src={item.image} alt={t(item.title)} fill style={{ objectFit: 'cover' }} className="transform group-hover:scale-105 transition-transform" data-ai-hint={item.aiHint}/>
                     </div>
                     <h4 className="font-semibold text-foreground text-sm group-hover:text-primary">{t(item.title)}</h4>
                     <p className="text-xs text-muted-foreground">{t(item.description)}</p>
@@ -175,10 +174,10 @@ const Header = () => {
           <div className="hidden md:flex items-center gap-4">
             <span>{t('connect_with_us')}</span>
             <div className="flex items-center gap-3">
-              <a href="#" aria-label="Facebook"><Facebook className="h-4 w-4" /></a>
-              <a href="#" aria-label="Twitter"><Twitter className="h-4 w-4" /></a>
-              <a href="#" aria-label="LinkedIn"><Linkedin className="h-4 w-4" /></a>
-              <a href="#" aria-label="Instagram"><Instagram className="h-4 w-4" /></a>
+              <a href="https://www.facebook.com/profile.php?id=61574545556514" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><Facebook className="h-4 w-4" /></a>
+              <a href="https://x.com/eferecycling" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><Twitter className="h-4 w-4" /></a>
+              <a href="https://www.linkedin.com/company/eco-fleix-electronics-recycling/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin className="h-4 w-4" /></a>
+              <a href="https://www.instagram.com/eferecycling_uae/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram className="h-4 w-4" /></a>
             </div>
           </div>
         </div>
