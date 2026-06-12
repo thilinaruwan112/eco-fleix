@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
@@ -7,14 +8,19 @@ import WhatsappButton from '@/components/layout/WhatsappButton';
 import Preloader from '@/components/layout/Preloader';
 import { ThemeProvider } from '@/components/layout/ThemeProvider';
 import { TranslationProvider } from '@/hooks/use-translation.tsx';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://eferecycling.com'),
   title: 'E-Waste Recycling Dubai | IT Asset Disposition | ECO FLEIX',
   description: 'ECO FLEIX offers professional e-waste recycling and IT asset disposition (ITAD) services in Dubai. We provide secure data destruction, electronics recycling, and sustainable e-waste management for businesses and individuals.',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'E-Waste Recycling Dubai | IT Asset Disposition | ECO FLEIX',
     description: 'Secure, certified, and eco-friendly e-waste recycling services in Dubai. We handle everything from data destruction to material recovery.',
-    url: 'https://www.ecofleixewasterecycling.com',
+    url: 'https://eferecycling.com',
     siteName: 'ECO FLEIX E-Waste Recycling Dubai',
     images: [
       {
@@ -56,6 +62,7 @@ export const metadata: Metadata = {
     'computer recycling dubai',
     'laptop recycling dubai',
   ],
+  manifest: '/manifest.webmanifest',
 };
 
 export default function RootLayout({
@@ -66,10 +73,25 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-0VT1C4GFG4"></Script>
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-0VT1C4GFG4');
+          `}
+        </Script>
+        <link rel="icon" href="https://content-provider.payshia.com/eco-fleix/app-icon/favicon.ico" sizes="any" />
+        <link rel="icon" href="https://content-provider.payshia.com/eco-fleix/app-icon/favicon-16x16.png" type="image/png" sizes="16x16" />
+        <link rel="icon" href="https://content-provider.payshia.com/eco-fleix/app-icon/favicon-32x32.png" type="image/png" sizes="32x32" />
+        <link rel="apple-touch-icon" href="https://content-provider.payshia.com/eco-fleix/app-icon/apple-touch-icon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <meta name="theme-color" content="#ffffff" />
       </head>
       <body className="font-body antialiased flex flex-col min-h-screen">
         <TranslationProvider>

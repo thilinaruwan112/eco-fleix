@@ -1,3 +1,4 @@
+
 {
   "connect_with_us": "Connect with us",
   "company_subtitle": "E WASTE RECYCLING COMPANY",
@@ -6,6 +7,7 @@
   "blogs": "Blogs",
   "services": "Services",
   "who_we_serve": "Who We Serve",
+  "what_we_accept": "What We Accept",
   "our_process": "Our Process",
   "contact": "Contact",
   "get_a_quote": "Get a Quote",
@@ -16,7 +18,7 @@
   "cookie_policy": "Cookie Policy",
   "footer_desc": "Leading sustainable e-waste recycling company transforming electronic waste management through innovative solutions.",
   "contact_info": "Contact Info",
-  "dubai_office_address": "Raja Building, Bur Dubai, Dubai",
+  "dubai_office_address": "Al Raffa Street, Bur Dubai, Dubai",
   "sharjah_office_address": "Al Sajaa Industrial Area, Sharjah",
   "quick_links": "Quick Links",
   "newsletter": "Newsletter",
@@ -34,6 +36,7 @@
   "view_all": "View All",
   "service": "Service",
   "sector": "Sector",
+  "item": "Item",
   "it_asset_remarketing": "IT Asset Remarketing",
   "it_asset_remanufacturing": "IT Asset Remanufacturing",
   "it_asset_disposition": "IT Asset Disposition",

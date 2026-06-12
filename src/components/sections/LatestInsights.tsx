@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import { useTranslation } from '@/hooks/use-translation';
+import Link from 'next/link';
 
 const LatestInsights = () => {
   const { t } = useTranslation();
@@ -14,7 +15,7 @@ const LatestInsights = () => {
       <div className="container mx-auto px-4">
         <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[500px] text-white">
           <Image
-            src="https://images.unsplash.com/photo-1603436039103-a434191370b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlLXdhc3RlJTIwcmVjeWNsaW5nJTIwZmFjdG9yeXxlbnwwfHx8fDE3NTM0NTA3ODV8MA&ixlib=rb-4.1.0&q=80&w=1080"
+            src="https://images.unsplash.com/photo-1645520718652-9342896b0eec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxlLXdhc3RlJTIwcmVjeWNsaW5nJTIwZmFjdG9yeXxlbnwwfHx8fDE3NTM2MzkzMzd8MA&ixlib=rb-4.1.0&q=80&w=1080"
             alt="E-waste processing facility"
             layout="fill"
             objectFit="cover"
@@ -32,7 +33,7 @@ const LatestInsights = () => {
             <div className="flex items-center flex-wrap gap-4 mt-4 text-sm text-white/90">
               <div className="flex items-center gap-2">
                 <Avatar className="h-8 w-8">
-                  <AvatarImage src="https://placehold.co/40x40.png" alt="Dr. Sarah Ahmed" data-ai-hint="woman portrait" />
+                  <AvatarImage src="https://images.unsplash.com/photo-1614283233556-f35b0c801ef1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc1MzYwMjc1Mnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Dr. Sarah Ahmed" data-ai-hint="woman portrait" />
                   <AvatarFallback>SA</AvatarFallback>
                 </Avatar>
                 <span>{t('latest_insights_author')}</span>
@@ -46,12 +47,12 @@ const LatestInsights = () => {
                 <span>{t('latest_insights_read_time')}</span>
               </div>
             </div>
-            <a href="/blog/the-future-of-e-waste-management-in-dubai">
+            <Link href="/blog/the-future-of-e-waste-management-in-dubai">
              <Button size="lg" className="mt-6 bg-white text-primary hover:bg-white/90">
                 {t('read_full_article')}
                 <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

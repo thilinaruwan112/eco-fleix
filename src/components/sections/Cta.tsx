@@ -1,7 +1,6 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
 import { useTranslation } from '@/hooks/use-translation';
 
 const Cta = () => {

@@ -1,3 +1,4 @@
+
 import { getPostBySlug, blogPosts } from '@/lib/blog-data';
 import BlogPostContent from '@/components/sections/BlogPostContent';
 import Cta from '@/components/sections/Cta';
@@ -28,10 +29,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${title} | ECO FLEIX Blog`,
     description: description,
+    alternates: {
+      canonical: `/blog/${post.slug}`,
+    },
     openGraph: {
       title: `${title} | ECO FLEIX Blog`,
       description: description,
-      url: `https://www.ecofleixewasterecycling.com/blog/${post.slug}`,
+      url: `https://eferecycling.com/blog/${post.slug}`,
       images: [
         {
           url: post.image,

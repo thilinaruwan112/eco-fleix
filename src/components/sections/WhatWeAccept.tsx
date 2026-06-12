@@ -4,11 +4,14 @@ import { Card, CardContent } from '@/components/ui/card';
 import React from 'react';
 import { Badge } from '../ui/badge';
 import { useTranslation } from '@/hooks/use-translation';
+import Image from 'next/image';
 
 interface AcceptedItem {
   icon: React.ReactNode;
   title: string;
   description: string;
+  image: string;
+  aiHint: string;
 }
 
 interface WhatWeAcceptProps {
@@ -32,17 +35,25 @@ const WhatWeAccept: React.FC<WhatWeAcceptProps> = ({ title, items }) => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {items.map((item, index) => (
-            <Card key={index} className="text-left shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-2xl bg-card h-full transform hover:-translate-y-2 group">
-              <CardContent className="p-8 flex flex-col h-full">
-                <div className="bg-primary/10 rounded-full p-3 mb-6 w-max group-hover:bg-primary transition-colors duration-300">
-                  {React.cloneElement(item.icon as React.ReactElement, { className: "h-8 w-8 text-primary group-hover:text-white transition-colors duration-300"})}
-                </div>
-                <h3 className="text-xl font-bold text-card-foreground mb-2 flex-grow">
-                  {t(item.title)}
-                </h3>
-                <p className="text-muted-foreground">
-                  {t(item.description)}
-                </p>
+             <Card key={index} className="group flex flex-col overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 bg-card">
+              <div className="relative h-56 w-full">
+                  <Image
+                      src={item.image}
+                      alt={t(item.title)}
+                      layout="fill"
+                      objectFit="cover"
+                      className="transition-transform duration-300 group-hover:scale-105"
+                      data-ai-hint={item.aiHint}
+                  />
+                   <div className="absolute inset-x-0 bottom-0 p-4">
+                     <div className="bg-primary/80 backdrop-blur-sm text-primary-foreground text-center rounded-lg px-4 py-2 text-lg font-bold">
+                       {t(item.title)}
+                     </div>
+                   </div>
+              </div>
+
+              <CardContent className="p-6 flex flex-col flex-grow">
+                <p className="text-sm text-muted-foreground flex-grow">{t(item.description)}</p>
               </CardContent>
             </Card>
           ))}

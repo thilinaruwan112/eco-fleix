@@ -5,9 +5,8 @@ import { useSearchParams } from 'next/navigation';
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowLeft, Building2, Landmark, School, Banknote, Stethoscope, Check, Shield, Globe, FileText, Users, DollarSign, Leaf, RefreshCw, BarChart, Eye, Star, Recycle } from 'lucide-react';
+import { ArrowLeft, Building2, Landmark, School, Banknote, Stethoscope, Shield, Globe, FileText, Users, DollarSign, Leaf, RefreshCw, Eye, Star, Recycle, Mail, MessageSquare } from 'lucide-react';
 import { Badge } from '../ui/badge';
-import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import { useTranslation } from '@/hooks/use-translation';
 
@@ -21,17 +20,37 @@ const sectors = [
 
 const ReadyToServe = ({title} : {title: string}) => {
     const { t } = useTranslation();
+    const phoneNumber = '+971529058388';
+    const message = `Hello! I'm interested in a consultation for the ${t(title)} sector.`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const email = 'info@eferecycling.com';
+    const emailSubject = `Consultation Request for ${t(title)} Sector`;
+    const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(emailSubject)}`;
+
     return (
     <section>
         <Card className="bg-primary text-primary-foreground">
             <CardContent className="p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-                <div>
+                <div className="text-center md:text-left">
                     <h3 className="text-2xl font-bold">{t('ready_to_serve_title', { sector: t(title) })}</h3>
                     <p className="mt-2 text-primary-foreground/90">
                         {t('ready_to_serve_desc')}
                     </p>
                 </div>
-                <Button variant="secondary" size="lg" className="flex-shrink-0">{t('get_free_consultation')}</Button>
+                <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+                    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                        <Button variant="secondary" size="lg" className="w-full">
+                            <MessageSquare className="mr-2 h-5 w-5" />
+                            WhatsApp
+                        </Button>
+                    </a>
+                    <a href={mailtoUrl}>
+                         <Button variant="secondary" size="lg" className="w-full">
+                            <Mail className="mr-2 h-5 w-5" />
+                            Email
+                        </Button>
+                    </a>
+                </div>
             </CardContent>
         </Card>
     </section>
@@ -95,7 +114,7 @@ const CorporationsContent = () => {
                 <CardContent className="p-8 relative text-center">
                     <Star className="h-16 w-16 text-primary/10 absolute top-6 left-6 -z-0" fill="currentColor"/>
                     <blockquote className="text-lg text-foreground italic relative z-10">
-                        "{t('corporations_testimonial_quote')}"
+                        &quot;{t('corporations_testimonial_quote')}&quot;
                     </blockquote>
                     <div className="mt-6 flex items-center justify-center gap-4">
                         <Avatar className="h-12 w-12">
@@ -174,7 +193,7 @@ const GovernmentAgenciesContent = () => {
                 <CardContent className="p-8 relative text-center">
                     <Star className="h-16 w-16 text-primary/10 absolute top-6 right-6 -z-0" fill="currentColor"/>
                     <blockquote className="text-lg text-foreground italic relative z-10">
-                        "{t('government_testimonial_quote')}"
+                        &quot;{t('government_testimonial_quote')}&quot;
                     </blockquote>
                     <div className="mt-6 flex items-center justify-center gap-4">
                         <Avatar className="h-12 w-12">
@@ -253,7 +272,7 @@ const EducationalInstitutionsContent = () => {
                 <CardContent className="p-8 relative text-center">
                     <Star className="h-16 w-16 text-primary/10 absolute top-6 left-6 -z-0" fill="currentColor"/>
                     <blockquote className="text-lg text-foreground italic relative z-10">
-                        "{t('education_testimonial_quote')}"
+                        &quot;{t('education_testimonial_quote')}&quot;
                     </blockquote>
                     <div className="mt-6 flex items-center justify-center gap-4">
                         <Avatar className="h-12 w-12">
@@ -331,7 +350,7 @@ const FinancialInstitutionsContent = () => {
                 <CardContent className="p-8 relative text-center">
                     <Star className="h-16 w-16 text-primary/10 absolute top-6 right-6 -z-0" fill="currentColor"/>
                     <blockquote className="text-lg text-foreground italic relative z-10">
-                        "{t('finance_testimonial_quote')}"
+                        &quot;{t('finance_testimonial_quote')}&quot;
                     </blockquote>
                     <div className="mt-6 flex items-center justify-center gap-4">
                         <Avatar className="h-12 w-12">
@@ -410,7 +429,7 @@ const HealthcareMedicalContent = () => {
                 <CardContent className="p-8 relative text-center">
                     <Star className="h-16 w-16 text-primary/10 absolute top-6 left-6 -z-0" fill="currentColor"/>
                     <blockquote className="text-lg text-foreground italic relative z-10">
-                        "{t('healthcare_testimonial_quote')}"
+                        &quot;{t('healthcare_testimonial_quote')}&quot;
                     </blockquote>
                     <div className="mt-6 flex items-center justify-center gap-4">
                         <Avatar className="h-12 w-12">

@@ -29,7 +29,7 @@ const Testimonials = () => {
               </svg>
 
               <blockquote className="text-xl text-card-foreground font-medium italic relative z-10">
-                "{t('testimonial_quote')}"
+                &quot;{t('testimonial_quote')}&quot;
               </blockquote>
               <div className="mt-8 flex items-center justify-center gap-4">
                 <Avatar className="h-12 w-12">
