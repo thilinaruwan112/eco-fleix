@@ -7,7 +7,7 @@ import { useTranslation } from '@/hooks/use-translation';
 
 const PioneeringSustainable = () => {
     const { t } = useTranslation();
-    const phoneNumber = '+971544563685';
+    const phoneNumber = '+971529058388';
     const message = "Hello! I'm interested in your e-waste recycling services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 

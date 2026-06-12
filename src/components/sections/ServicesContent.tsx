@@ -18,7 +18,7 @@ const services = [
 
 const ItAssetDispositionContent = () => {
     const { t } = useTranslation();
-    const phoneNumber = '+971544563685';
+    const phoneNumber = '+971529058388';
     const message = `Hello! I'm interested in IT Asset Disposition services.`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     const email = 'info@eferecycling.com';
@@ -126,7 +126,7 @@ const ItAssetDispositionContent = () => {
 
 const ItAssetRemanufacturingContent = () => {
     const { t } = useTranslation();
-    const phoneNumber = '+971544563685';
+    const phoneNumber = '+971529058388';
     const message = `Hello! I'm interested in IT Asset Remanufacturing services.`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     const email = 'info@eferecycling.com';
@@ -240,7 +240,7 @@ const ItAssetRemanufacturingContent = () => {
 
 const ItAssetRemarketingContent = () => {
     const { t } = useTranslation();
-    const phoneNumber = '+971544563685';
+    const phoneNumber = '+971529058388';
     const message = `Hello! I'm interested in IT Asset Remarketing services.`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     const email = 'info@eferecycling.com';
@@ -385,7 +385,7 @@ const ItAssetRemarketingContent = () => {
 
 const DataDestructionContent = () => {
     const { t } = useTranslation();
-    const phoneNumber = '+971544563685';
+    const phoneNumber = '+971529058388';
     const message = `Hello! I'm interested in Data Destruction services.`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     const email = 'info@eferecycling.com';

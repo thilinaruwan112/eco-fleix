@@ -20,7 +20,7 @@ const sectors = [
 
 const ReadyToServe = ({title} : {title: string}) => {
     const { t } = useTranslation();
-    const phoneNumber = '+971544563685';
+    const phoneNumber = '+971529058388';
     const message = `Hello! I'm interested in a consultation for the ${t(title)} sector.`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     const email = 'info@eferecycling.com';
