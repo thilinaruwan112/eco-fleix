@@ -38,10 +38,7 @@ const Footer = () => {
                   <Phone className="h-5 w-5" />
                   <span>+971 52 905 8388</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <Phone className="h-5 w-5" />
-                  <span>+971 54 456 3685</span>
-                </li>
+
                 <li className="flex items-center gap-3">
                   <Mail className="h-5 w-5" />
                   <span>ecofleixewasterecyclinguae@gmail.com</span>
