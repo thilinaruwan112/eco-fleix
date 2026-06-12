@@ -166,9 +166,9 @@ const Header = () => {
               <Mail className="h-4 w-4" />
               <span>info@eferecycling.com</span>
             </a>
-            <a href="tel:+971544563685" className="hidden sm:flex items-center gap-2">
+            <a href="tel:+971529058388" className="hidden sm:flex items-center gap-2">
               <Phone className="h-4 w-4" />
-              <span>+971 54 456 3685</span>
+              <span>+971 52 905 8388</span>
             </a>
           </div>
           <div className="hidden md:flex items-center gap-4">

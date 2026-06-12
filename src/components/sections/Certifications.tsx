@@ -10,24 +10,9 @@ const Certifications = () => {
 
   const certificationItems = [
     {
-      icon: <CheckCircle className="h-8 w-8 text-primary" />,
-      title: t('certification_1_title'),
-      description: 'ISO 9001',
-    },
-    {
-      icon: <Recycle className="h-8 w-8 text-primary" />,
-      title: t('certification_2_title'),
-      description: 'ISO 14001',
-    },
-    {
-      icon: <Shield className="h-8 w-8 text-primary" />,
-      title: t('certification_3_title'),
-      description: 'ISO 27001',
-    },
-    {
       icon: <Award className="h-8 w-8 text-primary" />,
-      title: t('certification_4_title'),
-      description: 'R2 Certified',
+      title: 'Green Certificate',
+      description: 'Eco-Friendly Operations',
     },
   ];
 
@@ -43,7 +28,7 @@ const Certifications = () => {
             {t('certifications_desc')}
           </p>
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex justify-center gap-8">
           {certificationItems.map((item, index) => (
             <Card key={index} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl bg-card">
               <CardContent className="p-8 flex flex-col items-center justify-center gap-4 h-full">

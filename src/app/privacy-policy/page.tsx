@@ -57,7 +57,7 @@ export default function PrivacyPolicyPage() {
                 ECO FLEIX<br />
                 Al Raffa Street, Bur Dubai, Dubai<br />
                 info@eferecycling.com<br />
-                +971 54 456 3685
+                +971 52 905 8388
             </address>
         </LegalContent>
     );
