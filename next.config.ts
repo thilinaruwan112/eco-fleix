@@ -7,7 +7,9 @@ const withPWA = withPWAInit({
   disable: process.env.NODE_ENV === "development",
 });
 
-const nextConfig: NextConfig = {
+const nextConfig: NextConfig = { 
+   trailingSlash: false,
+  output: 'export', // Enable static export
   /* config options here */
   typescript: {
     ignoreBuildErrors: true,
@@ -16,6 +18,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+    unoptimized: true, // Disable image optimization
     remotePatterns: [
       {
         protocol: 'https',
